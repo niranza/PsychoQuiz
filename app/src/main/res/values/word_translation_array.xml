@@ -1,0 +1,4190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="word_translation">
+
+        <!--region A letter-->
+        <item>ליד, בערך</item>
+        <item>אודות</item>
+        <item>מעל</item>
+        <item>מעל לכל</item>
+        <item>לחלוטין</item>
+        <item>לפי</item>
+        <item>בהתאם</item>
+        <item>בצד השני, לרוחב</item>
+        <item>בנוסף</item>
+        <item>ליד</item>
+        <item>אחרי</item>
+        <item>אחרי הכל</item>
+        <item>אחרי הכל</item>
+        <item>לאחר מכן</item>
+        <item>שוב</item>
+        <item>כנגד, ממול</item>
+        <item>לפני, לפנים</item>
+        <item>אף על פי</item>
+        <item>בסך הכל</item>
+        <item>לאורך</item>
+        <item>יחד עם</item>
+        <item>לצד, במקביל</item>
+        <item>גם</item>
+        <item>למרות ש-</item>
+        <item>בסך הכל</item>
+        <item>תמיד</item>
+        <item>בקרב, בין</item>
+        <item>בקרב, בין</item>
+        <item>ו-</item>
+        <item>מסביב</item>
+        <item>כאשר, כש-</item>
+        <item>כמו</item>
+        <item>כתוצאה</item>
+        <item>כאילו</item>
+        <item>כל עוד</item>
+        <item>כאשר, ברגע ש-</item>
+        <item>כמו גם</item>
+        <item>חוץ מ-</item>
+        <item>אצל, ב-</item>
+        <item>בהתחלה</item>
+        <item>סוף-סוף</item>
+        <item>יכולת</item>
+        <item>יכול, מסוגל</item>
+        <item>לקבל</item>
+        <item>מקובל</item>
+        <item>הסכמה</item>
+        <item>תאונה</item>
+        <item>להשיג</item>
+        <item>להפעיל</item>
+        <item>פעיל</item>
+        <item>שחקן</item>
+        <item>ממשי</item>
+        <item>למעשה</item>
+        <item>תוספת, הוספה</item>
+        <item>לפנות, לטפל</item>
+        <item>כתובת</item>
+        <item>להתרגל</item>
+        <item>לכוונן</item>
+        <item>יכל לעמוד בהוצאות</item>
+        <item>מפחד</item>
+        <item>להסכים</item>
+        <item>הסכם</item>
+        <item>לכוון, מטרה</item>
+        <item>אזעקה</item>
+        <item>דאגה, להדאיג</item>
+        <item>חי</item>
+        <item>כמעט</item>
+        <item>לבד</item>
+        <item>חלופי</item>
+        <item>התחלף, עבר מדבר אחד לשני וחזרה</item>
+        <item>לגמרי</item>
+        <item>שגריר</item>
+        <item>דו משמעי, לא לגמרי ברור</item>
+        <item>כמות</item>
+        <item>כעס, להכעיס</item>
+        <item>כועס</item>
+        <item>חיה</item>
+        <item>אחר</item>
+        <item>נוסף</item>
+        <item>תשובה</item>
+        <item>בנפרד</item>
+        <item>התנצלות</item>
+        <item>להופיע</item>
+        <item>נראה ש-</item>
+        <item>מראה, הופעה</item>
+        <item>מתאים</item>
+        <item>לאשר</item>
+        <item>ארכיטקט</item>
+        <item>אדריכלות, ארכיטקטורה</item>
+        <item>אזור, תחום</item>
+        <item>להתווכח</item>
+        <item>ויכוח</item>
+        <item>אציל, אריסטוקרט</item>
+        <item>לחמש</item>
+        <item>זרוע</item>
+        <item>צבא</item>
+        <item>בערך</item>
+        <item>לסדר</item>
+        <item>מעצר, לעצור</item>
+        <item>להגיע</item>
+        <item>אמנות</item>
+        <item>פריט</item>
+        <item>מאמר</item>
+        <item>להביע</item>
+        <item>רהוט</item>
+        <item>אמן</item>
+        <item>אמנותי</item>
+        <item>לגבי, בכל הנוגע ל-</item>
+        <item>כהוכחה ל-</item>
+        <item>לשאול</item>
+        <item>ביקש</item>
+        <item>לקשר</item>
+        <item>איגוד</item>
+        <item>אסוציאציה</item>
+        <item>להניח</item>
+        <item>הנחה</item>
+        <item>לפחות</item>
+        <item>ספורטאי, אתלט</item>
+        <item>לחבר, ליחס</item>
+        <item>לתקוף, מתקפה</item>
+        <item>ניסיון</item>
+        <item>גישה</item>
+        <item>למשוך</item>
+        <item>משיכה</item>
+        <item>נאה, מושך</item>
+        <item>קהל</item>
+        <item>מקורי, אותנטי</item>
+        <item>זמינות</item>
+        <item>זמין</item>
+        <item>ממוצע, רגיל</item>
+        <item>להתחמק, להימנע</item>
+        <item>ער, להתעורר</item>
+        <item>פתאומי</item>
+        <item>מוחלט</item>
+        <item>נגיש, זמין</item>
+        <item>להשלים, להשיג</item>
+        <item>מומחה, מעולה</item>
+        <item>הישג</item>
+        <item>להתחשב ב-, להתייחס ל-</item>
+        <item>חשבון</item>
+        <item>דיוק</item>
+        <item>מדויק</item>
+        <item>פעיל, אקטיביסט</item>
+        <item>להסתגל</item>
+        <item>להתאים</item>
+        <item>לעבד</item>
+        <item>לנהל, לפקח</item>
+        <item>לתת, לחלק</item>
+        <item>מנהל</item>
+        <item>להכניס, לקבל לתוך קבוצה</item>
+        <item>להודות</item>
+        <item>מבוגר</item>
+        <item>בגרות</item>
+        <item>מתקדם</item>
+        <item>מקדמה</item>
+        <item>התקדמות</item>
+        <item>יתרון</item>
+        <item>עצה</item>
+        <item>לייעץ</item>
+        <item>יועץ</item>
+        <item>אסתטיקה</item>
+        <item>להקצות</item>
+        <item>הכרזה</item>
+        <item>שנתי</item>
+        <item>למנות</item>
+        <item>גישה</item>
+        <item>בערך, בקירוב</item>
+        <item>אסטרונומיה</item>
+        <item>תשומת לב</item>
+        <item>תכונה, מאפיין</item>
+        <item>לייחס, לקשר</item>
+        <item>מודע</item>
+        <item>לנטוש, לזנוח</item>
+        <item>חטיפה, לחטוף</item>
+        <item>לציית</item>
+        <item>מחסור</item>
+        <item>חסר, לא נוכח</item>
+        <item>לספוג</item>
+        <item>שפע</item>
+        <item>התעללות, ניצול</item>
+        <item>להתעלל, לנצל</item>
+        <item>לצבור, לאסוף</item>
+        <item>לרכוש, להשיג</item>
+        <item>רכישה</item>
+        <item>לאמץ</item>
+        <item>הרפתקה</item>
+        <item>להשפיע</item>
+        <item>חיבה</item>
+        <item>שפע</item>
+        <item>שופע, עשיר</item>
+        <item>עזרה, לסייע</item>
+        <item>נישא באוויר</item>
+        <item>חברת תעופה</item>
+        <item>אווירון, מטוס</item>
+        <item>דומה</item>
+        <item>להרשות</item>
+        <item>בן-ברית, בנות-ברית</item>
+        <item>שינה ,לשנות</item>
+        <item>שינויים</item>
+        <item>לסירוגין</item>
+        <item>חובבן</item>
+        <item>תיקון, שינוי לטובה</item>
+        <item>לנתח</item>
+        <item>לצפות</item>
+        <item>להוט</item>
+        <item>חרד</item>
+        <item>גלוי</item>
+        <item>כנראה</item>
+        <item>לפנות</item>
+        <item>עליה בערך</item>
+        <item>הערכה</item>
+        <item>בהתאם</item>
+        <item>להופיע, לעלות</item>
+        <item>לקום, קם</item>
+        <item>מלאכותי</item>
+        <item>הצידה</item>
+        <item>במאמר מוסגר, מלבד</item>
+        <item>להעריך, לאמוד</item>
+        <item>נכס</item>
+        <item>למנות, להקצות</item>
+        <item>משימה, מטלה</item>
+        <item>להשיג, להגיע</item>
+        <item>להשתתף, להיות נוכח</item>
+        <item>משרת, מטפל, מלווה</item>
+        <item>סמכות</item>
+        <item>להרשות, להסמיך</item>
+        <item>סתיו</item>
+        <item>להמתין</item>
+        <item>מודעות</item>
+        <item>נערץ, ראוי להערצה</item>
+        <item>להעריץ</item>
+        <item>העריץ, אהב</item>
+        <item>שלילי</item>
+        <item>אנלוגי (ההיפך מדיגיטלי)</item>
+        <item>אנלוגיה, הקבלה</item>
+        <item>אב קדמון</item>
+        <item>מוצא</item>
+        <item>קדום, עתיק</item>
+        <item>להרכיב, להתאסף</item>
+        <item>לעזור, לסייע</item>
+        <item>תדהמה, השתאות</item>
+        <item>להדהים</item>
+        <item>לרשותך</item>
+        <item>סופר, מחבר</item>
+        <item>להסיט, להפנות, למנוע</item>
+        <item>מגוחך, לא סביר</item>
+        <item>להאיץ</item>
+        <item>להריע, לשבח</item>
+        <item>לאכסן, לשכן</item>
+        <item>ללוות</item>
+        <item>מורגל</item>
+        <item>תוקפני, אלים</item>
+        <item>חקלאות</item>
+        <item>אלרגי</item>
+        <item>לצבור, לערום</item>
+        <item>להדהים</item>
+        <item>לערער</item>
+        <item>לבקש</item>
+        <item>מדבר אל, מושך</item>
+        <item>מועמד</item>
+        <item>מעורר</item>
+        <item>רבים כמו (מספר גדול)</item>
+        <item>לוודא</item>
+        <item>שאיפה, חלום</item>
+        <item>ביקורת</item>
+        <item>פרס, להעניק פרס</item>
+        <item>להתנזר, להימנע ממשהו</item>
+        <item>להבליט, להדגיש</item>
+        <item>האשמה</item>
+        <item>להכיר, לדעת</item>
+        <item>הולם</item>
+        <item>פרסום</item>
+        <item>מודעה, פרסום</item>
+        <item>זיקה, קירבה</item>
+        <item>משיכה</item>
+        <item>להסעיר, לזעזע, לעצבן</item>
+        <item>לענות, לייסר</item>
+        <item>ייסורים</item>
+        <item>מעבר</item>
+        <item>חייזר</item>
+        <item>ניכור, הרחקה</item>
+        <item>עוגן</item>
+        <item>להשמיד</item>
+        <item>עתיק, ענתיקה</item>
+        <item>מנגנון</item>
+        <item>מכירה פומבית</item>
+        <item>להרחיב</item>
+        <item>חתימה</item>
+        <item>חו\</item>
+        <item>שותף לדבר עבירה</item>
+        <item>זוכה מאשמה</item>
+        <item>לדבוק ב-, לדגול ב-</item>
+        <item>פרקליט</item>
+        <item>לייעץ</item>
+        <item>להסתדר בשורה</item>
+        <item>דמי כיס, הקצבה</item>
+        <item>אזכור, רמיזה</item>
+        <item>מספיק, שופע, גדול</item>
+        <item>קטיעה</item>
+        <item>שעשוע</item>
+        <item>הרדמה</item>
+        <item>להציק</item>
+        <item>להעריך (שווי), לאמוד</item>
+        <item>תיבה</item>
+        <item>יהיר, שחצן</item>
+        <item>חפץ, פריט אומנות</item>
+        <item>זוועה</item>
+        <item>לבוש</item>
+        <item>לשנוא, לתעב</item>
+        <item>גיל ההתבגרות</item>
+        <item>סוכנות</item>
+        <item>אדיש</item>
+        <item>אפאתיה, אדישות</item>
+        <item>לפייס</item>
+        <item>תיאבון, רצון עז</item>
+        <item>מחא כפיים, הריע</item>
+        <item>מתאים לעיבוד</item>
+        <item>עורך-דין</item>
+        <item>הילה</item>
+        <item>יראת כבוד</item>
+        <item>מגושם</item>
+        <item>מוזר, מביך</item>
+        <item>חשבונייה</item>
+        <item>אקדמי</item>
+        <item>שחקנית (בהצגה או סרט)</item>
+        <item>לקשט</item>
+        <item>סדר יום</item>
+        <item>מזגן</item>
+        <item>אצות</item>
+        <item>קרן</item>
+        <item>כלי רכב, אוטו</item>
+        <!--endregion A letter-->
+
+        <!--region B letter-->
+        <item>לאחור</item>
+        <item>מבוסס על</item>
+        <item>בגלל</item>
+        <item>בגלל</item>
+        <item>לפני</item>
+        <item>לפני, מול</item>
+        <item>מאחורי</item>
+        <item>מכיוון ש-</item>
+        <item>מתחת</item>
+        <item>מתחת</item>
+        <item>ליד</item>
+        <item>בכל מקרה</item>
+        <item>מלבד, חוץ מ-</item>
+        <item>בנוסף על</item>
+        <item>בין</item>
+        <item>מעבר</item>
+        <item>שניהם</item>
+        <item>גם… וגם…</item>
+        <item>אך, אבל</item>
+        <item>מלבד, חוץ מ-</item>
+        <item>עד, לא יאוחר מ-</item>
+        <item>ליד, בסמוך ל-</item>
+        <item>חיידקים</item>
+        <item>נואשות, קשות</item>
+        <item>אופה</item>
+        <item>להקה</item>
+        <item>לחבוש, תחבושת, רצועה</item>
+        <item>בקושי</item>
+        <item>בסיס</item>
+        <item>עטלף</item>
+        <item>מחבט</item>
+        <item>אמבטיה, להתרחץ</item>
+        <item>מאבק, להיאבק</item>
+        <item>חוף ים</item>
+        <item>לסבול, לשאת</item>
+        <item>דוב</item>
+        <item>יופי</item>
+        <item>חדר שינה</item>
+        <item>להתחיל / התחיל / התחיל</item>
+        <item>התחלה</item>
+        <item>שייך</item>
+        <item>הכי טוב</item>
+        <item>רב-מכר</item>
+        <item>טוב יותר</item>
+        <item>אופניים</item>
+        <item>לידה</item>
+        <item>לנשוך, נשיכה</item>
+        <item>מוזר</item>
+        <item>עיוור</item>
+        <item>לבנה, גוש, חלק</item>
+        <item>חסימה</item>
+        <item>דם</item>
+        <item>כלי דם</item>
+        <item>לנשוף, נשף</item>
+        <item>לפוצץ, פוצץ</item>
+        <item>סירה</item>
+        <item>גוויה, גוף</item>
+        <item>עצם</item>
+        <item>גבול</item>
+        <item>משעמם</item>
+        <item>בקבוק</item>
+        <item>תחתית</item>
+        <item>ישבן</item>
+        <item>קנה</item>
+        <item>מוח, שכל</item>
+        <item>לשטוף את המח</item>
+        <item>אמיץ</item>
+        <item>לחם</item>
+        <item>לשבור</item>
+        <item>לנשום</item>
+        <item>גשר, לגשר</item>
+        <item>נרחב</item>
+        <item>תקציב, לתקצב</item>
+        <item>מבנה</item>
+        <item>לבנות</item>
+        <item>בניין</item>
+        <item>לבנות</item>
+        <item>קליע</item>
+        <item>באמצעות, על-ידי</item>
+        <item>איזון, לאזן</item>
+        <item>שיווי משקל</item>
+        <item>חרם, איסור</item>
+        <item>אמונה</item>
+        <item>לכופף</item>
+        <item>היזהר</item>
+        <item>להשאיל</item>
+        <item>תדריך, תקציר</item>
+        <item>בקצרה</item>
+        <item>בהיר, ברור</item>
+        <item>ללא ספק, בשום אופן</item>
+        <item>עד עתה</item>
+        <item>חשוף, ריק, לחשוף</item>
+        <item>להתנהג</item>
+        <item>התנהגות</item>
+        <item>לקפץ, ניתור</item>
+        <item>מבריק</item>
+        <item>עול</item>
+        <item>ערבה</item>
+        <item>שיח</item>
+        <item>רקע</item>
+        <item>נדבנים, תורמים</item>
+        <item>מועיל, רווחי</item>
+        <item>מודגש</item>
+        <item>אמיץ, חצוף</item>
+        <item>בוטנאי</item>
+        <item>גבול</item>
+        <item>ענף, סניף</item>
+        <item>להרחיב</item>
+        <item>בנק</item>
+        <item>גדה</item>
+        <item>לערום</item>
+        <item>לבגוד</item>
+        <item>ריק, רווח</item>
+        <item>דחף, המריץ</item>
+        <item>לשדר</item>
+        <item>להתחנן</item>
+        <item>לשרוף, להישרף</item>
+        <item>מבולבל</item>
+        <item>מטען, מזוודה</item>
+        <item>תחבושת</item>
+        <item>מחסום</item>
+        <item>ביישן</item>
+        <item>כופף</item>
+        <item>לערבב</item>
+        <item>טשטוש, לטשטש</item>
+        <item>להרתיח</item>
+        <item>לתמוך</item>
+        <item>מגף</item>
+        <item>לקדוח (חור)</item>
+        <item>לשעמם, שעמום</item>
+        <item>לקבור</item>
+        <item>ערבות, לשחרר בערבות</item>
+        <item>קרח</item>
+        <item>להתמקח</item>
+        <item>מציאה, עסקה</item>
+        <item>אסם</item>
+        <item>אגן, כיור</item>
+        <item>זקן</item>
+        <item>חיה, מפלצת</item>
+        <item>מכה, להכות</item>
+        <item>מקצב</item>
+        <item>ישבן</item>
+        <item>תנכ\</item>
+        <item>תפל</item>
+        <item>למצמץ</item>
+        <item>קשר</item>
+        <item>להרביע, להפרות</item>
+        <item>מין, גזע</item>
+        <item>פורץ</item>
+        <item>לשחוט</item>
+        <item>קצב</item>
+        <item>בס (במוזיקה)</item>
+        <item>חרוז</item>
+        <item>מקור</item>
+        <item>דבורה</item>
+        <item>פעמון</item>
+        <item>גרגרי יער</item>
+        <item>להב</item>
+        <item>להאשים</item>
+        <item>שמיכה</item>
+        <item>עגום</item>
+        <item>נשב (רוח), ניפח, פוצץ</item>
+        <item>לבנה</item>
+        <item>בריון</item>
+        <item>פרפר</item>
+        <!--endregion B letter-->
+
+        <!--region C letter-->
+        <item>בהחלט, בוודאי</item>
+        <item>בעיקר</item>
+        <item>קרוב</item>
+        <item>באופן יחסי</item>
+        <item>כתוצאה מכך</item>
+        <item>בעקביות</item>
+        <item>באופן קבוע</item>
+        <item>סותר</item>
+        <item>להפך, בניגוד ל-</item>
+        <item>לעומת זאת</item>
+        <item>בהתאמה</item>
+        <item>יחד עם</item>
+        <item>כרגע, נכון לעכשיו</item>
+        <item>לקרוא, להתקשר</item>
+        <item>מצלמה</item>
+        <item>לחבב</item>
+        <item>לדאוג, לטפל</item>
+        <item>בזהירות</item>
+        <item>לא זהיר, רשלני</item>
+        <item>לסחוב</item>
+        <item>קטלוג, רשימת פריטים</item>
+        <item>לתפוס, תפס</item>
+        <item>מטרה</item>
+        <item>גורם, סיבה</item>
+        <item>תא</item>
+        <item>מרכז</item>
+        <item>מרכזי</item>
+        <item>אתגר</item>
+        <item>לאתגר</item>
+        <item>סיכוי</item>
+        <item>עודף</item>
+        <item>שינוי, לשנות</item>
+        <item>לאפיין</item>
+        <item>זול</item>
+        <item>לבדוק</item>
+        <item>ילד</item>
+        <item>ילדות</item>
+        <item>ילדים</item>
+        <item>מעגל</item>
+        <item>להקיף בעיגול</item>
+        <item>נקי, לנקות</item>
+        <item>פיקח</item>
+        <item>לטפס</item>
+        <item>שעון</item>
+        <item>סגור, לסגור</item>
+        <item>בגד, בד</item>
+        <item>מאמן, לאמן, להדריך</item>
+        <item>קרון נוסעים, כרכרה, מחלקת תיירים (במטוס)</item>
+        <item>קוד</item>
+        <item>להתקיים בשותפות</item>
+        <item>מטבע</item>
+        <item>קר, התקררות</item>
+        <item>קולוניאלי</item>
+        <item>צבע</item>
+        <item>לצבוע</item>
+        <item>להתלונן</item>
+        <item>כולל</item>
+        <item>להשלים</item>
+        <item>מורכב מ-</item>
+        <item>ליצור קשר, מגע</item>
+        <item>להמשיך</item>
+        <item>המשכיות, רצף הגיוני</item>
+        <item>מתמשך</item>
+        <item>שליטה, לשלוט</item>
+        <item>לוח בקרה, פיקוח</item>
+        <item>לצנן, צונן</item>
+        <item>עותקים</item>
+        <item>להעתיק</item>
+        <item>פינה, לדחוק לפינה</item>
+        <item>נכון</item>
+        <item>לתקן</item>
+        <item>מחיר, עלות</item>
+        <item>יקר</item>
+        <item>רוזן</item>
+        <item>לספור</item>
+        <item>ארץ</item>
+        <item>כפר, אזור</item>
+        <item>כיסוי, מכסה</item>
+        <item>פרה</item>
+        <item>תרבות</item>
+        <item>מסוגל, יכול</item>
+        <item>קיבולת</item>
+        <item>יכולת, סמכות, תפקיד</item>
+        <item>עיר בירה</item>
+        <item>ראשי, משמעותי</item>
+        <item>הון</item>
+        <item>אות גדולה</item>
+        <item>עונש מוות</item>
+        <item>לנצל</item>
+        <item>מסוים</item>
+        <item>בטוח</item>
+        <item>וודאות</item>
+        <item>אופי</item>
+        <item>אות, תו</item>
+        <item>דמות</item>
+        <item>מאפיין</item>
+        <item>בחירה</item>
+        <item>לבחור</item>
+        <item>מצב, תנאי, נסיבות</item>
+        <item>אדיב</item>
+        <item>אזרחי</item>
+        <item>כיתה</item>
+        <item>סוג</item>
+        <item>מעמד</item>
+        <item>לסווג, מסווג</item>
+        <item>מושבה</item>
+        <item>לצרף, לשלב</item>
+        <item>נפוץ, משותף</item>
+        <item>משותף, ציבורי</item>
+        <item>לתקשר</item>
+        <item>קהילה</item>
+        <item>חברה</item>
+        <item>בר-השוואה</item>
+        <item>להשוות</item>
+        <item>השוואה</item>
+        <item>להבין</item>
+        <item>הבנה</item>
+        <item>להתרכז</item>
+        <item>לסיים</item>
+        <item>להסיק</item>
+        <item>מסקנה</item>
+        <item>סופית, באופן החלטי</item>
+        <item>לאשר, לאמת</item>
+        <item>המשך</item>
+        <item>שיתוף פעולה</item>
+        <item>ליבה</item>
+        <item>משבר</item>
+        <item>מרפא</item>
+        <item>כבל</item>
+        <item>לחשב</item>
+        <item>מחשבון</item>
+        <item>מערכה, מסע</item>
+        <item>כנה, ישיר</item>
+        <item>מועמד</item>
+        <item>תיבה</item>
+        <item>מקרה, טיעון</item>
+        <item>לקטלג, למיין, לסווג</item>
+        <item>זהיר</item>
+        <item>מאה שנים</item>
+        <item>לחייב</item>
+        <item>להסתער</item>
+        <item>להאשים</item>
+        <item>להאשים</item>
+        <item>לגבות</item>
+        <item>גיליון, תרשים</item>
+        <item>טענה, טוען</item>
+        <item>תביעה</item>
+        <item>להקביל, לחפוף</item>
+        <item>עצום</item>
+        <item>להתחיל</item>
+        <item>לדחוס</item>
+        <item>לכלול</item>
+        <item>רעיון, מושג</item>
+        <item>תפיסה</item>
+        <item>להתייעץ</item>
+        <item>להעניק, להסביר</item>
+        <item>ועידה</item>
+        <item>לשתף, לספר (סוד)</item>
+        <item>בטוח בעצמו</item>
+        <item>עימות, סכסוך</item>
+        <item>סברה, לשער</item>
+        <item>לחבר</item>
+        <item>תוצאה</item>
+        <item>לקחת בחשבון, לשקול</item>
+        <item>הרבה, רבות</item>
+        <item>לצרוך</item>
+        <item>צרכנים</item>
+        <item>להכיל, מכיל</item>
+        <item>עכשווי</item>
+        <item>נוח</item>
+        <item>באופן נח</item>
+        <item>מוסכמה</item>
+        <item>ועידה, כנס</item>
+        <item>שגרתי, קונבנציונאלי</item>
+        <item>מומר</item>
+        <item>להמיר</item>
+        <item>למסור, להעביר</item>
+        <item>אמיץ</item>
+        <item>ליצור</item>
+        <item>יוצר</item>
+        <item>יצור</item>
+        <item>מטבע</item>
+        <item>מותאם אישית</item>
+        <item>מנהג</item>
+        <item>לקוח, צרכן</item>
+        <item>להתאים באופן אישי</item>
+        <item>תעלה</item>
+        <item>להשליך, לגרש</item>
+        <item>צוות שחקנים</item>
+        <item>מעמד חברתי</item>
+        <item>טירה</item>
+        <item>אגבי, רגיל, יומיומי</item>
+        <item>ראשי, בכיר, מנהיג</item>
+        <item>צ\'יף</item>
+        <item>אזרחים</item>
+        <item>להבהיר</item>
+        <item>אקלים</item>
+        <item>חוף</item>
+        <item>קו/רצועת חוף</item>
+        <item>מעיל</item>
+        <item>שכבה (של צבע, בטון וכו\')</item>
+        <item>דו-קיום</item>
+        <item>לשתף פעולה</item>
+        <item>להתמוטט</item>
+        <item>עמוד</item>
+        <item>טור</item>
+        <item>נחמה</item>
+        <item>נוח</item>
+        <item>מסחר</item>
+        <item>סרטון פרסומת</item>
+        <item>מסחרי</item>
+        <item>ביצוע/ לבצע</item>
+        <item>להתחייב</item>
+        <item>ועדה</item>
+        <item>מסובך</item>
+        <item>סיבוך</item>
+        <item>להסכים, לציית</item>
+        <item>להתפשר</item>
+        <item>דאגה, עניין</item>
+        <item>להכשיר, להתאים</item>
+        <item>תנאי, מצב, מעמד</item>
+        <item>לנהל, לקיים</item>
+        <item>להתעמת, לעמת</item>
+        <item>עימות</item>
+        <item>התחשבות</item>
+        <item>מתחשב</item>
+        <item>עקבי</item>
+        <item>קבוע, רצוף</item>
+        <item>מהווים</item>
+        <item>להקים, לייסד</item>
+        <item>לבנות</item>
+        <item>להתייעץ</item>
+        <item>הקשר</item>
+        <item>ללקות, להידבק (במחלה)</item>
+        <item>חוזה, הסכם</item>
+        <item>להתכווץ</item>
+        <item>סתירה</item>
+        <item>שיירה</item>
+        <item>אמת מידה, אבן בחן</item>
+        <item>מבקר</item>
+        <item>לבקר</item>
+        <item>כלוב, לכלוא</item>
+        <item>סרטן (מחלה)</item>
+        <item>ללכוד</item>
+        <item>מטען</item>
+        <item>לחרוט</item>
+        <item>בית קברות</item>
+        <item>להצהיר, לאשר</item>
+        <item>פרק</item>
+        <item>כנסיה</item>
+        <item>להפיץ</item>
+        <item>לנוע במחזוריות</item>
+        <item>עמית, קולגה</item>
+        <item>לאסוף</item>
+        <item>להתנגש</item>
+        <item>התנגשות</item>
+        <item>באופן ראוי לשבח</item>
+        <item>לציין לשבח</item>
+        <item>פרשנות</item>
+        <item>בן-זוג</item>
+        <item>מתאים, ראוי</item>
+        <item>לאלץ, לחייב</item>
+        <item>לפצות</item>
+        <item>לאסוף, לקבץ</item>
+        <item>להסתיר</item>
+        <item>להרהר</item>
+        <item>לעבר</item>
+        <item>מתואם</item>
+        <item>להסכים</item>
+        <item>להתרחש בו זמנית</item>
+        <item>נידון ל-</item>
+        <item>לגנות</item>
+        <item>להודות</item>
+        <item>וידוי</item>
+        <item>מאסר, ריתוק</item>
+        <item>להחרים</item>
+        <item>להתאים, להסתגל</item>
+        <item>לבלבל</item>
+        <item>בלבול</item>
+        <item>לכבוש</item>
+        <item>כיבוש</item>
+        <item>מודע</item>
+        <item>שימור</item>
+        <item>שמרני</item>
+        <item>לשמר</item>
+        <item>להתמודד, לטעון, להיאבק</item>
+        <item>שביעות רצון</item>
+        <item>תוכן</item>
+        <item>יבשת</item>
+        <item>להוות ניגוד</item>
+        <item>ניגוד</item>
+        <item>לתרום</item>
+        <item>שנוי במחלוקת</item>
+        <item>מחלוקת</item>
+        <item>לכנס</item>
+        <item>שיחה</item>
+        <item>לשכנע</item>
+        <item>קואורדינציה, תיאום</item>
+        <item>מתאם</item>
+        <item>להתכתב</item>
+        <item>להתאים</item>
+        <item>התכתבות</item>
+        <item>סדק, לסדוק</item>
+        <item>להשתוקק</item>
+        <item>פשע</item>
+        <item>וולגרי, גס</item>
+        <item>גולמי</item>
+        <item>מטבח, בישול</item>
+        <item>קללה, לקלל</item>
+        <item>לספק</item>
+        <item>קתדרלה</item>
+        <item>בקר</item>
+        <item>מרכבה</item>
+        <item>צדקה</item>
+        <item>לרדוף, מרדף</item>
+        <item>לעודד</item>
+        <item>עליז, שמח</item>
+        <item>כימיקל, כימי</item>
+        <item>מסלול, להקיף</item>
+        <item>מעגל חשמלי</item>
+        <item>קרב</item>
+        <item>לתקוף</item>
+        <item>להתחרות, להתמודד</item>
+        <item>תחרות</item>
+        <item>חלקים, מרכיבים</item>
+        <item>מהווה חובה</item>
+        <item>תמציתי, תכליתי</item>
+        <item>בטון</item>
+        <item>קונקרטי, מוחשי</item>
+        <item>לאסוף קהל, לאסוף</item>
+        <item>בולט</item>
+        <item>קשר, מזימה</item>
+        <item>מדבק</item>
+        <item>לזהם</item>
+        <item>לתאם, לקשר</item>
+        <item>להשחית, מושחת</item>
+        <item>מועצה</item>
+        <item>פרקליט, יועץ</item>
+        <item>לייעץ, להדריך</item>
+        <item>בעל תפקיד מקביל, עמית, בן-זוג</item>
+        <item>זוג, לצמד</item>
+        <item>אומץ</item>
+        <item>מגרש (ספורט)</item>
+        <item>בית משפט</item>
+        <item>אדיב</item>
+        <item>נימוס, אדיבות</item>
+        <item>אומנות, מלאכה</item>
+        <item>כלי טייס / כלי שייט</item>
+        <item>אומן, בעל מלאכה</item>
+        <item>ביקורת</item>
+        <item>לחצות</item>
+        <item>צלב, להצליב</item>
+        <item>צומת</item>
+        <item>אכזרי</item>
+        <item>כת</item>
+        <item>בקתה</item>
+        <item>טקס, מסכת</item>
+        <item>פחם</item>
+        <item>פקודה, לפקוד</item>
+        <item>להמתיק (עונש)</item>
+        <item>לנסוע בקביעות לעבודה</item>
+        <item>להחליף, להמיר</item>
+        <item>הלחין</item>
+        <item>לדחוס</item>
+        <item>לסלוח, למחול</item>
+        <item>נעים, ידידותי</item>
+        <item>מולד</item>
+        <item>לאחד, לגבש</item>
+        <item>מיכל, קונטיינר</item>
+        <item>תחרות</item>
+        <item>למחות</item>
+        <item>להרשיע</item>
+        <item>אסיר</item>
+        <item>להתמודד</item>
+        <item>מיתר</item>
+        <item>אבן פינה</item>
+        <item>להתנגש, התנגשות</item>
+        <item>אמינות, מהימנות</item>
+        <item>כתר, להכתיר</item>
+        <item>לעבד, לטפח</item>
+        <item>סקרנות</item>
+        <item>סקרן</item>
+        <item>עקומה, פניה</item>
+        <item>חור</item>
+        <item>לחגוג</item>
+        <item>קסם</item>
+        <item>לרמות, לבגוד</item>
+        <item>התנגשות</item>
+        <item>צוק</item>
+        <item>מסווה, להסוות</item>
+        <item>תרדמת</item>
+        <item>קומי (מהמילה קומדיה)</item>
+        <item>אוניברסלי</item>
+        <item>שיעול, להשתעל</item>
+        <item>מסלול</item>
+        <item>קורס</item>
+        <item>מנה</item>
+        <item>בן-דוד</item>
+        <item>להטיל מום</item>
+        <item>קרקור</item>
+        <item>לקצץ</item>
+        <item>יבול</item>
+        <item>קהל</item>
+        <item>להצטופף</item>
+        <item>וילון</item>
+        <item>גופה</item>
+        <item>גמל</item>
+        <item>לבטל</item>
+        <item>ממתק</item>
+        <item>לבדוק, לסקור</item>
+        <item>שטיח</item>
+        <item>מזומן</item>
+        <item>לפדות</item>
+        <item>קופאי</item>
+        <item>קזינו</item>
+        <item>זחל</item>
+        <item>מערה</item>
+        <item>קוויאר</item>
+        <item>דגני בוקר</item>
+        <item>סיגריה</item>
+        <item>פרי הדר</item>
+        <item>חימר</item>
+        <item>ענן</item>
+        <item>מועדון</item>
+        <item>מקק, ג\'וק</item>
+        <item>ארון מתים</item>
+        <item>קולון, בושם (של גבר)</item>
+        <item>זבל אורגני</item>
+        <item>מנצח (תזמורת)</item>
+        <item>כובש</item>
+        <item>עיצור (לשון)</item>
+        <item>לול</item>
+        <item>לכלוא</item>
+        <item>נחושת</item>
+        <item>כותנה</item>
+        <item>פומה, סוג של טורף</item>
+        <item>קופון</item>
+        <item>מלפפון</item>
+        <item>הגיע לשיא</item>
+        <item>צאר (שליט רוסי)</item>
+        <!--endregion C letter-->
+
+        <!--region D letter-->
+        <item>יומיומי</item>
+        <item>למרות</item>
+        <item>שונה מ-</item>
+        <item>מרוחק</item>
+        <item>למטה</item>
+        <item>בגלל, לאור</item>
+        <item>תוך כדי, במשך</item>
+        <item>לרקוד</item>
+        <item>סכנה, לסכן</item>
+        <item>מסוכן</item>
+        <item>בת</item>
+        <item>מוות</item>
+        <item>עמוק</item>
+        <item>מאוד, במידה רבה</item>
+        <item>להגדיר</item>
+        <item>מוחלט</item>
+        <item>למחוק</item>
+        <item>מדבר</item>
+        <item>לנטוש</item>
+        <item>להחריב</item>
+        <item>מת, למות</item>
+        <item>קובייה (קוביות)</item>
+        <item>קשה</item>
+        <item>מלוכלך</item>
+        <item>מגוון</item>
+        <item>גמור, עשוי</item>
+        <item>חלום, לחלום</item>
+        <item>לשתות, משקה</item>
+        <item>סם, תרופה, לסמם</item>
+        <item>בשל</item>
+        <item>צריך להיעשות, זמנו הגיע</item>
+        <item>להחליט</item>
+        <item>לרדת</item>
+        <item>לדחות</item>
+        <item>ירידה</item>
+        <item>להפחית, לצמצם</item>
+        <item>ירידה, הפחתה</item>
+        <item>להסיק</item>
+        <item>לדרוש, דרישה</item>
+        <item>לסרב</item>
+        <item>להכחיש</item>
+        <item>לעזוב</item>
+        <item>לשאוב, להפיק, לגזור מ-</item>
+        <item>ירד, הדרדר</item>
+        <item>צאצא</item>
+        <item>מגיע (לו)</item>
+        <item>גורל</item>
+        <item>להקדיש</item>
+        <item>לכוון</item>
+        <item>ישיר, כנה</item>
+        <item>לביים</item>
+        <item>כיוון</item>
+        <item>חסרון</item>
+        <item>לגלות, לחשוף</item>
+        <item>לגלות</item>
+        <item>תגליות</item>
+        <item>לדון, להתווכח</item>
+        <item>להפריך</item>
+        <item>ברור, נפרד</item>
+        <item>מצוקה</item>
+        <item>לסטות</item>
+        <item>מגוון</item>
+        <item>לחלק</item>
+        <item>ספק, להטיל ספק</item>
+        <item>נזק, לגרום נזק</item>
+        <item>עשור</item>
+        <item>תבוסה</item>
+        <item>הובס</item>
+        <item>להגן</item>
+        <item>הגנה</item>
+        <item>מחסור</item>
+        <item>לשלוח</item>
+        <item>משלוח</item>
+        <item>דמוגרפי</item>
+        <item>להפגין</item>
+        <item>להדגים</item>
+        <item>יעד</item>
+        <item>להתנתק</item>
+        <item>להידרדר</item>
+        <item>לאבחן</item>
+        <item>מנהל</item>
+        <item>במאי</item>
+        <item>להפלות</item>
+        <item>לבטל, לפטר, לשחרר</item>
+        <item>חד-פעמי</item>
+        <item>להפריע, לשבש</item>
+        <item>להפיץ</item>
+        <item>הפצה</item>
+        <item>לתעד</item>
+        <item>מסמך</item>
+        <item>תפקיד, חובה</item>
+        <item>הכרזה, הצהרה</item>
+        <item>להכריז</item>
+        <item>להקדיש</item>
+        <item>מוקדש ל-</item>
+        <item>מסור</item>
+        <item>להתנוון</item>
+        <item>מעלה</item>
+        <item>דרגה</item>
+        <item>עיכוב, לאחר, לדחות</item>
+        <item>תענוג</item>
+        <item>תכנית, דוגמה, תרשים</item>
+        <item>לתכנן, לעצב</item>
+        <item>מעצב</item>
+        <item>לאתר, לגלות</item>
+        <item>לקבוע</item>
+        <item>נחוש, נחרץ</item>
+        <item>לפתח</item>
+        <item>התפתחות, פיתוח</item>
+        <item>תרשים, דיאגרמה</item>
+        <item>ניב</item>
+        <item>הבדל</item>
+        <item>חילוקי דעות</item>
+        <item>שונה</item>
+        <item>להבדיל, להבחין</item>
+        <item>לצמצם</item>
+        <item>אסון</item>
+        <item>להפר, לא לציית</item>
+        <item>להיפטר</item>
+        <item>מרחק</item>
+        <item>דרסטי</item>
+        <item>חשיכה</item>
+        <item>ויכוח, דיון</item>
+        <item>נפטר</item>
+        <item>להונות</item>
+        <item>מכוון</item>
+        <item>לשקול, לבחון, לדון</item>
+        <item>דיון</item>
+        <item>אשליות, הזיות</item>
+        <item>הכחשה</item>
+        <item>תלוי ב-</item>
+        <item>לתאר</item>
+        <item>הרוס</item>
+        <item>שומם, נטוש</item>
+        <item>להרוס</item>
+        <item>הרסני</item>
+        <item>להפחית, לגרוע</item>
+        <item>סוטה</item>
+        <item>מכשיר</item>
+        <item>לתכנן, להמציא</item>
+        <item>להכתיב, לפקד</item>
+        <item>הפרעה</item>
+        <item>להציג</item>
+        <item>להתעלם</item>
+        <item>להתמוסס</item>
+        <item>להסיח את הדעת</item>
+        <item>מחוז</item>
+        <item>אלוהי</item>
+        <item>אלוהות</item>
+        <item>מדרון, מורד</item>
+        <item>שחר</item>
+        <item>עסקה</item>
+        <item>להתמודד</item>
+        <item>עסק ב, חולק (קלפים, ניירת)</item>
+        <item>חוב</item>
+        <item>ריקבון</item>
+        <item>לפענח</item>
+        <item>להאציל, להסמיך</item>
+        <item>נזנח, נשכח</item>
+        <item>עבריין</item>
+        <item>דיכאון</item>
+        <item>מתואר</item>
+        <item>תיאור</item>
+        <item>נחשק</item>
+        <item>תשוקה, חשק, לחפוץ</item>
+        <item>להתייאש</item>
+        <item>נואש</item>
+        <item>ייאוש</item>
+        <item>מימד</item>
+        <item>חוסר הסכמה</item>
+        <item>להעלם</item>
+        <item>לאכזב</item>
+        <item>לא מאשר, לא מסכים, לא מרוצה</item>
+        <item>תלמידים</item>
+        <item>להעניש, לחנך, משמעת</item>
+        <item>תחום לימוד/מחקר</item>
+        <item>חינך, העניש</item>
+        <item>ממושמע</item>
+        <item>חוסר שביעות רצון</item>
+        <item>לשכנע שלא לעשות משהו</item>
+        <item>סתירה, פער</item>
+        <item>מחלה</item>
+        <item>חיטוי</item>
+        <item>לפרוק, לנקוע</item>
+        <item>לזלזל, להמעיט בערך</item>
+        <item>להתנגד, חילוקי דעות</item>
+        <item>הפרדה</item>
+        <item>מצוינות</item>
+        <item>מיוחד</item>
+        <item>להבדיל, להבחין</item>
+        <item>להפריע</item>
+        <item>הפרעה</item>
+        <item>לשלוט</item>
+        <item>תריסר</item>
+        <item>בצורת</item>
+        <item>דו-קרב</item>
+        <item>לשכפל</item>
+        <item>יציב, מתמשך</item>
+        <item>שושלת</item>
+        <item>לח</item>
+        <item>לדכא</item>
+        <item>להעיז, תעוזה</item>
+        <item>אתגר</item>
+        <item>לחלום בהקיץ</item>
+        <item>חרש</item>
+        <item>לעכב, לדחות</item>
+        <item>להוציא אוויר מ-</item>
+        <item>לעוות</item>
+        <item>מום, עיוות</item>
+        <item>עדין</item>
+        <item>להנמיך, להשפיל</item>
+        <item>מחלקה</item>
+        <item>חנות כלבו</item>
+        <item>להפקיד, פיקדון</item>
+        <item>להפחית</item>
+        <item>לתעב</item>
+        <item>קינוח</item>
+        <item>חסר, נטול</item>
+        <item>זלזול, בוז</item>
+        <item>בושה</item>
+        <item>תחפושת</item>
+        <item>לא נאמן</item>
+        <item>זלזול</item>
+        <item>לשגר</item>
+        <item>עקירה</item>
+        <item>להפיץ</item>
+        <item>צייתן, כנוע, נח</item>
+        <item>ביתי</item>
+        <item>לתרום</item>
+        <item>תורם</item>
+        <item>תיקו, שוויון</item>
+        <item>לצייר</item>
+        <item>לשלוף, שלף</item>
+        <item>חסרון, עיכוב</item>
+        <item>זרם, סחף</item>
+        <item>פגיון</item>
+        <item>מחלבה</item>
+        <item>גנדרני</item>
+        <item>לקשט</item>
+        <item>קישוטי, דקורטיבי</item>
+        <item>איל</item>
+        <item>משוגע, מטורף</item>
+        <item>בצפיפות</item>
+        <item>צפיפות</item>
+        <item>לתאר, להציג, לשרטט</item>
+        <item>לעג</item>
+        <item>פרט, לפרט</item>
+        <item>מזיק</item>
+        <item>הרוס, מפורק</item>
+        <item>דיאטה, תזונה</item>
+        <item>לעמעמם</item>
+        <item>פירוק מנשק</item>
+        <item>סכסוך, מחלוקת, צרימה</item>
+        <item>גועל, להגעיל</item>
+        <item>לנתח, לבתר</item>
+        <item>חיתוך, ביתור</item>
+        <item>חוסר שימוש</item>
+        <item>מנה, מינון</item>
+        <item>מוסר כפול</item>
+        <item>גיוס</item>
+        <item>משיכה</item>
+        <item>טיוטה</item>
+        <item>רוח פרצים</item>
+        <item>לגרור</item>
+        <item>פחד, לפחד</item>
+        <item>להרטיב, להספיג</item>
+        <item>לטפטף</item>
+        <item>סתום</item>
+        <item>משעמם</item>
+        <item>עמום</item>
+        <item>לשפוך</item>
+        <item>להתגורר</item>
+        <item>משכן, בית</item>
+        <item>צבע, לצבוע</item>
+        <item>חץ</item>
+        <item>יציאה, פגישה, דייט</item>
+        <item>תאריך</item>
+        <item>תמר</item>
+        <item>ים המלח</item>
+        <item>מכנה (של שבר)</item>
+        <item>שקשור בשיניים</item>
+        <item>רופא שיניים</item>
+        <item>יומן</item>
+        <item>עריץ, דיקטטור</item>
+        <item>דילמה, בעיה</item>
+        <item>יומי</item>
+        <item>גירושין</item>
+        <item>מפתן הדלת</item>
+        <item>שובך</item>
+        <item>אבק, לאבק</item>
+        <item>הולנדי</item>
+        <item>לגמד, גמד</item>
+        <item>הידלדל, התמעט</item>
+        <!--endregion D letter-->
+
+        <!--region E letter-->
+        <item>לדוגמה</item>
+        <item>קודם לכן</item>
+        <item>או…או…</item>
+        <item>במקום אחר</item>
+        <item>במידה שווה</item>
+        <item>במיוחד</item>
+        <item>בעיקרו, במהותו</item>
+        <item>גם אם</item>
+        <item>אף על פי כן</item>
+        <item>למרות ש-</item>
+        <item>לבסוף</item>
+        <item>כל יום</item>
+        <item>לפעמים</item>
+        <item>מלבד, חוץ מ-</item>
+        <item>מוקדם</item>
+        <item>אדמה</item>
+        <item>כדור הארץ</item>
+        <item>רעידת אדמה</item>
+        <item>לחנך</item>
+        <item>השכלה</item>
+        <item>ריק, לרוקן</item>
+        <item>אויב</item>
+        <item>אנרגיה, כוח</item>
+        <item>ליהנות</item>
+        <item>מהנה</item>
+        <item>נכנס</item>
+        <item>שגיאה</item>
+        <item>לברוח, בריחה</item>
+        <item>ערב</item>
+        <item>אירוע</item>
+        <item>מדויק</item>
+        <item>בדיוק</item>
+        <item>דוגמה</item>
+        <item>יתר, מוגזם</item>
+        <item>מומחה</item>
+        <item>נכחד</item>
+        <item>לערוך</item>
+        <item>מהדורה</item>
+        <item>עורך</item>
+        <item>שליט, קיסר</item>
+        <item>אימפריה</item>
+        <item>לאפשר</item>
+        <item>עצום</item>
+        <item>מספיק</item>
+        <item>עידן</item>
+        <item>חיוני</item>
+        <item>להעריך, לאמוד</item>
+        <item>הערכה</item>
+        <item>ליישר, להשוות</item>
+        <item>אפילו</item>
+        <item>זוגי (מספר)</item>
+        <item>באופן שווה</item>
+        <item>למעט</item>
+        <item>לממש, ליישם</item>
+        <item>להתאמן</item>
+        <item>תרגיל</item>
+        <item>לצפות</item>
+        <item>ציפיות</item>
+        <item>להסביר</item>
+        <item>הסבר</item>
+        <item>לבטא</item>
+        <item>מהיר</item>
+        <item>ביטוי</item>
+        <item>קיצוני</item>
+        <item>להרוויח</item>
+        <item>כלכלה</item>
+        <item>קצה, חספוס</item>
+        <item>לפרט, להרחיב</item>
+        <item>לבחור</item>
+        <item>להגיח, להופיע</item>
+        <item>להגר</item>
+        <item>בולט, בכיר</item>
+        <item>לצרף</item>
+        <item>להגדיל</item>
+        <item>להבטיח</item>
+        <item>סביבה</item>
+        <item>מגיפה, אפידמיה</item>
+        <item>מקבילה</item>
+        <item>למחוק</item>
+        <item>מחק</item>
+        <item>לייסד</item>
+        <item>להעריך, לאמוד</item>
+        <item>אתי, מוסרי</item>
+        <item>התחמק</item>
+        <item>ראיה</item>
+        <item>יוצא מהכלל</item>
+        <item>להוציא להורג</item>
+        <item>להוציא לפועל</item>
+        <item>יעיל, אפקטיבי</item>
+        <item>יעיל</item>
+        <item>מאמץ</item>
+        <item>חשמל</item>
+        <item>רגש</item>
+        <item>לחוקק</item>
+        <item>פרק</item>
+        <item>אתני</item>
+        <item>להצטיין</item>
+        <item>מצוין</item>
+        <item>מתיש, מעייף</item>
+        <item>ניסיון, לחוות</item>
+        <item>ניסוי, להתנסות</item>
+        <item>לנצל, להפיק תועלת</item>
+        <item>פעולות, מעשים</item>
+        <item>ייצוא</item>
+        <item>נרחב</item>
+        <item>להקל, קלוּת</item>
+        <item>בקלות</item>
+        <item>תוצאה, אפקט</item>
+        <item>רושם, השפעה</item>
+        <item>סמל</item>
+        <item>לעודד</item>
+        <item>לחרוט</item>
+        <item>להעצים</item>
+        <item>לחלוטין</item>
+        <item>אנזים</item>
+        <item>שוויון, במידה שווה</item>
+        <item>להשוות, להתאים</item>
+        <item>לעורר, להעלות</item>
+        <item>התפתחותי</item>
+        <item>התפתח</item>
+        <item>בצורה מוגזמת</item>
+        <item>להחליף, חלופה</item>
+        <item>למנוע, לשלול, להרחיק, לגרש</item>
+        <item>בלעדי</item>
+        <item>באופן בלעדי, רק</item>
+        <item>תירוץ</item>
+        <item>לסלוח</item>
+        <item>מפורש, ברור, בוטה</item>
+        <item>לחקור, ללמוד</item>
+        <item>חשיפה</item>
+        <item>מצוין</item>
+        <item>חד, מעודן, אנין</item>
+        <item>להאריך, להרחיב</item>
+        <item>שלוחה</item>
+        <item>חיצוני</item>
+        <item>חיצוני</item>
+        <item>הכחדה</item>
+        <item>לתמצת, להפיק</item>
+        <item>לחסל, לפסול</item>
+        <item>רהוט</item>
+        <item>לברוח, להתחמק</item>
+        <item>לחבק, לאמץ לקרבו</item>
+        <item>פליטה</item>
+        <item>להעסיק</item>
+        <item>מעסיק, מעביד</item>
+        <item>לסגור, להקיף</item>
+        <item>סגירה, כיתור, שטח מגודר</item>
+        <item>מפגש</item>
+        <item>לסכן</item>
+        <item>בסכנת הכחדה</item>
+        <item>כוח סבל</item>
+        <item>לסבול, להחזיק מעמד</item>
+        <item>לאכוף, לכפות</item>
+        <item>קו המשווה</item>
+        <item>לצייד</item>
+        <item>ציוד</item>
+        <item>התפרץ</item>
+        <item>נכס</item>
+        <item>אחוזה</item>
+        <item>הוצאות</item>
+        <item>יקר</item>
+        <item>נחוש, נלהב</item>
+        <item>עוּבָּר</item>
+        <item>להעסיק, ליצור מגע</item>
+        <item>אירוסין</item>
+        <item>התחייבות</item>
+        <item>להתגייס</item>
+        <item>להרגיז, להכעיס</item>
+        <item>לשעשע, לבדר</item>
+        <item>בידור</item>
+        <item>זכאי</item>
+        <item>כניסה</item>
+        <item>לחזות, לצפות</item>
+        <item>מכובד</item>
+        <item>להגזים</item>
+        <item>בחינה, בדיקה</item>
+        <item>לבחון</item>
+        <item>התרגשות</item>
+        <item>להפעיל</item>
+        <item>להתאמץ</item>
+        <item>פליטה, צינור מפלט</item>
+        <item>קיים</item>
+        <item>קיום</item>
+        <item>לזרז</item>
+        <item>לגמור, לבזבז, לפזר</item>
+        <item>שניתן לוותר עליו</item>
+        <item>ראייה, כוונת</item>
+        <item>מזרח</item>
+        <item>מוזר, אקסצנטרי</item>
+        <item>אקולוגי</item>
+        <item>גמיש, אלסטי, גומיה</item>
+        <item>זקן</item>
+        <item>לחנוט, לשמר</item>
+        <item>להביך</item>
+        <item>גורם התמרמרות</item>
+        <item>לפלוט, להוציא</item>
+        <item>הזדהות, אמפתיה</item>
+        <item>להדגיש</item>
+        <item>לכשף, להקסים</item>
+        <item>להסיג גבול, לפלוש</item>
+        <item>מנוע</item>
+        <item>מהנדס, להנדס</item>
+        <item>להעשיר</item>
+        <item>להירשם</item>
+        <item>נבע</item>
+        <item>התלהבות</item>
+        <item>קנאי</item>
+        <item>קנאה, לקנא</item>
+        <item>לייצג, לאפיין</item>
+        <item>סחף, כרסום</item>
+        <item>שגוי</item>
+        <item>מעורר, מעלה, מזכיר</item>
+        <item>לנשוף</item>
+        <item>להציג, מוצג</item>
+        <item>תערוכה</item>
+        <item>להגלות, לגרש</item>
+        <item>להרחיב</item>
+        <item>התפתחות</item>
+        <item>להגלות, לגרש</item>
+        <item>להשעות, להרחיק</item>
+        <item>להתפוצץ</item>
+        <item>סחיטה</item>
+        <item>בלתי רגיל</item>
+        <item>לאמוד על סמך מידע קיים</item>
+        <item>נשר</item>
+        <item>הד</item>
+        <item>אכיל</item>
+        <item>צלופח</item>
+        <item>פיל</item>
+        <item>מעטפה</item>
+        <item>אקזוטי, מארץ זרה</item>
+        <item>חומר נפץ</item>
+        <!--endregion E letter-->
+
+        <!--region F letter-->
+        <item>הלאה, יותר</item>
+        <item>לבסוף, סוף-סוף</item>
+        <item>ראשית</item>
+        <item>עבור</item>
+        <item>בגלל ש-</item>
+        <item>לדוגמה</item>
+        <item>לדוגמה</item>
+        <item>בדרך-כלל</item>
+        <item>לנצח, לתמיד</item>
+        <item>קודם, לשעבר</item>
+        <item>קדימה, לפנים</item>
+        <item>לעיתים קרובות</item>
+        <item>מ-</item>
+        <item>מ-</item>
+        <item>מפעם לפעם</item>
+        <item>לקדם</item>
+        <item>בהמשך</item>
+        <item>זאת ועוד</item>
+        <item>עובדה</item>
+        <item>שקר</item>
+        <item>חווה</item>
+        <item>חוואי</item>
+        <item>אבא</item>
+        <item>פחד, לפחד</item>
+        <item>להרגיש</item>
+        <item>הרגשה</item>
+        <item>מעט</item>
+        <item>תחום, שדה</item>
+        <item>למצוא</item>
+        <item>ממצאים</item>
+        <item>אצבע</item>
+        <item>אש, להצית</item>
+        <item>לירות</item>
+        <item>לפטר</item>
+        <item>לתקן</item>
+        <item>פרח</item>
+        <item>לשכוח</item>
+        <item>חבר</item>
+        <item>ידידותי</item>
+        <item>חברות</item>
+        <item>חזית, להתעמת</item>
+        <item>מלא, למלא</item>
+        <item>פונה ל-, עם הפנים ל-</item>
+        <item>פנים</item>
+        <item>שקשור בפנים</item>
+        <item>כספי</item>
+        <item>לאסור</item>
+        <item>ליצור, להקים</item>
+        <item>צורה</item>
+        <item>רשמי</item>
+        <item>הלאה, קדימה</item>
+        <item>מתקן</item>
+        <item>להיכשל</item>
+        <item>כשלון</item>
+        <item>אמון</item>
+        <item>סתיו</item>
+        <item>תכונה, מאפיין</item>
+        <item>סרט באורך מלא</item>
+        <item>להציג</item>
+        <item>לשגשג, לפרוח</item>
+        <item>לעקוב, לציית</item>
+        <item>למען</item>
+        <item>כוח</item>
+        <item>לכפות</item>
+        <item>לזנוח</item>
+        <item>מצא, גילה</item>
+        <item>לייסד</item>
+        <item>יסוד</item>
+        <item>תפקוד, לתפקד</item>
+        <item>עתיד</item>
+        <item>לסייע, לעזור, להקל</item>
+        <item>להתפרק</item>
+        <item>מהיר</item>
+        <item>צום</item>
+        <item>להדק</item>
+        <item>נשי</item>
+        <item>קנס</item>
+        <item>קטן, עדין, דקיק</item>
+        <item>משביע רצון</item>
+        <item>משובח, מצוין</item>
+        <item>בכושר</item>
+        <item>להתאים</item>
+        <item>בריחה, מנוסה</item>
+        <item>טיסה</item>
+        <item>חזק</item>
+        <item>תחזית</item>
+        <item>חוץ</item>
+        <item>זר, נוכרי</item>
+        <item>לוותר, להפסיד</item>
+        <item>בעל מזל</item>
+        <item>עושר</item>
+        <item>מזל</item>
+        <item>מסגרת, למסגר</item>
+        <item>לממן</item>
+        <item>קרן</item>
+        <item>בסיסי (פונדמנטלי)</item>
+        <item>מגייס כספים</item>
+        <item>כסף, הון, מקור מימון</item>
+        <item>גורם</item>
+        <item>טובה</item>
+        <item>להעדיף</item>
+        <item>מועדף</item>
+        <item>לריב, רב</item>
+        <item>גזרה, צורה</item>
+        <item>לחשב, להניח, להסיק</item>
+        <item>ספרה, מספר</item>
+        <item>דמות</item>
+        <item>שטוח</item>
+        <item>דירה</item>
+        <item>עף</item>
+        <item>לעוף</item>
+        <item>זבוב</item>
+        <item>לסכל</item>
+        <item>אות, סימן מבשר באות</item>
+        <item>שליח, חלוץ, מבשר</item>
+        <item>מאובן</item>
+        <item>בד</item>
+        <item>לבדות</item>
+        <item>משפחה</item>
+        <item>סופני (פטלי)</item>
+        <item>גורל, חרץ גורל</item>
+        <item>חבר, עמית</item>
+        <item>בדיון, לא אמיתי</item>
+        <item>תיק, קובץ</item>
+        <item>טביעת אצבע</item>
+        <item>להבה</item>
+        <item>להחמיא</item>
+        <item>שטוח יותר</item>
+        <item>חנופה</item>
+        <item>לנהור, עדר, המון</item>
+        <item>שיטפון</item>
+        <item>עדין, שביר</item>
+        <item>מפעל, בית חרושת</item>
+        <item>מוכר</item>
+        <item>להתוודע</item>
+        <item>לרתק</item>
+        <item>פורה</item>
+        <item>עובר (ברחם)</item>
+        <item>סיב</item>
+        <item>סמלי</item>
+        <item>לסכם, לגבש</item>
+        <item>חברה (פירמה)</item>
+        <item>מוצק</item>
+        <item>נחוש, תקיף</item>
+        <item>בוטה</item>
+        <item>גמיש</item>
+        <item>חוסר יציבות</item>
+        <item>שטף</item>
+        <item>שוטף</item>
+        <item>נוזל</item>
+        <item>עקבות, טביעות רגל</item>
+        <item>לצפות מראש</item>
+        <item>מצודה, מבצר</item>
+        <item>לחזק, לבצר</item>
+        <item>ניחוח</item>
+        <item>להקפיא, הקפיא</item>
+        <item>פרי</item>
+        <item>להגשים</item>
+        <item>להתעלף</item>
+        <item>קלוש</item>
+        <item>רעב קשה</item>
+        <item>מפורסם</item>
+        <item>עייפות, תשישות</item>
+        <item>לעייף</item>
+        <item>אשמה</item>
+        <item>פגם, תקלה</item>
+        <item>לקוי, לא תקין</item>
+        <item>חום (של מחלה)</item>
+        <item>טעם</item>
+        <item>לתבל</item>
+        <item>להימלט, נמלט</item>
+        <item>לזרוק, להעיף</item>
+        <item>להפוך צד</item>
+        <item>סלטה</item>
+        <item>זרם</item>
+        <item>להתמקד, מיקוד</item>
+        <item>שאפשר לשכוח אותו</item>
+        <item>אומן, מאומץ</item>
+        <item>שבר</item>
+        <item>שבר</item>
+        <item>מרמה, הונאה</item>
+        <item>תדר, תדירות</item>
+        <item>תדיר, שכיח</item>
+        <item>מפחיד</item>
+        <item>שוליים</item>
+        <item>חסכני</item>
+        <item>תסכול</item>
+        <item>דלק</item>
+        <item>אדים, עשן</item>
+        <item>פטרת</item>
+        <item>פרווה</item>
+        <item>זעם</item>
+        <item>פיה</item>
+        <item>אגדה</item>
+        <item>מאוורר, לאוורר</item>
+        <item>מעריץ, אוהד</item>
+        <item>מחבב</item>
+        <item>מגונדר</item>
+        <item>אופנה</item>
+        <item>לעצב</item>
+        <item>יוצר סרטים</item>
+        <item>פילטר, מסנן</item>
+        <item>דייג</item>
+        <item>דיג</item>
+        <item>עדין, שביר</item>
+        <item>עממי</item>
+        <item>פולקלור</item>
+        <item>טיפש, לשטות במישהו</item>
+        <item>קטע צילום</item>
+        <item>יער</item>
+        <item>לסלוח</item>
+        <item>מזלג</item>
+        <item>נוסחה, פורמולה</item>
+        <item>לנסח</item>
+        <item>אחוותי, של אחים</item>
+        <item>צפרדע</item>
+        <item>לרהט</item>
+        <!--endregion F letter-->
+
+        <!--region G letter-->
+        <item>בהתחשב בכך</item>
+        <item>בהנחה ש-, נתון ש-</item>
+        <item>להרוויח, להוסיף</item>
+        <item>שמח</item>
+        <item>הדרגתי</item>
+        <item>גדול, מעולה</item>
+        <item>כללי</item>
+        <item>גנרל (דרגה צבאית)</item>
+        <item>באופן כללי</item>
+        <item>ברוטו, גלמי</item>
+        <item>ענק, דוחה</item>
+        <item>צמיחה, גדילה</item>
+        <item>אסף</item>
+        <item>עולמי, גלובאלי</item>
+        <item>מטרה</item>
+        <item>סחורה, טובין</item>
+        <item>אחיזה</item>
+        <item>לתפוס, להבין</item>
+        <item>קבוצה, לקבץ</item>
+        <item>פער</item>
+        <item>יצר</item>
+        <item>דור</item>
+        <item>למשול</item>
+        <item>ממשל</item>
+        <item>מושל</item>
+        <item>לרצות</item>
+        <item>בסיס, אדמה</item>
+        <item>לגדול, לגדל</item>
+        <item>להתבגר, לגדול</item>
+        <item>אשם</item>
+        <item>גאון</item>
+        <item>עדין</item>
+        <item>אמיתי, מקורי</item>
+        <item>להעניק, מענק</item>
+        <item>שומר, לשמור</item>
+        <item>למדוד, להעריך, מידה</item>
+        <item>נדיב</item>
+        <item>גנים</item>
+        <item>מחווה</item>
+        <item>נתון</item>
+        <item>כיתה</item>
+        <item>ציון, דרגה, מעמד</item>
+        <item>שיפוע</item>
+        <item>בהדרגה</item>
+        <item>לסיים לימודים</item>
+        <item>גדול, כולל, מרשים</item>
+        <item>נכדה</item>
+        <item>סבא</item>
+        <item>סבתא</item>
+        <item>נכד</item>
+        <item>ניחוש, לנחש</item>
+        <item>הנחיה, הכוונה, הנהגה</item>
+        <item>להדריך</item>
+        <item>אבק שריפה</item>
+        <item>בגד, לבוש</item>
+        <item>בנזין</item>
+        <item>ז\'אנר, סוגה</item>
+        <item>סוג, מין</item>
+        <item>ענק</item>
+        <item>גביע</item>
+        <item>לברך, לקבל פנים</item>
+        <item>יגון, צער</item>
+        <item>טרוניה, התמרמרות</item>
+        <item>נהם</item>
+        <item>להבטיח, ערבות</item>
+        <item>הימר</item>
+        <item>גן (תורשתי)</item>
+        <item>ספר בראשית</item>
+        <item>היווצרות, התהוות</item>
+        <item>תורשתי, גנטי</item>
+        <item>ידידותי</item>
+        <item>מבט חטוף</item>
+        <item>תקלה, הפרעה</item>
+        <item>להאדיר</item>
+        <item>חסד, חינניות</item>
+        <item>חינני, אדיב</item>
+        <item>תבואה</item>
+        <item>גרעין, לטחון</item>
+        <item>זבל</item>
+        <item>גן</item>
+        <item>שום</item>
+        <item>שער</item>
+        <item>מתנה</item>
+        <item>קרחון</item>
+        <item>בלוטה</item>
+        <item>כוס</item>
+        <item>זכוכית</item>
+        <item>זיגוג</item>
+        <item>כפפה</item>
+        <item>מוזהב</item>
+        <item>דקדוקי</item>
+        <item>ענבים</item>
+        <item>גרגרים, לכלוך</item>
+        <item>מכולת</item>
+        <item>חתן</item>
+        <item>לטפח, לטפל</item>
+        <item>גיליוטינה</item>
+        <item>מלחמת המפרץ</item>
+        <item>אולם ספורט</item>
+        <item>אולם ספורט</item>
+        <!--endregion G letter-->
+
+        <!--region H letter-->
+        <item>כמעט אף פעם</item>
+        <item>לפיכך, לכן</item>
+        <item>כאן</item>
+        <item>איך, כיצד</item>
+        <item>בכל דרך</item>
+        <item>למרות זאת</item>
+        <item>חצי</item>
+        <item>יד</item>
+        <item>למסור</item>
+        <item>לשמוע</item>
+        <item>שמועה</item>
+        <item>חום, לחמם</item>
+        <item>גיבור</item>
+        <item>סוס</item>
+        <item>חם</item>
+        <item>חריף</item>
+        <item>לשכן</item>
+        <item>בית</item>
+        <item>הרגל</item>
+        <item>סביבת מגורים</item>
+        <item>בריאות</item>
+        <item>מאוד, במידה רבה</item>
+        <item>כבד</item>
+        <item>תקווה, לקוות</item>
+        <item>אנושי</item>
+        <item>בן-אדם, אנוש</item>
+        <item>בקושי</item>
+        <item>להסס</item>
+        <item>לעכב, למנוע</item>
+        <item>מולדת</item>
+        <item>הגון</item>
+        <item>לכבד, כבוד</item>
+        <item>עצום, ענק</item>
+        <item>נוקשה, אכזרי</item>
+        <item>חלול</item>
+        <item>מאה</item>
+        <item>לצוד, ציד</item>
+        <item>צייד</item>
+        <item>לעצור,להפסיק, עצירה</item>
+        <item>להתמודד</item>
+        <item>קשה יותר</item>
+        <item>מזיק</item>
+        <item>שאינו מזיק</item>
+        <item>מסוכן</item>
+        <item>קדחתני</item>
+        <item>יורש</item>
+        <item>תורשה</item>
+        <item>בית חולים</item>
+        <item>לאשפז</item>
+        <item>רעב</item>
+        <item>לשבח</item>
+        <item>ברד</item>
+        <item>היכל</item>
+        <item>מסדרון</item>
+        <item>לפגוע, להזיק</item>
+        <item>לרתום</item>
+        <item>עשב</item>
+        <item>עדר, לרעות</item>
+        <item>לאסוף</item>
+        <item>מורשת</item>
+        <item>בעל</item>
+        <item>לחצות</item>
+        <item>להציק</item>
+        <item>למהר, להחפז</item>
+        <item>מהיר, בהול</item>
+        <item>פתח, צוהר</item>
+        <item>לבקוע (מביצה)</item>
+        <item>לגרור</item>
+        <item>לשים לב</item>
+        <item>הגמוניה</item>
+        <item>גובה</item>
+        <item>כפירה</item>
+        <item>לישון שנת חורף</item>
+        <item>התחבא מ-</item>
+        <item>חבוי, נסתר</item>
+        <item>כביש ראשי</item>
+        <item>לעכב</item>
+        <item>רמז</item>
+        <item>היסטוריון</item>
+        <item>כוורת</item>
+        <item>אָיוֹם</item>
+        <item>אימה</item>
+        <item>הכנסת אורחים</item>
+        <item>מארח</item>
+        <item>עוינות</item>
+        <item>צביעות</item>
+        <item>הליכה, טיול</item>
+        <item>תחביב</item>
+        <item>להשפיל</item>
+        <item>ענוה</item>
+        <item>נכה</item>
+        <item>הרמוניה</item>
+        <item>לב</item>
+        <item>דופק, פעימות לב</item>
+        <item>גיבורה</item>
+        <item>מצחיק</item>
+        <item>גבעה</item>
+        <item>צופר</item>
+        <item>קרן (של בעח)</item>
+        <item>עוזרת בית, מנקה</item>
+        <item>יללה, לילל</item>
+        <!--endregion H letter-->
+
+        <!--region I letter-->
+        <item>כלומר, לדוגמה</item>
+        <item>באופן זהה</item>
+        <item>אם</item>
+        <item>מיד</item>
+        <item>ב-, בתוך</item>
+        <item>בעוד רגע</item>
+        <item>במילה אחת</item>
+        <item>בנוסף</item>
+        <item>במקרה</item>
+        <item>בהשוואה</item>
+        <item>לסיכום</item>
+        <item>בניגוד ל-</item>
+        <item>בבוא העת</item>
+        <item>למעשה</item>
+        <item>למעשה</item>
+        <item>בחזית של, מול</item>
+        <item>באופן כללי</item>
+        <item>לאור</item>
+        <item>על-מנת, בכדי</item>
+        <item>במילים אחרות</item>
+        <item>במיוחד</item>
+        <item>למרות</item>
+        <item>במקרה הזה</item>
+        <item>באותו אופן</item>
+        <item>דרך אגב</item>
+        <item>כולל</item>
+        <item>בהחלט</item>
+        <item>בתחילה</item>
+        <item>בתוך, פנים</item>
+        <item>מיד</item>
+        <item>במקום</item>
+        <item>במקום</item>
+        <item>אל תוך</item>
+        <item>אוביקטיבי, ללא צד</item>
+        <item>לא עקבי</item>
+        <item>להכניס</item>
+        <item>זהה</item>
+        <item>לסבך, לערב</item>
+        <item>השלכות, משמעות</item>
+        <item>חשיבות</item>
+        <item>חשוב</item>
+        <item>לקוי, לא מספיק</item>
+        <item>הכנסה</item>
+        <item>לא מובן</item>
+        <item>להצביע על</item>
+        <item>אינדיקציה, סימן ל-</item>
+        <item>ליישב, לאכלס</item>
+        <item>תושבים</item>
+        <item>ראשי תיבות</item>
+        <item>התחלתי, ראשוני</item>
+        <item>יזם, התחיל, אִתְחֵל</item>
+        <item>בינלאומי</item>
+        <item>אי</item>
+        <item>אי</item>
+        <item>להוציא לאור, להפיץ</item>
+        <item>גיליון</item>
+        <item>נושא, עניין, סוגיה</item>
+        <item>רעיון</item>
+        <item>לזהות</item>
+        <item>לא חוקי</item>
+        <item>דמות, תמונה</item>
+        <item>דמיון</item>
+        <item>לדמיין</item>
+        <item>לפגום, להחליש</item>
+        <item>להעביר, להקנות</item>
+        <item>באופן הוגן, ללא אפליה</item>
+        <item>לייבא</item>
+        <item>לכפות</item>
+        <item>בלתי אפשר</item>
+        <item>כלוא</item>
+        <item>לשפר</item>
+        <item>לאלתר</item>
+        <item>תקין, מסודר</item>
+        <item>להגדיל, להגביר</item>
+        <item>מדהים</item>
+        <item>יחיד, אינדיבידואל</item>
+        <item>תעשייה</item>
+        <item>נגזר, משתמע</item>
+        <item>להודיע, לעדכן</item>
+        <item>מידע</item>
+        <item>לחדש, להמציא</item>
+        <item>כוונה</item>
+        <item>מכוון</item>
+        <item>לתקשר, להשפיע</item>
+        <item>ריבית</item>
+        <item>עניין</item>
+        <item>פנימי</item>
+        <item>פרשנות</item>
+        <item>לערב</item>
+        <item>לבודד</item>
+        <item>בורות</item>
+        <item>בור, חסר השכלה</item>
+        <item>להתעלם</item>
+        <item>בור, אנאלפבית</item>
+        <item>השפעה</item>
+        <item>התנגשות</item>
+        <item>חסר סבלנות</item>
+        <item>להרשים</item>
+        <item>מרשים</item>
+        <item>חוסר פעילות</item>
+        <item>לכלול</item>
+        <item>כולל</item>
+        <item>חרוץ, שקדן</item>
+        <item>הודבק</item>
+        <item>זיהום</item>
+        <item>חף מפשע</item>
+        <item>תמים</item>
+        <item>מוסד, מכון</item>
+        <item>לכונן</item>
+        <item>הוראה, הדרכה</item>
+        <item>ביטוח</item>
+        <item>להבטיח</item>
+        <item>להשקיע</item>
+        <item>השקעה</item>
+        <item>משקיע</item>
+        <item>השקיה</item>
+        <item>אידיאל, אידיאלי</item>
+        <item>כביר, עצום</item>
+        <item>להגר</item>
+        <item>דחף</item>
+        <item>ללא שיקול דעת</item>
+        <item>לטובת</item>
+        <item>תמריץ</item>
+        <item>כמות, הִקָּרוּת (משהו שקורה)</item>
+        <item>אדישות</item>
+        <item>אינסופי</item>
+        <item>מולד</item>
+        <item>פנימי</item>
+        <item>לתשאל</item>
+        <item>חקירה</item>
+        <item>להתעקש</item>
+        <item>השראה</item>
+        <item>נותן השראה</item>
+        <item>פנימי</item>
+        <item>להפריע</item>
+        <item>צומת, הצטלבות</item>
+        <item>להתערב</item>
+        <item>התערבות</item>
+        <item>להמציא</item>
+        <item>ממציא</item>
+        <item>מצאי</item>
+        <item>בלתי נראה</item>
+        <item>להזמין</item>
+        <item>מחלה</item>
+        <item>להמחיש, להדגיש</item>
+        <item>מאייר</item>
+        <item>שקיעה</item>
+        <item>לא מוסרי</item>
+        <item>ליישם, להוציא לפועל</item>
+        <item>מימוש, יישום, ביצוע</item>
+        <item>תקרית</item>
+        <item>חוסר יכולת</item>
+        <item>לכלול, לשתף, לאגד</item>
+        <item>ללא הגבלה</item>
+        <item>עצמאות</item>
+        <item>עצמאי</item>
+        <item>בלתי נמנע</item>
+        <item>מדבק</item>
+        <item>נחות</item>
+        <item>להסתנן</item>
+        <item>השפעה, להשפיע</item>
+        <item>תובנה</item>
+        <item>כלי</item>
+        <item>שאין להתגבר עליו</item>
+        <item>אינטלקטואלי</item>
+        <item>לראיין, ראיון</item>
+        <item>להציג, לעשות היכרות</item>
+        <item>הקדמה, מבוא, היכרות</item>
+        <item>לחדור, לפלוש</item>
+        <item>פולשים</item>
+        <item>לחקור</item>
+        <item>לעורר, לזמן</item>
+        <item>לא רגיל</item>
+        <item>שלא ניתן לעמוד בפניו</item>
+        <item>להעריץ</item>
+        <item>חולה</item>
+        <item>להאיר</item>
+        <item>אשליה</item>
+        <item>דמיוני</item>
+        <item>לחקות</item>
+        <item>להתחנן, להפציר</item>
+        <item>לרמוז</item>
+        <item>מאסר, כליאה</item>
+        <item>בלי משים, בלי כוונה</item>
+        <item>להתאים</item>
+        <item>שיפוע</item>
+        <item>חייב ל-, אסיר תודה</item>
+        <item>לגרום, לייצר</item>
+        <item>ינקות</item>
+        <item>לרשת</item>
+        <item>לרסן</item>
+        <item>להזריק</item>
+        <item>פציעה</item>
+        <item>אי שפיות</item>
+        <item>לבחון, לבדוק</item>
+        <item>עלבון</item>
+        <item>להעליב</item>
+        <item>לשלב</item>
+        <item>מודיעין</item>
+        <item>אינטליגנציה</item>
+        <item>ממשק</item>
+        <item>הערה, הפרעה לשיחה</item>
+        <item>גלידה</item>
+        <item>קרחון</item>
+        <item>נטיף קרח</item>
+        <item>ילידים, מולד</item>
+        <item>דלקת</item>
+        <item>לנפח</item>
+        <item>עבירה</item>
+        <item>להכניס משהו לגוף דרך הפה</item>
+        <item>מרכיבים</item>
+        <item>לפצוע</item>
+        <item>חרק</item>
+        <item>התקנה</item>
+        <item>מיידי</item>
+        <item>בהרף עין</item>
+        <item>להחדיר, להשריש</item>
+        <item>לבודד</item>
+        <item>התקוממות</item>
+        <item>ללא פגע</item>
+        <item>מתווך, אמצעי</item>
+        <item>נצחי</item>
+        <item>להפחיד</item>
+        <item>פולשני</item>
+        <item>ללא שינוי</item>
+        <item>אירוני</item>
+        <item>אינדקס, תוכן עניינים</item>
+        <item>לא יקר, זול</item>
+        <item>פונדק</item>
+        <item>עז, אינטנסיבי</item>
+        <item>להרעיל, לשכר</item>
+        <item>להלהיב</item>
+        <item>אינטואיציה</item>
+        <item>חסר-חוליות</item>
+        <item>שנהב</item>
+        <!--endregion I letter-->
+
+        <!--region J letter-->
+        <item>בדיוק כמו</item>
+        <item>בדיוק כמו… גם</item>
+        <item>לקפוץ</item>
+        <item>צודק, הוגן</item>
+        <item>מדויק, אמיתי</item>
+        <item>רק, בלבד</item>
+        <item>תכשיט</item>
+        <item>להצטרף, לחבר</item>
+        <item>מפרק, חיבור</item>
+        <item>משותף</item>
+        <item>לשפוט</item>
+        <item>שיפוט</item>
+        <item>יהודי</item>
+        <item>להצדיק</item>
+        <item>משונן</item>
+        <item>מסע</item>
+        <item>שמח, עליז</item>
+        <item>שרת</item>
+        <item>ריצה, ג\'וגינג, לרוץ</item>
+        <item>בדיחה</item>
+        <item>כד, קנקן</item>
+        <item>מיץ</item>
+        <item>ג\'ונגל</item>
+        <item>מגרש גרוטאות</item>
+        <!--endregion J letter-->
+
+        <!--region K letter-->
+        <item>להרוג, לחסל, הרג</item>
+        <item>מלך</item>
+        <item>ממלכה</item>
+        <item>מטבח</item>
+        <item>לדעת, ידע</item>
+        <item>יֶדַע</item>
+        <item>ידוע</item>
+        <item>טוב לב, אדיב, נעים</item>
+        <item>סוג</item>
+        <item>סכין, סכינים</item>
+        <item>אבן מפתח</item>
+        <item>לשמור</item>
+        <item>חלק מהמצודה</item>
+        <item>לבעוט, בעיטה</item>
+        <item>ברכיים</item>
+        <item>קשר</item>
+        <item>קומקום</item>
+        <item>עפיפון</item>
+        <!--endregion K letter-->
+
+        <!--region L letter-->
+        <item>אחרון</item>
+        <item>מאוחר יותר</item>
+        <item>שני, אחרון</item>
+        <item>הוביל ל-</item>
+        <item>שמאלה</item>
+        <item>כמו</item>
+        <item>כמו-כן, באותו אופן</item>
+        <item>המשיך, החזיק מעמד</item>
+        <item>מאוחר, לאחר</item>
+        <item>קל</item>
+        <item>אור</item>
+        <item>לחבב, להעדיף</item>
+        <item>רשימה, להכין רשימה</item>
+        <item>מנעול, לנעול</item>
+        <item>הגיון</item>
+        <item>מחסור</item>
+        <item>שפה</item>
+        <item>גדול</item>
+        <item>הגדול ביותר</item>
+        <item>חוק</item>
+        <item>עורך-דין</item>
+        <item>משפטי</item>
+        <item>חוקי</item>
+        <item>להפוך חוקי, לאשר</item>
+        <item>פחות</item>
+        <item>קטלני</item>
+        <item>לאזן, להשוות</item>
+        <item>רמה, דרגה, מפלס</item>
+        <item>סביר</item>
+        <item>מקומי</item>
+        <item>לאתר</item>
+        <item>מונח</item>
+        <item>מסלול</item>
+        <item>להשיק, להתחיל</item>
+        <item>לשגר, להוציא לדרך</item>
+        <item>גבול, לשים גבול, מוגבל</item>
+        <item>מגבלה</item>
+        <item>לובי, מבואה</item>
+        <item>לשדל</item>
+        <item>מעידה, פליטת פה</item>
+        <item>פרק זמן, פקיעה, סיום</item>
+        <item>עור</item>
+        <item>הרצאה</item>
+        <item>לחוקק</item>
+        <item>חקיקה</item>
+        <item>אורך</item>
+        <item>להנמיך</item>
+        <item>ריאה</item>
+        <item>אבן דרך</item>
+        <item>נוף</item>
+        <item>להישען</item>
+        <item>קריא</item>
+        <item>עדשה</item>
+        <item>רישיון</item>
+        <item>לאשר, להתיר</item>
+        <item>תקופת החיים, במשך החיים</item>
+        <item>ספרותי</item>
+        <item>משכיל, מלומד</item>
+        <item>ספרות</item>
+        <item>להעמיס</item>
+        <item>מפסיד</item>
+        <item>תגית</item>
+        <item>לתייג</item>
+        <item>להתאמץ</item>
+        <item>עבודה, עמל, לעמול</item>
+        <item>מעבדה</item>
+        <item>פועל</item>
+        <item>שכבה</item>
+        <item>להוביל, הוביל</item>
+        <item>מנהיג</item>
+        <item>מנהיגות</item>
+        <item>לשקר, שֶקֶר</item>
+        <item>לשכב, שכב</item>
+        <item>להקשיב</item>
+        <item>באופן רפוי</item>
+        <item>חזק</item>
+        <item>רמקול</item>
+        <item>מותרות</item>
+        <item>העדר ברק, העדר כוח</item>
+        <item>פנאי</item>
+        <item>נינוח, רגוע</item>
+        <item>ריווחי</item>
+        <item>מזוודות</item>
+        <item>זוהר, בוהק</item>
+        <item>אורב, מתגנב</item>
+        <item>מצער, מעציב</item>
+        <item>לצחוק</item>
+        <item>להלוות, להשאיל</item>
+        <item>ליברלי, מתירני</item>
+        <item>ספריה</item>
+        <item>קצה</item>
+        <item>גף, איבר</item>
+        <item>גמיש</item>
+        <item>ייחוס, שושלת</item>
+        <item>להתעכב, להשתהות</item>
+        <item>קישור, לקשר, חוליה</item>
+        <item>להתאכסן, אכסנייה</item>
+        <item>בול עץ</item>
+        <item>יומן, לתעד ביומן</item>
+        <item>בודד, יחיד</item>
+        <item>בדידות</item>
+        <item>גזע עץ</item>
+        <item>אגם</item>
+        <item>צולע</item>
+        <item>לכבס</item>
+        <item>עלה (עלים)</item>
+        <item>מידת אורך קדומה</item>
+        <item>ליגה</item>
+        <item>חמלה, רחמים</item>
+        <item>נמר</item>
+        <item>אורח חיים</item>
+        <item>שפה</item>
+        <item>כבד</item>
+        <item>הלוואה</item>
+        <item>לתעב</item>
+        <item>נאמנות</item>
+        <item>מזל</item>
+        <item>ארוחת צהריים</item>
+        <!--endregion L letter-->
+
+        <!--region M letter-->
+        <item>בעיקר</item>
+        <item>בצורה ניכרת</item>
+        <item>בינתיים</item>
+        <item>זאת ועוד</item>
+        <item>לרוב</item>
+        <item>עיקרי</item>
+        <item>מפה, למפות</item>
+        <item>לסמן</item>
+        <item>אולי</item>
+        <item>פגישה</item>
+        <item>חבר (בקבוצה מסוימת)</item>
+        <item>חלב, לחלוב</item>
+        <item>טעות</item>
+        <item>שגוי, לטעות</item>
+        <item>כסף</item>
+        <item>לזוז, לעבור</item>
+        <item>תנועה</item>
+        <item>חייב, חובה, הכרח</item>
+        <item>כשל, ליקוי</item>
+        <item>טֶבַח</item>
+        <item>רפואה, תרופה</item>
+        <item>מתקופת ימי הביניים</item>
+        <item>מוצרים, סחורה</item>
+        <item>רק, לא יותר מ-</item>
+        <item>רק, לא יותר מ-</item>
+        <item>אמצע</item>
+        <item>אנושי, בן תמותה</item>
+        <item>קטלני</item>
+        <item>תמותה</item>
+        <item>רוב</item>
+        <item>הכי</item>
+        <item>באופן שווה/הדדי</item>
+        <item>יונק</item>
+        <item>מתון</item>
+        <item>לתווך, לפשר</item>
+        <item>להפוך למודרני</item>
+        <item>עובש</item>
+        <item>לעצב</item>
+        <item>לדרבן</item>
+        <item>לשמר</item>
+        <item>ראשי, עיקרי</item>
+        <item>מסלול לימודים</item>
+        <item>סולם מז\'ור (במוזיקה)</item>
+        <item>רוב</item>
+        <item>זכר</item>
+        <item>לנהל</item>
+        <item>ניהול</item>
+        <item>כתב יד</item>
+        <item>ימי</item>
+        <item>ימי</item>
+        <item>שוק</item>
+        <item>שיווק, לשווק</item>
+        <item>מסה</item>
+        <item>המון, המוני</item>
+        <item>חומר, חומרני</item>
+        <item>אמצעי</item>
+        <item>למדוד</item>
+        <item>למזג, לחבר</item>
+        <item>מיזוג</item>
+        <item>הודעה</item>
+        <item>שיטה</item>
+        <item>מתון, עדין</item>
+        <item>צבא, צבאי</item>
+        <item>קטן, שולי</item>
+        <item>סולם מינור (במוזיקה)</item>
+        <item>קטין</item>
+        <item>מיעוט</item>
+        <item>דעה מוטעית</item>
+        <item>משימה</item>
+        <item>אופנה, מודה</item>
+        <item>מצב, אופן, צורה</item>
+        <item>דגם, מודל, דוגמן</item>
+        <item>צנוע</item>
+        <item>לשנות, להתאים</item>
+        <item>גדול, אדיר</item>
+        <item>דוור</item>
+        <item>תת-תזונה</item>
+        <item>להזדווג</item>
+        <item>בן זוג, חבר</item>
+        <item>בגרות</item>
+        <item>ראש עיר</item>
+        <item>לגשר, לתווך</item>
+        <item>בינוני (במובן שלילי)</item>
+        <item>אומלל</item>
+        <item>לחות</item>
+        <item>מוסר</item>
+        <item>מורל</item>
+        <item>מכונה</item>
+        <item>ייצר</item>
+        <item>לצעוד</item>
+        <item>שוליים, מרווח</item>
+        <item>צבאי, קרבי</item>
+        <item>אדון, שליט</item>
+        <item>להתמחות, לשלוט</item>
+        <item>יצירת מופת</item>
+        <item>מומחיות</item>
+        <item>גפרור</item>
+        <item>התאמה, להתאים</item>
+        <item>להמיס</item>
+        <item>אכפת</item>
+        <item>לשים לב, לשמור</item>
+        <item>שכל</item>
+        <item>טיל</item>
+        <item>לנייד, להניע</item>
+        <item>חפרפרת</item>
+        <item>שומה</item>
+        <item>רב, הרבה</item>
+        <item>גודל, חשיבות</item>
+        <item>עיוות, פגם</item>
+        <item>התנהגות, אופן</item>
+        <item>נימוס</item>
+        <item>נישואין</item>
+        <item>גברי</item>
+        <item>ערך, הישג</item>
+        <item>מתכת, מתכתי</item>
+        <item>קפדני</item>
+        <item>להגר</item>
+        <item>לחקות</item>
+        <item>שר (בממשלה)</item>
+        <item>מלך</item>
+        <item>קודר, עגמומי</item>
+        <item>שריר</item>
+        <item>מוטציה</item>
+        <item>תעלומה</item>
+        <item>למקסם</item>
+        <item>מבוך</item>
+        <item>למכן, להתקין מכונות</item>
+        <item>מדיה, תקשורת</item>
+        <item>ים תיכוני</item>
+        <item>מצבה, תזכיר</item>
+        <item>לשנן, לזכור בעל-פה</item>
+        <item>זיכרון, לזכר</item>
+        <item>נפשי</item>
+        <item>להזכיר, לאזכר</item>
+        <item>מדריך רוחני</item>
+        <item>רחמים</item>
+        <item>באוויר</item>
+        <item>למזער</item>
+        <item>מראה</item>
+        <item>להתנהג בצורה לא הולמת</item>
+        <item>נזק, מעשה קונדס</item>
+        <item>לפספס</item>
+        <item>להתגעגע</item>
+        <item>מעורפל</item>
+        <item>לערבב, ערבוב</item>
+        <item>להשגיח, מוניטור</item>
+        <item>אנדרטה</item>
+        <item>מוטיב</item>
+        <item>הר</item>
+        <item>מדרון</item>
+        <item>פסגת הר</item>
+        <item>אבל, מתאבל</item>
+        <item>עשה</item>
+        <item>קסום</item>
+        <item>מדהים</item>
+        <item>להבטיח, לוודא</item>
+        <item>איפור</item>
+        <item>שיש</item>
+        <item>גוּלָּה</item>
+        <item>חיית כיס</item>
+        <item>מתמטיקאי</item>
+        <item>נס, פלא</item>
+        <item>ללעוג</item>
+        <item>נזיר</item>
+        <item>קוף</item>
+        <item>מפלצת</item>
+        <item>מצב רוח</item>
+        <item>יתוש</item>
+        <item>עש</item>
+        <item>עכבר (עכברים)</item>
+        <item>פה</item>
+        <!--endregion M letter-->
+
+        <!--region N letter-->
+        <item>במיוחד, כלומר</item>
+        <item>קרוב</item>
+        <item>ליד, קרוב</item>
+        <item>לא… ולא…</item>
+        <item>אף פעם</item>
+        <item>למרות זאת</item>
+        <item>הבא</item>
+        <item>ליד</item>
+        <item>למרות זאת</item>
+        <item>לא רק</item>
+        <item>לא רק… אלא גם…</item>
+        <item>שלא לדבר על</item>
+        <item>לא… אבל…</item>
+        <item>ראוי לציון</item>
+        <item>עכשיו</item>
+        <item>מספר</item>
+        <item>אומה</item>
+        <item>לאום</item>
+        <item>להלאים</item>
+        <item>יליד, מקומי, טבעי</item>
+        <item>טבעי</item>
+        <item>טבע</item>
+        <item>צריך, צורך</item>
+        <item>שלילי</item>
+        <item>רשת</item>
+        <item>חדש</item>
+        <item>מגיש חדשות</item>
+        <item>עיתון</item>
+        <item>הערה, פתק</item>
+        <item>לציין</item>
+        <item>ידוע, מפורסם</item>
+        <item>לשלול</item>
+        <item>ניטרלי</item>
+        <item>מרובה</item>
+        <item>תזונה</item>
+        <item>לשאת ולתת</item>
+        <item>משא ומתן</item>
+        <item>מועמד</item>
+        <item>גרעיני</item>
+        <item>הכרחי</item>
+        <item>להזניח, הזנחה</item>
+        <item>הזנחה, רשלנות</item>
+        <item>לילי</item>
+        <item>צהריים (12:00)</item>
+        <item>נכבד</item>
+        <item>התראה</item>
+        <item>לשים לב</item>
+        <item>להודיע, ליידע</item>
+        <item>צר</item>
+        <item>לנווט</item>
+        <item>עצבני, לחוץ, מתוח</item>
+        <item>אצולה</item>
+        <item>אציל, אצילי</item>
+        <item>רעיון, מושג, נטיה</item>
+        <item>רומן, סיפור</item>
+        <item>חדש</item>
+        <item>סם</item>
+        <item>שכן</item>
+        <item>שכונה</item>
+        <item>רעש</item>
+        <item>מטרד</item>
+        <item>אחות</item>
+        <item>חדר ילדים</item>
+        <item>לטפח, להזין, לחנך</item>
+        <item>קריינות</item>
+        <item>ימי</item>
+        <item>צוואר</item>
+        <item>קן, לקונן</item>
+        <item>נורמה, תקן</item>
+        <item>צפון</item>
+        <item>אף, חרטום</item>
+        <item>כיום</item>
+        <item>רדום, חסר תחושה</item>
+        <item>בחילה</item>
+        <item>כינוי חיבה</item>
+        <item>לא עוד</item>
+        <item>מונה (של שבר)</item>
+        <item>מספרי</item>
+        <item>אגוז</item>
+        <!--endregion N letter-->
+
+        <!--region O letter-->
+        <item>מידי פעם</item>
+        <item>של, מ-</item>
+        <item>כמובן, בוודאי</item>
+        <item>כמובן… אך…</item>
+        <item>לעיתים קרובות</item>
+        <item>על</item>
+        <item>מצד אחד… מצד שני</item>
+        <item>בניגוד לכך</item>
+        <item>על, מעל</item>
+        <item>ברגע ש-</item>
+        <item>פעם (בעבר)</item>
+        <item>מידי פעם</item>
+        <item>רק</item>
+        <item>מנוגד, ממול</item>
+        <item>או</item>
+        <item>בדרך-כלל</item>
+        <item>אחרת</item>
+        <item>חוץ</item>
+        <item>בחוץ</item>
+        <item>על, מעל</item>
+        <item>כולל, באופן כללי</item>
+        <item>הודות ל-</item>
+        <item>פעם אחת</item>
+        <item>לפתוח, פתוח</item>
+        <item>מחדש, שוב</item>
+        <item>ברור</item>
+        <item>אירוע, סיבה, הזדמנות</item>
+        <item>מדי פעם, מקרי</item>
+        <item>הזדמנויות, מקרים</item>
+        <item>קרה, התרחש</item>
+        <item>הצעה, להציע</item>
+        <item>רשמי, מאושר</item>
+        <item>לכהן, לערוך</item>
+        <item>נפט, שמן, לשמן</item>
+        <item>מתמשך</item>
+        <item>אפשרות, אופציה</item>
+        <item>לצוות</item>
+        <item>מסדר דתי</item>
+        <item>להזמין</item>
+        <item>מסודר</item>
+        <item>התמצאות</item>
+        <item>מקור, מוצא</item>
+        <item>מקורי</item>
+        <item>מקוריות</item>
+        <item>התחיל, התהווה</item>
+        <item>תוצאה</item>
+        <item>להתגבר</item>
+        <item>פריט, אובייקט</item>
+        <item>להתנגד</item>
+        <item>להשיג</item>
+        <item>לנתח</item>
+        <item>לפעול, להפעיל, לתפעל</item>
+        <item>ניתוח</item>
+        <item>מבצע, פעולה</item>
+        <item>אופוזיציה, התנגדות</item>
+        <item>רגיל</item>
+        <item>איבר</item>
+        <item>אורגן (כלי נגינה)</item>
+        <item>ארגון</item>
+        <item>לארגן</item>
+        <item>התפרצות</item>
+        <item>להפריז, להגזים</item>
+        <item>שעבר זמן ההגשה שלו</item>
+        <item>משקיף</item>
+        <item>מיושן</item>
+        <item>לתפוס, לאכלס</item>
+        <item>להעסיק</item>
+        <item>התרחשות</item>
+        <item>מוזר</item>
+        <item>אי זוגי</item>
+        <item>השמטה, הזנחה</item>
+        <item>להשמיט, להזניח</item>
+        <item>דעה</item>
+        <item>יריב, מתנגד</item>
+        <item>הזדמנות</item>
+        <item>אורגני</item>
+        <item>חופף</item>
+        <item>משלו</item>
+        <item>בעלות על משהו</item>
+        <item>בעלים</item>
+        <item>ציות</item>
+        <item>לציית</item>
+        <item>אוביקטיבי</item>
+        <item>מכשול</item>
+        <item>חו\</item>
+        <item>לחוג, להסתובב</item>
+        <item>להתמצא</item>
+        <item>מכוון, מונחה</item>
+        <item>חיצוני</item>
+        <item>תוואי, מתאר, קווים כלליים</item>
+        <item>העלים עין</item>
+        <item>אבחנה</item>
+        <item>להתבונן, להבחין</item>
+        <item>עקשן</item>
+        <item>להעליב</item>
+        <item>פושע, פוגע</item>
+        <item>מעליב, פוגעני</item>
+        <item>מדכא, מעיק</item>
+        <item>אכזרי</item>
+        <item>קישוט</item>
+        <item>מיושן</item>
+        <item>מדבר גלויות, ישיר</item>
+        <item>יוצא מן הכלל, מצוין</item>
+        <item>לעקוף, להשיג</item>
+        <item>התחייבות</item>
+        <item>לחייב, להכריח</item>
+        <item>אוקיינוס</item>
+        <item>לקזז</item>
+        <item>יותר מידי</item>
+        <item>לפקח</item>
+        <item>מהמם</item>
+        <item>אובססיה, דיבוק</item>
+        <item>ריח, ניחוח</item>
+        <item>מיושן</item>
+        <item>עולה על, שוקל יותר מ-</item>
+        <item>להיות חייב</item>
+        <item>חמצן</item>
+        <item>תמנון</item>
+        <item>שיר הלל</item>
+        <item>זית</item>
+        <item>בצל</item>
+        <item>תזמורת</item>
+        <item>לתאם, לתזמר</item>
+        <item>תנור בישול</item>
+        <item>שיפוץ, אוברול</item>
+        <!--endregion O letter-->
+
+        <!--region P letter-->
+        <item>במיוחד, בפרט</item>
+        <item>עבר, שעבר</item>
+        <item>קבוע</item>
+        <item>נצחי, לנצח</item>
+        <item>כעת</item>
+        <item>הקודם, לפני-כן</item>
+        <item>בעיקר</item>
+        <item>קודם ל-, לפני</item>
+        <item>בתנאי ש-</item>
+        <item>פִסקה</item>
+        <item>לשלם</item>
+        <item>שלום</item>
+        <item>שָׁלֵו, שקט</item>
+        <item>טייס</item>
+        <item>מקום, למקם</item>
+        <item>לתכנן</item>
+        <item>תכנית</item>
+        <item>מישור</item>
+        <item>מטוס</item>
+        <item>נשיא</item>
+        <item>מחיר</item>
+        <item>יסודי, עיקרי</item>
+        <item>בעיה</item>
+        <item>תכנית</item>
+        <item>תכניה</item>
+        <item>לתכנת</item>
+        <item>חלק</item>
+        <item>חלקי</item>
+        <item>חולה</item>
+        <item>סבלני</item>
+        <item>לכל</item>
+        <item>אחוז</item>
+        <item>להשלים, לשפר</item>
+        <item>מושלם</item>
+        <item>זיהום</item>
+        <item>אוכלוסייה</item>
+        <item>להיות בעלים של, להחזיק ב-</item>
+        <item>בעלות, חזקה</item>
+        <item>מדויק</item>
+        <item>דיוק</item>
+        <item>נוכחות</item>
+        <item>מתנה</item>
+        <item>להציג</item>
+        <item>הווה, נוכח, קיים</item>
+        <item>ראשוני, עיקרי, מובחר</item>
+        <item>קדום, חסר תרבות</item>
+        <item>קודם</item>
+        <item>עדיפות</item>
+        <item>התקדמות, להתקדם</item>
+        <item>מתקדם ומתמשך</item>
+        <item>מתאים, הולם</item>
+        <item>כראוי</item>
+        <item>להגן</item>
+        <item>לפרנס</item>
+        <item>לספק</item>
+        <item>כוונה, מטרה</item>
+        <item>בכוונה</item>
+        <item>קצב</item>
+        <item>זוג</item>
+        <item>הורה</item>
+        <item>הורות</item>
+        <item>השתתף</item>
+        <item>מיוחד, לא רגיל</item>
+        <item>פריטים</item>
+        <item>הפסקה, להפסיק</item>
+        <item>להתמיד, להתעקש</item>
+        <item>אדם</item>
+        <item>אישי</item>
+        <item>אישיות</item>
+        <item>שלב, דרגה</item>
+        <item>תופעה</item>
+        <item>חלוץ</item>
+        <item>תנוחה</item>
+        <item>מיקום, למקם</item>
+        <item>תפקיד, משרה</item>
+        <item>אפשרי</item>
+        <item>עוני</item>
+        <item>מוכה עוני</item>
+        <item>תקדים</item>
+        <item>קודם</item>
+        <item>קודמים</item>
+        <item>נקבע מראש</item>
+        <item>לצפות מראש</item>
+        <item>חיזוי, ניבוי</item>
+        <item>נבואי</item>
+        <item>מוקדם מדי</item>
+        <item>פרטי</item>
+        <item>תוצר, ירקות ופירות</item>
+        <item>לייצר</item>
+        <item>מוצר</item>
+        <item>מקצוע</item>
+        <item>מקצועי</item>
+        <item>מוחלט, מאוד</item>
+        <item>מעמיק</item>
+        <item>עמוקות</item>
+        <item>הבטחה, להבטיח</item>
+        <item>תכונה</item>
+        <item>רכוש</item>
+        <item>למחות, הפגנה</item>
+        <item>להוכיח</item>
+        <item>ציבורי</item>
+        <item>בעל חשיבות עליונה</item>
+        <item>לוותר</item>
+        <item>להעביר, למסור</item>
+        <item>הולך רגל</item>
+        <item>אולי</item>
+        <item>משך זמן, מחזור</item>
+        <item>תקופה</item>
+        <item>נקודה</item>
+        <item>קבוע</item>
+        <item>רדיפה (דתית)</item>
+        <item>כוכב לכת</item>
+        <item>צמח, עציץ, לשתול</item>
+        <item>סקר, הצבעה</item>
+        <item>מאוכלס בצפיפות</item>
+        <item>להציב, למנות ; עמדה, משרה, תפקיד</item>
+        <item>לפרסם ; פרסום</item>
+        <item>לשלוח בדואר ; דואר</item>
+        <item>עמוד</item>
+        <item>דבר דואר</item>
+        <item>לדחות</item>
+        <item>רב כוח</item>
+        <item>עדיף</item>
+        <item>להניח</item>
+        <item>כומר</item>
+        <item>זכות יתר, פריביליגיה</item>
+        <item>רווח</item>
+        <item>רווחי</item>
+        <item>הוצאה לאור</item>
+        <item>פורסם</item>
+        <item>לפרסם, להוציא לאור</item>
+        <item>מוציא לאור</item>
+        <item>מקביל</item>
+        <item>מסיבה</item>
+        <item>מפלגה</item>
+        <item>דוגמה</item>
+        <item>כָּתַב</item>
+        <item>להבחין, לראות</item>
+        <item>לבצע, להציג</item>
+        <item>ביצוע</item>
+        <item>הופעה</item>
+        <item>מבצע, מציג</item>
+        <item>רשות, היתר</item>
+        <item>להרשות</item>
+        <item>אישור, רישיון</item>
+        <item>לשכנע</item>
+        <item>שכנוע</item>
+        <item>חתיכה, חלק</item>
+        <item>יצירה</item>
+        <item>צינור</item>
+        <item>סביר, מתקבל על הדעת</item>
+        <item>לזמום, לקשור קשר</item>
+        <item>להכין תרשים</item>
+        <item>חלקה (חלקת אדמה)</item>
+        <item>עלילה</item>
+        <item>מסיג גבול, צייד לא מורשה</item>
+        <item>מעשי</item>
+        <item>לתרגל, תרגול</item>
+        <item>לרשום מרשם</item>
+        <item>מרשם</item>
+        <item>לשמר</item>
+        <item>אמתלה, תואנה</item>
+        <item>למנוע</item>
+        <item>מניעה</item>
+        <item>קודם</item>
+        <item>סביר, מתקבל על הדעת</item>
+        <item>כנראה, קרוב לוודאי</item>
+        <item>תהליך</item>
+        <item>לעכל, לעבד</item>
+        <item>לאסור, למנוע</item>
+        <item>פרוייקט, מיזם</item>
+        <item>להשליך, להקרין</item>
+        <item>לתכנן</item>
+        <item>לקדם</item>
+        <item>קידום</item>
+        <item>הביא לידי</item>
+        <item>תומך</item>
+        <item>שיעור, מידה</item>
+        <item>צמיחה, שגשוג</item>
+        <item>משגשג, מצליח</item>
+        <item>משאבה, לשאוב</item>
+        <item>לרדוף</item>
+        <item>מרדף</item>
+        <item>כאב, להכאיב</item>
+        <item>סביל</item>
+        <item>מתפשט, מחלחל</item>
+        <item>עצומה, עתירה, לעתור</item>
+        <item>תמונה, לצלם</item>
+        <item>לדמיין</item>
+        <item>מחזה</item>
+        <item>משחק, לשחק</item>
+        <item>מחזאי</item>
+        <item>מדיניות</item>
+        <item>חזק, בעל כוח השפעה</item>
+        <item>אפשרי, פוטנציאלי</item>
+        <item>דעה קדומה</item>
+        <item>נפוץ, שכיח, רווח</item>
+        <item>גאווה</item>
+        <item>כלא</item>
+        <item>נבואה</item>
+        <item>לשגשג</item>
+        <item>מחוז, אזור</item>
+        <item>להתגרות, להסית</item>
+        <item>הדגשה</item>
+        <item>ניקוד, פיסוק</item>
+        <item>טהור</item>
+        <item>טיהור</item>
+        <item>חפיסה, חבילה</item>
+        <item>צייר</item>
+        <item>ציור</item>
+        <item>תשוקה</item>
+        <item>דרך, נתיב</item>
+        <item>סבלנות</item>
+        <item>בסבלנות</item>
+        <item>מטופלים</item>
+        <item>רוכל, סוחר</item>
+        <item>קנס</item>
+        <item>אנשים</item>
+        <item>להנציח</item>
+        <item>מטרד, מזיק (חרקים)</item>
+        <item>נפט</item>
+        <item>מגפה</item>
+        <item>מלא, שופע</item>
+        <item>משורר</item>
+        <item>קוטבי, הפוך לחלוטין</item>
+        <item>קוטב</item>
+        <item>מוט</item>
+        <item>עני, מסכן</item>
+        <item>בצורה גרועה</item>
+        <item>דיוקן</item>
+        <item>הדורות הבאים</item>
+        <item>סיר, קדרה</item>
+        <item>תפוח אדמה</item>
+        <item>קדר</item>
+        <item>לשבח</item>
+        <item>התכונן</item>
+        <item>לנהל</item>
+        <item>יוקרתי</item>
+        <item>להעמיד פנים</item>
+        <item>מנהל בית ספר</item>
+        <item>עיקרי</item>
+        <item>עיקרון</item>
+        <item>תקופת מבחן</item>
+        <item>התפשט במהירות</item>
+        <item>פורה, שופע</item>
+        <item>מתמשך</item>
+        <item>בולט, חשוב</item>
+        <item>נוטה</item>
+        <item>הוכחה, ראיה</item>
+        <item>חסין, עמיד (סיומת)</item>
+        <item>להניע, לדחוף</item>
+        <item>הצעה</item>
+        <item>להציע</item>
+        <item>להציע, להציע נישואין</item>
+        <item>הצעה</item>
+        <item>צפוי, עתידי</item>
+        <item>להעניש</item>
+        <item>כף יד</item>
+        <item>דקל</item>
+        <item>סליחה, לסלוח</item>
+        <item>לחון, חנינה</item>
+        <item>להציץ</item>
+        <item>קטנוני</item>
+        <item>קטן, חסר חשיבות</item>
+        <item>פוביה, פחד כרוני</item>
+        <item>ציר, לסובב על ציר</item>
+        <item>צלחת, לוח</item>
+        <item>לעתור, להתחנן</item>
+        <item>תענוג, לענג</item>
+        <item>להתחייב</item>
+        <item>צרה, סכנה</item>
+        <item>טבילה</item>
+        <item>חריף, נוקב</item>
+        <item>רעיל</item>
+        <item>פולני</item>
+        <item>להבריק, לצחצח</item>
+        <item>מנומס</item>
+        <item>לתאר, לצייר</item>
+        <item>יקר</item>
+        <item>באופן ניכר</item>
+        <item>טרף, לטרוף</item>
+        <item>פרס</item>
+        <item>לחטט, לברר, לגשש</item>
+        <item>פתגם, אמרה</item>
+        <item>תלמיד</item>
+        <item>לקנות, לרכוש</item>
+        <item>חידה, פאזל</item>
+        <item>מבולבל</item>
+        <item>לרפד</item>
+        <item>מחבט</item>
+        <item>משוט, דוושה</item>
+        <item>מחבת</item>
+        <item>סתירה, פרדוקס</item>
+        <item>פתולוגיה, ענף ברפואה</item>
+        <item>אפרסק</item>
+        <item>פלפל</item>
+        <item>ענף</item>
+        <item>נח, ישב על ענף</item>
+        <item>חיית מחמד</item>
+        <item>בית מרקחת</item>
+        <item>פילוסופיה</item>
+        <item>צילום, לצלם</item>
+        <item>פיזי, גופני</item>
+        <item>פיזיקאי</item>
+        <item>לקטוף, לבחור</item>
+        <item>מפרט לגיטרה</item>
+        <item>יונה</item>
+        <item>לצבוט</item>
+        <item>בור</item>
+        <item>טיח</item>
+        <item>בריכה</item>
+        <item>מהמורה, בור</item>
+        <item>קדרות</item>
+        <item>עוף</item>
+        <item>מתיחה</item>
+        <item>הריון</item>
+        <item>הרה (בהריון)</item>
+        <item>קדמון, פרה-היסטורי</item>
+        <item>הכנות לקראת</item>
+        <item>מצגת</item>
+        <item>לדקור</item>
+        <item>מדפסת, דַּפָּס</item>
+        <item>תעמולה</item>
+        <item>מיומנות, יכולת</item>
+        <item>ארנק</item>
+        <!--endregion P letter-->
+
+        <!--region Q letter-->
+        <item>מלכה</item>
+        <item>שאלה</item>
+        <item>להטיל ספק</item>
+        <item>זריז</item>
+        <item>שקט</item>
+        <item>למדי</item>
+        <item>ציטוט</item>
+        <item>להיות מוסמך</item>
+        <item>איכות</item>
+        <item>רבע</item>
+        <item>לכמת</item>
+        <item>כמות</item>
+        <item>שאלה, חקירה</item>
+        <item>רעד</item>
+        <item>לספק, להרוות</item>
+        <item>וכחני</item>
+        <!--endregion Q letter-->
+
+        <!--region R letter-->
+        <item>לעיתים נדירות</item>
+        <item>עדיף</item>
+        <item>במקום, יותר מ-</item>
+        <item>למרות, ללא קשר</item>
+        <item>באופן קבוע</item>
+        <item>ימינה</item>
+        <item>שיעור , היקף, תעריף</item>
+        <item>למדי</item>
+        <item>להגיב</item>
+        <item>מחוז, אזור</item>
+        <item>להירשם</item>
+        <item>הרשמה</item>
+        <item>לדחות</item>
+        <item>מנוחה</item>
+        <item>יתר, שאר</item>
+        <item>עשיר</item>
+        <item>זכות</item>
+        <item>סיכון, לסכן</item>
+        <item>נהר</item>
+        <item>דרך</item>
+        <item>להעלות</item>
+        <item>רכס</item>
+        <item>מטווח</item>
+        <item>טווח</item>
+        <item>הגיוני, רציונאלי</item>
+        <item>להצדיק, להסביר</item>
+        <item>מציאות</item>
+        <item>הגיון</item>
+        <item>סיבה</item>
+        <item>מיתון</item>
+        <item>להמליץ</item>
+        <item>למחזר</item>
+        <item>מחזור</item>
+        <item>להפחית</item>
+        <item>מתייחס</item>
+        <item>התייחסות, הפניה</item>
+        <item>אשפה, זבל</item>
+        <item>לסרב</item>
+        <item>שלטון, משטר</item>
+        <item>תקנה</item>
+        <item>שלטון</item>
+        <item>משל, שלט</item>
+        <item>יחסי</item>
+        <item>קרוב-משפחה</item>
+        <item>בקרוב, באופן יחסי</item>
+        <item>דת</item>
+        <item>שידור/מאורע חוזר</item>
+        <item>לחזור</item>
+        <item>חזרה</item>
+        <item>להשיב</item>
+        <item>מחקר</item>
+        <item>להתנגד</item>
+        <item>התנגדות, מחתרת</item>
+        <item>נחוש</item>
+        <item>לפתור</item>
+        <item>תוצאה</item>
+        <item>הסתיים ב-</item>
+        <item>לחשוף</item>
+        <item>לסקור, סקירה</item>
+        <item>ביקורת</item>
+        <item>נוקשה, מחמיר</item>
+        <item>עליה, לעלות</item>
+        <item>זריחה</item>
+        <item>עולה</item>
+        <item>טיל</item>
+        <item>גזע</item>
+        <item>מרוץ</item>
+        <item>מעקה, מסילה</item>
+        <item>מסילת רכבת</item>
+        <item>מקרי, אקראי</item>
+        <item>באקראיות</item>
+        <item>תגובה</item>
+        <item>הגיוני</item>
+        <item>לשחזר</item>
+        <item>להפריך</item>
+        <item>להשיג מחדש</item>
+        <item>להתייחס, להחשיב</item>
+        <item>להתייחס, לקשר</item>
+        <item>לשחרר</item>
+        <item>רלוונטי, קשור</item>
+        <item>למקם מחדש</item>
+        <item>מסויג, לא מעוניין</item>
+        <item>להסתמך</item>
+        <item>מרוחק</item>
+        <item>דיווח, לדווח</item>
+        <item>עיתונאי</item>
+        <item>בקשה, לבקש</item>
+        <item>לדרוש, דרישה</item>
+        <item>לשקם, לשחזר</item>
+        <item>להמשיך</item>
+        <item>חידוש</item>
+        <item>כלל, חוק, שלטון</item>
+        <item>לשלוט, לפסוק, להחליט</item>
+        <item>מושל, שליט</item>
+        <item>סרגל</item>
+        <item>קרינה</item>
+        <item>נדיר</item>
+        <item>נא (בשר)</item>
+        <item>חי, נא (בשר)</item>
+        <item>גולמי, גס</item>
+        <item>לקבל</item>
+        <item>שארע לאחרונה</item>
+        <item>לאחרונה</item>
+        <item>הכרה</item>
+        <item>שיא</item>
+        <item>רשומה</item>
+        <item>לתעד</item>
+        <item>להקליט</item>
+        <item>להתאושש</item>
+        <item>לשחזר, ליצור מחדש</item>
+        <item>להירגע</item>
+        <item>הסתמכות</item>
+        <item>נשאר, עדיין</item>
+        <item>שרידים</item>
+        <item>להסיר</item>
+        <item>לחדש</item>
+        <item>ידוע</item>
+        <item>לתקן</item>
+        <item>להחליף</item>
+        <item>מחליף</item>
+        <item>להציל</item>
+        <item>דומה</item>
+        <item>מגורים</item>
+        <item>תושב קבע</item>
+        <item>משאב</item>
+        <item>בעל תושייה</item>
+        <item>לרסן</item>
+        <item>להחזיק, לשמור</item>
+        <item>להשיב</item>
+        <item>הכנסה, רווח</item>
+        <item>מסלול, דרך</item>
+        <item>להרוס</item>
+        <item>הריסות, עיי חורבות</item>
+        <item>באופן קיצוני</item>
+        <item>דרגה</item>
+        <item>קרן, אלומת אור</item>
+        <item>סכין גילוח</item>
+        <item>לטפח, לגדל</item>
+        <item>אחורי</item>
+        <item>להתפייס</item>
+        <item>שינוי, רפורמה</item>
+        <item>לרענן, להמריץ מחדש</item>
+        <item>מערכת יחסים</item>
+        <item>דתי</item>
+        <item>שארית</item>
+        <item>לחדש, לשפץ</item>
+        <item>שייך בהתאמה</item>
+        <item>בהתאמה</item>
+        <item>להגביל</item>
+        <item>הגבלה</item>
+        <item>לפרוש</item>
+        <item>לבטל, לשלול</item>
+        <item>פרס, לתגמל</item>
+        <item>טקס, פולחן</item>
+        <item>קשה, מחוספס</item>
+        <item>יסודי, בסיסי</item>
+        <item>מהיר</item>
+        <item>אֶשֶד, זרם מים מהיר בנהר</item>
+        <item>במהירות</item>
+        <item>קורא</item>
+        <item>הפרכה, סתירה</item>
+        <item>לזהות</item>
+        <item>זיכרון</item>
+        <item>הקלטות</item>
+        <item>לגייס</item>
+        <item>קרה שוב</item>
+        <item>חוזר, נשנה</item>
+        <item>מעודן, מלוטש</item>
+        <item>להרהר</item>
+        <item>לשקף, להחזיר אור</item>
+        <item>השתקפות</item>
+        <item>פליט</item>
+        <item>לתגבר, לחזק</item>
+        <item>הדרדר, הישנות</item>
+        <item>מתייחס</item>
+        <item>יחסים</item>
+        <item>ראוי לציון, יוצא דופן</item>
+        <item>יריב</item>
+        <item>יריבות</item>
+        <item>מכרסם</item>
+        <item>תפקיד</item>
+        <item>כפרי</item>
+        <item>ללא קושי</item>
+        <item>מוכנות</item>
+        <item>הבין</item>
+        <item>גידול, טיפוח</item>
+        <item>הבטחה, הרגעה</item>
+        <item>נולד מחדש</item>
+        <item>להיזכר</item>
+        <item>להחזיר, להשיב צלצול</item>
+        <item>גיוס</item>
+        <item>אמין, שניתן לסמוך עליו</item>
+        <item>שארית, שריד</item>
+        <item>להקהל</item>
+        <item>תרופה</item>
+        <item>לארגן מחדש</item>
+        <item>דחה, הגעיל</item>
+        <item>העתק מדויק</item>
+        <item>לייצג, מייצג</item>
+        <item>מדכא</item>
+        <item>להתרבות, לשכפל</item>
+        <item>שם, מוניטין</item>
+        <item>להתנגד, להתרעם</item>
+        <item>שריון מקום</item>
+        <item>שמורה</item>
+        <item>לשמור</item>
+        <item>שמורה</item>
+        <item>עתודה, מילואים</item>
+        <item>מאגר</item>
+        <item>התפטר</item>
+        <item>כבוד, לכבד</item>
+        <item>בכבוד</item>
+        <item>להגיב, תגובה, תשובה</item>
+        <item>אחריות</item>
+        <item>אחראי</item>
+        <item>פרישה</item>
+        <item>לסגת, נסיגה</item>
+        <item>לתקן, לשפר</item>
+        <item>בדיקה מחדש לצורך שיפור</item>
+        <item>ללעוג</item>
+        <item>מגוחך</item>
+        <item>שפה</item>
+        <item>חבל</item>
+        <item>לשפשף</item>
+        <item>שמועה</item>
+        <item>זעם</item>
+        <item>פשיטה</item>
+        <item>לקצור</item>
+        <item>מורד</item>
+        <item>מרד</item>
+        <item>סורר, מרדני</item>
+        <item>מתכון</item>
+        <item>נמען</item>
+        <item>מספר הופכי (במתמטיקה)</item>
+        <item>הדדי</item>
+        <item>בילוי</item>
+        <item>החזר</item>
+        <item>להתחרט, חרטה</item>
+        <item>לווסת</item>
+        <item>שיקום</item>
+        <item>הורד בדרגה</item>
+        <item>לנקוט באמצעים</item>
+        <item>אתר נופש</item>
+        <item>להחיות</item>
+        <item>קם לתחייה, התחדש</item>
+        <item>מרד</item>
+        <item>מהפכה</item>
+        <item>קֶצֶב</item>
+        <item>שורש</item>
+        <item>נע על ציר סיבובי</item>
+        <item>גומי</item>
+        <item>גשם</item>
+        <item>קשת</item>
+        <item>ירידת גשמים</item>
+        <item>סערת גשמים</item>
+        <item>עכברוש</item>
+        <item>ג\'ינג\'י (סלנג)</item>
+        <item>חזרה</item>
+        <item>לחזור, לתרגל</item>
+        <item>גלגול נשמות</item>
+        <item>מסעדה</item>
+        <item>תחייה</item>
+        <item>רטרואקטיבי, למפרע</item>
+        <item>חרוז</item>
+        <item>אורז</item>
+        <item>רכיבה, לרכוב</item>
+        <item>זירה</item>
+        <item>טבעת</item>
+        <item>לצלצל, צלצל</item>
+        <item>לקלות, צלי</item>
+        <item>שוד</item>
+        <item>חלוק</item>
+        <item>גג</item>
+        <item>זבל</item>
+        <item>שטויות</item>
+        <item>לרוץ, רץ</item>
+        <!--endregion R letter-->
+
+        <!--region S letter-->
+        <item>לעיתים רחוקות</item>
+        <item>בקיצור, בקרוב</item>
+        <item>הצידה</item>
+        <item>באופן משמעותי</item>
+        <item>באופן דומה</item>
+        <item>בו זמנית</item>
+        <item>מכיוון ש-</item>
+        <item>מאז</item>
+        <item>אז, כך ש-, ולכן</item>
+        <item>כל עוד</item>
+        <item>כך ש-</item>
+        <item>לעיתים, לפעמים</item>
+        <item>בהקדם, מוקדם</item>
+        <item>במיוחד</item>
+        <item>עדיין, למרות זאת</item>
+        <item>כתוצאה מכך</item>
+        <item>כמו למשל</item>
+        <item>לפתע</item>
+        <item>ללא ספק</item>
+        <item>במפתיע</item>
+        <item>בטוח</item>
+        <item>בטיחות</item>
+        <item>לשמור</item>
+        <item>פחד, להפחיד</item>
+        <item>בית-ספר</item>
+        <item>חיפוש, לחפש</item>
+        <item>לבחור</item>
+        <item>למכור</item>
+        <item>לשלוח</item>
+        <item>אחדים, כמה</item>
+        <item>קצר</item>
+        <item>מחסור</item>
+        <item>צד, לצודד, לתמוך</item>
+        <item>שינה</item>
+        <item>לישון</item>
+        <item>איטי, לאט</item>
+        <item>להאט</item>
+        <item>כל-כך, מאוד</item>
+        <item>חלל</item>
+        <item>רווח</item>
+        <item>מהירות</item>
+        <item>להתחיל</item>
+        <item>נייח, דומם, שקט</item>
+        <item>אבן</item>
+        <item>חזק</item>
+        <item>מאחז</item>
+        <item>שיטה</item>
+        <item>מערכת</item>
+        <item>סצנה</item>
+        <item>זירה</item>
+        <item>נוף</item>
+        <item>מדע</item>
+        <item>מדען</item>
+        <item>יחידה, חלק</item>
+        <item>נראה כ-, דומה ל-</item>
+        <item>חוש, לחוש</item>
+        <item>היגיון, תודעה</item>
+        <item>נבון</item>
+        <item>רציני, חמור</item>
+        <item>מעבורת</item>
+        <item>סימן, לסמן</item>
+        <item>לחתום</item>
+        <item>שֶׁלֶט</item>
+        <item>אות, סימן, לאותת</item>
+        <item>דומה</item>
+        <item>פשוט</item>
+        <item>לפשט</item>
+        <item>בפשטות</item>
+        <item>חברתי</item>
+        <item>מרווח</item>
+        <item>כיכר</item>
+        <item>ריבוע</item>
+        <item>לעמוד</item>
+        <item>לתקנן</item>
+        <item>נתון ל-, בכפוך ל-</item>
+        <item>למסור, להעביר לבעלות אחר</item>
+        <item>נתין, אזרח, אדם</item>
+        <item>נושא</item>
+        <item>אישי, משוחד בדעתו</item>
+        <item>פרברי</item>
+        <item>הצליח</item>
+        <item>הצלחה</item>
+        <item>סכום, סך, לסכם</item>
+        <item>לסכם</item>
+        <item>לסכם</item>
+        <item>סיכום, תמצית</item>
+        <item>להקיף</item>
+        <item>מקיף, סובב</item>
+        <item>לתבל</item>
+        <item>עונה</item>
+        <item>להבטיח, לשמור, להגן</item>
+        <item>סלקטיבי</item>
+        <item>שירות</item>
+        <item>מניה</item>
+        <item>לחלוק</item>
+        <item>לשלוח</item>
+        <item>אוניה</item>
+        <item>משלוח</item>
+        <item>משמעות, חשיבות</item>
+        <item>משמעותי</item>
+        <item>לדמות, לחקות</item>
+        <item>גודל</item>
+        <item>להמריא</item>
+        <item>אדמה</item>
+        <item>לכלוך</item>
+        <item>לבקש/לחפש בתחינה</item>
+        <item>לשדל / להדיח</item>
+        <item>בדידות</item>
+        <item>פתרון</item>
+        <item>למיין</item>
+        <item>מקור</item>
+        <item>מרווח</item>
+        <item>להימתח, להקיף</item>
+        <item>נהדר, מהולל</item>
+        <item>מעיין</item>
+        <item>אביב</item>
+        <item>קפיץ ; לקפוץ, קפץ</item>
+        <item>יציבות</item>
+        <item>כושר עמידה, סיבולת</item>
+        <item>רמה, תקן, מקובל</item>
+        <item>מדינה</item>
+        <item>מצב</item>
+        <item>הצהרה</item>
+        <item>קבוע, יציב</item>
+        <item>לעורר, להמריץ</item>
+        <item>מלאי</item>
+        <item>לאחסן</item>
+        <item>מניה</item>
+        <item>מוזר</item>
+        <item>לשאוף</item>
+        <item>יורש</item>
+        <item>קיץ</item>
+        <item>עליון</item>
+        <item>לפקח</item>
+        <item>תמיכה, לתמוך</item>
+        <item>תומך</item>
+        <item>סקר</item>
+        <item>לבחון, לסקור</item>
+        <item>לשרוד</item>
+        <item>מהיר</item>
+        <item>דוגמית</item>
+        <item>שביעות רצון</item>
+        <item>לפזר</item>
+        <item>לוח זמנים</item>
+        <item>רגיש</item>
+        <item>רגישות</item>
+        <item>משפט</item>
+        <item>גזר דין</item>
+        <item>משרת</item>
+        <item>לשרת</item>
+        <item>להגיש, לשרת</item>
+        <item>לְרַצּוֹת (עונש)</item>
+        <item>מושב</item>
+        <item>חד</item>
+        <item>מוחלט, לחלוטין</item>
+        <item>שקוף</item>
+        <item>משופע, תלול</item>
+        <item>רווק</item>
+        <item>יחיד</item>
+        <item>ספקנות</item>
+        <item>יכולת, מיומנות</item>
+        <item>מתוחכם</item>
+        <item>מיותר, עודף</item>
+        <item>להתמחות</item>
+        <item>מין, זן</item>
+        <item>לפרט</item>
+        <item>צופה, משקיף</item>
+        <item>דיבור</item>
+        <item>להרוס</item>
+        <item>לפנק</item>
+        <item>לקלקל</item>
+        <item>לבזוז, שלל</item>
+        <item>ערמה</item>
+        <item>להדק</item>
+        <item>תחנה</item>
+        <item>להציב</item>
+        <item>גזע</item>
+        <item>בטן, קיבה</item>
+        <item>אסטרטגיה</item>
+        <item>להכניע</item>
+        <item>להגיש</item>
+        <item>להיכנע</item>
+        <item>מעודן</item>
+        <item>ראוי, מתאים, יאה</item>
+        <item>מעולה (איכותי)</item>
+        <item>שטחי</item>
+        <item>דיכוי</item>
+        <item>סבל מ-</item>
+        <item>להמשיך באותה צורה</item>
+        <item>לתמוך</item>
+        <item>סמל</item>
+        <item>לסמל</item>
+        <item>קדוש</item>
+        <item>להקריב, קורבן</item>
+        <item>תועלת, עניין</item>
+        <item>מסך, צג, וילון</item>
+        <item>לסנן</item>
+        <item>לסרוק</item>
+        <item>לבקש</item>
+        <item>לחפש, חיפש</item>
+        <item>ססמי (קשור לרעידות אדמה)</item>
+        <item>סדרה</item>
+        <item>להתיישב</item>
+        <item>להסדיר</item>
+        <item>חמור</item>
+        <item>צורה, לעצב (צורה)</item>
+        <item>משמרת</item>
+        <item>להזיז</item>
+        <item>נוצץ, בוהק</item>
+        <item>תופעת לוואי</item>
+        <item>פשטות</item>
+        <item>שרטוט, איור, סקיצה</item>
+        <item>להאמיר</item>
+        <item>גורד שחקים</item>
+        <item>עצב, צער</item>
+        <item>גיץ, ניצוץ</item>
+        <item>מדהים</item>
+        <item>כוונה, רוח הדברים</item>
+        <item>רוח רפאים, נפש</item>
+        <item>רוחני</item>
+        <item>ללא תכנון</item>
+        <item>לייצב</item>
+        <item>יציב</item>
+        <item>אד, לאדות</item>
+        <item>אוניית קיטור</item>
+        <item>ישיר</item>
+        <item>לזרום, נחל, זרם</item>
+        <item>מוכה</item>
+        <item>צעד, לצעוד</item>
+        <item>מאבק, עימות</item>
+        <item>הכה, התקיף</item>
+        <item>שביתה</item>
+        <item>פסים</item>
+        <item>מבנה, לבנות</item>
+        <item>למעוד</item>
+        <item>תחליף</item>
+        <item>מספיק</item>
+        <item>מיותר, עודף</item>
+        <item>פני שטח</item>
+        <item>חשוד (מישהו)</item>
+        <item>לחשוד</item>
+        <item>חשוד (משהו)</item>
+        <item>אוהד</item>
+        <item>לווין</item>
+        <item>לרצות, לספק</item>
+        <item>נדיר</item>
+        <item>אקדמאי, בעל מלגה, מלומד</item>
+        <item>לזכות בניקוד</item>
+        <item>לחתוך, לחרוץ</item>
+        <item>תוצאה</item>
+        <item>חילוני</item>
+        <item>בכיר</item>
+        <item>זקן</item>
+        <item>תחושה</item>
+        <item>חדשות מרעישות</item>
+        <item>להרכיב, לארגן, לסדר</item>
+        <item>סדין</item>
+        <item>דף</item>
+        <item>ראייה, כוונת</item>
+        <item>תצפית, מראה</item>
+        <item>כסף, כסוף</item>
+        <item>כיור</item>
+        <item>לשקוע</item>
+        <item>עור</item>
+        <item>פשט עור</item>
+        <item>השמצה, להשמיץ</item>
+        <item>קל, מעט</item>
+        <item>לדבר, דיבר</item>
+        <item>דובר</item>
+        <item>כישוף, קסם</item>
+        <item>איות, לאיית</item>
+        <item>לבלות, להעביר</item>
+        <item>לבזבז, לפזר</item>
+        <item>לשפוך</item>
+        <item>לזהות</item>
+        <item>כתם</item>
+        <item>נבע</item>
+        <item>אצטדיון</item>
+        <item>שומם, עזוב</item>
+        <item>בוטה, מוחלט, גמור</item>
+        <item>פסל</item>
+        <item>פלדה</item>
+        <item>נוקשה</item>
+        <item>אחסון</item>
+        <item>מתח נפשי</item>
+        <item>להתאמץ, למתוח, לנקוע</item>
+        <item>חוזק</item>
+        <item>לחזק</item>
+        <item>מאבק, מאמץ</item>
+        <item>תקוע</item>
+        <item>לסבול</item>
+        <item>שקיעה</item>
+        <item>אור יום</item>
+        <item>עליון</item>
+        <item>הפתעה</item>
+        <item>לנדנד, נדנדה</item>
+        <item>מתג</item>
+        <item>להחליף</item>
+        <item>סימפטום</item>
+        <item>שכר</item>
+        <item>קנס, עונש, עידוד</item>
+        <item>מסור</item>
+        <item>ראה, לראות</item>
+        <item>זרעים</item>
+        <item>קטע, מקטע</item>
+        <item>בטחון-עצמי</item>
+        <item>סיפוק-עצמי</item>
+        <item>המשך</item>
+        <item>רצף</item>
+        <item>לנפץ, להרוס, לקעקע</item>
+        <item>קליפה, מעטפת</item>
+        <item>פגז</item>
+        <item>מקלט</item>
+        <item>מגן, להגן</item>
+        <item>חתימה</item>
+        <item>דומם, שקט</item>
+        <item>בשקט</item>
+        <item>אלכסון, נטייה</item>
+        <item>להכניס מישהו לרשימה</item>
+        <item>רעף, לוח</item>
+        <item>לטבוח, לשחוט, טֶבַח</item>
+        <item>עבד</item>
+        <item>עבדות</item>
+        <item>רזה</item>
+        <item>שיפוע, מדרון</item>
+        <item>גיחוך</item>
+        <item>חייל</item>
+        <item>מבודד</item>
+        <item>לפתור</item>
+        <item>נשמה</item>
+        <item>קול</item>
+        <item>בריא</item>
+        <item>מיוחד</item>
+        <item>יתד</item>
+        <item>פאר</item>
+        <item>זרקור</item>
+        <item>במה, לביים</item>
+        <item>לרעוב</item>
+        <item>חנות, לאחסן</item>
+        <item>לאחסן</item>
+        <item>מתח, לחץ, מצוקה</item>
+        <item>להדגיש</item>
+        <item>נוקשה</item>
+        <item>עקשן</item>
+        <item>עוקב</item>
+        <item>תוסף</item>
+        <item>אספקה</item>
+        <item>רגישות</item>
+        <item>להשעות</item>
+        <item>השהיה, מתח</item>
+        <item>ימאי</item>
+        <item>ישועה, גאולה</item>
+        <item>רווי</item>
+        <item>סולם, סקלה</item>
+        <item>לעלות, לטפס</item>
+        <item>מאזניים</item>
+        <item>קשקשים (של דג)</item>
+        <item>סריקה, לסרוק</item>
+        <item>לבוז, לזלזל, מנודה</item>
+        <item>בדק, בחן</item>
+        <item>פסל</item>
+        <item>סם הרגעה, משכך</item>
+        <item>הפרדה</item>
+        <item>התקף</item>
+        <item>בנפרד</item>
+        <item>הפרדה</item>
+        <item>לכווץ ,כיווץ</item>
+        <item>תכריך, עטיפה</item>
+        <item>חטא</item>
+        <item>כנות</item>
+        <item>מצב, סיטואציה</item>
+        <item>בית מטבחיים</item>
+        <item>פיכח</item>
+        <item>בלבד, רק</item>
+        <item>זרע</item>
+        <item>להזרים</item>
+        <item>תבלין, לתבל</item>
+        <item>פיקנטי</item>
+        <item>לרסס, לפזר</item>
+        <item>כתם</item>
+        <item>בול, חותמת</item>
+        <item>צעד, לצעוד</item>
+        <item>סערה</item>
+        <item>ליישר</item>
+        <item>מחקר</item>
+        <item>חדר עבודה</item>
+        <item>נדהם, היה המום</item>
+        <item>חומר, תוכן</item>
+        <item>להציע</item>
+        <item>התאבדות</item>
+        <item>פסגות</item>
+        <item>ניתוח</item>
+        <item>להצטיין, לעלות על</item>
+        <item>להיכנע</item>
+        <item>מעקב</item>
+        <item>הישרדות</item>
+        <item>לבלוע</item>
+        <item>לטאטא</item>
+        <item>סימטריה, התאמה</item>
+        <item>סיפור, סאגה</item>
+        <item>מלח</item>
+        <item>ארון קבורה קדום</item>
+        <item>ערבה, סוואנה</item>
+        <item>תסריט</item>
+        <item>פירות ים</item>
+        <item>מושב, להושיב</item>
+        <item>סוד</item>
+        <item>רגשות</item>
+        <item>צל, להאפיל</item>
+        <item>גילוח, לגלח</item>
+        <item>מדף (מדפים)</item>
+        <item>רועה צאן</item>
+        <item>רעף</item>
+        <item>חנות</item>
+        <item>לקנות</item>
+        <item>כתף</item>
+        <item>להראות</item>
+        <item>הופעה</item>
+        <item>ביישן</item>
+        <item>משי</item>
+        <item>תולעת משי</item>
+        <item>זמר</item>
+        <item>אדון, תואר אצולה אנגלי</item>
+        <item>שמיים, רקיע</item>
+        <item>ערפיח</item>
+        <item>עשן, לעשן</item>
+        <item>נחש</item>
+        <item>להישבר</item>
+        <item>במהירות (סלנג)</item>
+        <item>לרטון, לנחור</item>
+        <item>להתעטש</item>
+        <item>שלג</item>
+        <item>כדורגל</item>
+        <item>מכר</item>
+        <item>דרום</item>
+        <item>דרומי</item>
+        <item>כתם</item>
+        <item>עכביש</item>
+        <item>תרד</item>
+        <item>נותן חסות</item>
+        <item>ללא מחשבה</item>
+        <item>ממרח, למרוח</item>
+        <item>התפשטות, פיזור</item>
+        <item>מרגל, לרגל</item>
+        <item>גרם מדרגות</item>
+        <item>לעקוב, להטריד</item>
+        <item>כוכב, לככב</item>
+        <item>לעצור, לחסום</item>
+        <item>חזק, מוצק</item>
+        <item>לגנוב</item>
+        <item>סטריאוטיפ</item>
+        <item>דביק</item>
+        <item>תנור, כיריים</item>
+        <item>מכה</item>
+        <item>ליטוף</item>
+        <item>שבץ/אירוע מוחי</item>
+        <item>סטודיו</item>
+        <item>דברים</item>
+        <item>למלא, לפחלץ</item>
+        <item>פעלול</item>
+        <item>טיפש</item>
+        <item>חיסור (חשבון)</item>
+        <item>סוכר</item>
+        <item>מתוק, ממתק</item>
+        <item>נסחף</item>
+        <item>רמאי</item>
+        <item>חרב</item>
+        <item>הברה</item>
+        <item>תסמונת</item>
+        <item>סירופ</item>
+        <!--endregion S letter-->
+
+        <!--region T letter-->
+        <item>מ-</item>
+        <item>תודות ל-</item>
+        <item>ש-</item>
+        <item>אז</item>
+        <item>אז</item>
+        <item>שם</item>
+        <item>לכן</item>
+        <item>למרות זאת</item>
+        <item>למרות ש-</item>
+        <item>לכן, כך ש-</item>
+        <item>בתור התחלה</item>
+        <item>כדי לסכם</item>
+        <item>יחד עם</item>
+        <item>גם</item>
+        <item>יותר מידי</item>
+        <item>אל, אל עבר</item>
+        <item>באמת</item>
+        <item>מטרה</item>
+        <item>ללמד, לימד</item>
+        <item>לחשוב, חשב</item>
+        <item>זמן</item>
+        <item>לחלוטין</item>
+        <item>עיר, עיירה</item>
+        <item>משימה</item>
+        <item>תחום, שטח</item>
+        <item>ולכן, גרם ל-</item>
+        <item>כותרת</item>
+        <item>מגע, לגעת</item>
+        <item>לסחור, מסחר</item>
+        <item>להחליף</item>
+        <item>להכשיר, לאמן</item>
+        <item>רכבת</item>
+        <item>משפט</item>
+        <item>נסיון</item>
+        <item>לפנות, סיבוב</item>
+        <item>זמני</item>
+        <item>סמיך</item>
+        <item>עבה</item>
+        <item>לשגשג</item>
+        <item>מסורת</item>
+        <item>תנועה</item>
+        <item>פקק תנועה</item>
+        <item>להעביר</item>
+        <item>העברה</item>
+        <item>שבט</item>
+        <item>התרחש</item>
+        <item>מקדש</item>
+        <item>תנאים</item>
+        <item>מונחים</item>
+        <item>אלף</item>
+        <item>לייסר, לענות</item>
+        <item>סיור</item>
+        <item>תייר</item>
+        <item>אמון, לבטוח</item>
+        <item>סוג</item>
+        <item>להקליד</item>
+        <item>אופייני</item>
+        <item>צוות</item>
+        <item>נטייה</item>
+        <item>לסיים, לחסל</item>
+        <item>שטח</item>
+        <item>להפחיד, להבעית</item>
+        <item>נושא</item>
+        <item>איום</item>
+        <item>הדוק, לחוץ, צמוד</item>
+        <item>סובלנות</item>
+        <item>לסבול</item>
+        <item>טקט</item>
+        <item>מתח</item>
+        <item>להעיד</item>
+        <item>מרקם, טקסטורה</item>
+        <item>עניבה</item>
+        <item>לקשור, קשר</item>
+        <item>עץ</item>
+        <item>קבר</item>
+        <item>תכונה</item>
+        <item>להרגיע, להרדים</item>
+        <item>עסקה</item>
+        <item>להתעלות</item>
+        <item>מעבר, שינוי</item>
+        <item>שקוף</item>
+        <item>הובלה</item>
+        <item>להוביל</item>
+        <item>תחבורה</item>
+        <item>לזהם</item>
+        <item>להכתים, להכפיש</item>
+        <item>מוכתם, מזוהם</item>
+        <item>כשרון</item>
+        <item>לאלף, לבית</item>
+        <item>ניסיוני, טנטטיבי</item>
+        <item>גנב</item>
+        <item>מותחן</item>
+        <item>טון</item>
+        <item>תמליל, פרוטוקול</item>
+        <item>למעוד</item>
+        <item>טיול</item>
+        <!--endregion T letter-->
+
+        <!--region U letter-->
+        <item>מתחת</item>
+        <item>מתחת</item>
+        <item>ללא ספק</item>
+        <item>אלא אם כן</item>
+        <item>שלא כמו</item>
+        <item>עד ש-</item>
+        <item>עד עתה</item>
+        <item>למעלה</item>
+        <item>על</item>
+        <item>הפוך</item>
+        <item>בדרך-כלל</item>
+        <item>להבין</item>
+        <item>בלתי רגיל, יוצא דופן</item>
+        <item>להשתמש</item>
+        <item>תועלת, תכלית</item>
+        <item>לנצל</item>
+        <item>שימושי</item>
+        <item>חסר תועלת</item>
+        <item>רגיל</item>
+        <item>לא מתועד</item>
+        <item>מדים</item>
+        <item>אחיד</item>
+        <item>לאחד</item>
+        <item>איגוד, איחוד</item>
+        <item>יקום</item>
+        <item>להחזיק, לתמוך, לדגול</item>
+        <item>לא מודע</item>
+        <item>לא בטוח</item>
+        <item>לא ברור</item>
+        <item>לחשוף, לגלות</item>
+        <item>נפרש, נפתח, התגלה</item>
+        <item>לפתוח קיפול</item>
+        <item>יחידה</item>
+        <item>לא יציב</item>
+        <item>עדכון, לעדכן</item>
+        <item>לשדרג</item>
+        <item>לא יאמן</item>
+        <item>מונח ביסוד, נמצא מתחת ל-</item>
+        <item>לקחת על עצמך</item>
+        <item>מובטל</item>
+        <item>לא נחקר, לא נבדק</item>
+        <item>לא מוכר</item>
+        <item>מצער</item>
+        <item>למרבה הצער</item>
+        <item>בלתי נתפס</item>
+        <item>מיוחד</item>
+        <item>לאחד</item>
+        <item>לפתוח, לשחרר</item>
+        <item>לא הכרחי</item>
+        <item>התקוממות, מרד</item>
+        <item>עירוני</item>
+        <item>לעודד, לדחוף ; דחף, רצון, תשוקה</item>
+        <item>דחוף</item>
+        <item>מוחלט, סופי</item>
+        <item>בלתי נסבל</item>
+        <item>אינספור</item>
+        <item>לעבור, להתנסות, לחוות</item>
+        <item>בלתי נשכח</item>
+        <item>לא בטוח</item>
+        <item>מחוסר הכרה</item>
+        <item>לא צודק</item>
+        <item>לא שיגרתי</item>
+        <item>הערכה נמוכה, לזלזל</item>
+        <item>בלתי רשמי</item>
+        <item>לא מאורגן</item>
+        <item>בלתי נסלח</item>
+        <item>לא מציאותי</item>
+        <item>חוסר שקט</item>
+        <item>לא מוכן, ממאן</item>
+        <item>מהפך</item>
+        <item>רעש, מהומה</item>
+        <item>שתן</item>
+        <item>השתמש</item>
+        <item>לבטא, להגות</item>
+        <item>מכוער</item>
+        <item>לא מושך</item>
+        <item>דוד</item>
+        <item>לא מודאג</item>
+        <item>לא ביקורתי</item>
+        <item>לחשוף, לחפור</item>
+        <item>לא הוגן</item>
+        <item>לא קדוש, לא מוסרי</item>
+        <item>לא רצוי</item>
+        <item>גידול, חינוך</item>
+        <item>ריפוד</item>
+        <item>סדרן</item>
+        <item>לכלות, לנצל עד תום</item>
+        <!--endregion U letter-->
+
+        <!--region V letter-->
+        <item>להיפך</item>
+        <item>יקר ערך</item>
+        <item>ערך, להעריך</item>
+        <item>לראות</item>
+        <item>נוף, שדה ראיה</item>
+        <item>צופה</item>
+        <item>לבקר</item>
+        <item>אורח, מבקר</item>
+        <item>קול, להשמיע קול</item>
+        <item>נפח</item>
+        <item>עוצמת קול</item>
+        <item>כרך</item>
+        <item>תקף</item>
+        <item>אימת, נתן תוקף</item>
+        <item>אלימות</item>
+        <item>אלים</item>
+        <item>חיסון</item>
+        <item>משתנה</item>
+        <item>שינוי, וריאציה</item>
+        <item>מבחר, מגוון</item>
+        <item>מגוון</item>
+        <item>גדול</item>
+        <item>מאונך</item>
+        <item>במרץ</item>
+        <item>להפר, לחלל</item>
+        <item>עבירה, הפרה</item>
+        <item>להתנדב, מתנדב</item>
+        <item>קול, הצבעה, להצביע</item>
+        <item>לשווא</item>
+        <item>שחצן</item>
+        <item>משתנה</item>
+        <item>סיכון</item>
+        <item>לוודא, לאמת</item>
+        <item>גרסאות</item>
+        <item>כלי שיט</item>
+        <item>כפר</item>
+        <item>מדומה, וירטואלי</item>
+        <item>למעשה, בעצם</item>
+        <item>חזותי</item>
+        <item>לדמיין</item>
+        <item>עמימות, ערפול</item>
+        <item>להיעלם</item>
+        <item>ירק</item>
+        <item>צמחוני</item>
+        <item>כלי רכב</item>
+        <item>יושר, הגינות</item>
+        <item>פסק דין, פסיקה</item>
+        <item>מסע</item>
+        <item>פנוי, ריק</item>
+        <item>חייל משוחרר, יוצא צבא</item>
+        <item>ותיק</item>
+        <item>מעלה</item>
+        <item>חיוני</item>
+        <item>חד, בהיר, ססגוני, שופע</item>
+        <item>פגיעות</item>
+        <item>עמק</item>
+        <item>שסתום</item>
+        <item>ורבלי, מילולי</item>
+        <item>דרך</item>
+        <item>קורבן</item>
+        <item>אוצר מילים</item>
+        <item>מקצוע</item>
+        <item>חופשה</item>
+        <item>בעל חוליות</item>
+        <item>אפודה</item>
+        <item>ניצחון</item>
+        <item>רשע, נבל</item>
+        <item>חומץ</item>
+        <item>צפע</item>
+        <item>רעשני</item>
+        <item>תנועה (לשון)</item>
+        <!--endregion V letter-->
+
+        <!--region W letter-->
+        <item>מה, איזה</item>
+        <item>כאשר, כש-</item>
+        <item>כש-, מתישהו</item>
+        <item>היכן, איפה</item>
+        <item>בעוד ש-</item>
+        <item>בעוד ש-</item>
+        <item>בכל מקום, לא משנה היכן</item>
+        <item>בין אם… או…</item>
+        <item>אשר, ש-</item>
+        <item>איזה</item>
+        <item>בזמן ש-</item>
+        <item>כל עוד</item>
+        <item>מי, ש-</item>
+        <item>מי</item>
+        <item>אשר לו, אשר הוא</item>
+        <item>מדוע</item>
+        <item>באמצעות, עם</item>
+        <item>בתוך</item>
+        <item>מבלי, ללא</item>
+        <item>להמתין, המתנה</item>
+        <item>דרך</item>
+        <item>מזג אוויר</item>
+        <item>מלחמה</item>
+        <item>לוחמה</item>
+        <item>לוחם</item>
+        <item>הפסולת</item>
+        <item>בזבוז, לבזבז</item>
+        <item>להסתכל, להשגיח</item>
+        <item>שעון</item>
+        <item>נפוץ</item>
+        <item>פראי, טבע</item>
+        <item>ערבה, שממה</item>
+        <item>צמר</item>
+        <item>בצורה נרחבת</item>
+        <item>להרחיב</item>
+        <item>חורף</item>
+        <item>משכורת</item>
+        <item>לערוך, לנהל</item>
+        <item>מחלקה</item>
+        <item>רחב</item>
+        <item>מוכן</item>
+        <item>חכם, פיקח</item>
+        <item>משאלה, לבקש</item>
+        <item>לעכב, לעצור, לא לתת</item>
+        <item>כלל עולמי, בכל העולם</item>
+        <item>גרוע יותר</item>
+        <item>ראוי</item>
+        <item>עשיר</item>
+        <item>לשקול</item>
+        <item>משקל</item>
+        <item>ברשעות</item>
+        <item>חכמה, בינה</item>
+        <item>לרצות</item>
+        <item>מבוקש</item>
+        <item>חום</item>
+        <item>עושר</item>
+        <item>סעד</item>
+        <item>חיטה</item>
+        <item>חיות בר</item>
+        <item>רוח</item>
+        <item>למתוח</item>
+        <item>כנף</item>
+        <item>להתמודד, לעמוד ב-</item>
+        <item>להזהיר</item>
+        <item>אזהרה</item>
+        <item>להחליש</item>
+        <item>לסגת, לפרוש</item>
+        <item>עד, להעיד</item>
+        <item>דאגה, לדאוג</item>
+        <item>עגלה</item>
+        <item>להסתובב, לשוטט</item>
+        <item>מערב</item>
+        <item>יין</item>
+        <item>לתהות, להטיל ספק</item>
+        <item>פלא</item>
+        <item>נפלא</item>
+        <item>עץ</item>
+        <item>יער</item>
+        <item>מתוח, נמתח</item>
+        <item>פצע</item>
+        <item>לעטוף, מעטפת</item>
+        <item>מעוצב, מחושל</item>
+        <item>קיר</item>
+        <item>יבלת</item>
+        <item>צרעה</item>
+        <item>מפל</item>
+        <item>גל</item>
+        <item>נשק</item>
+        <item>ללבוש</item>
+        <item>לטוות, לארוג</item>
+        <item>חתונה</item>
+        <item>סוף שבוע</item>
+        <item>באר</item>
+        <item>טוב, היטב</item>
+        <item>בריא</item>
+        <item>לוויתן</item>
+        <item>משרוקית, לשרוק</item>
+        <item>סיטונאות</item>
+        <item>אישה, רעיה</item>
+        <item>ניצחון, לנצח</item>
+        <item>זאב (זאבים)</item>
+        <item>עבודה, לעבוד</item>
+        <item>תולעת</item>
+        <item>סופר</item>
+        <!--endregion W letter-->
+
+        <!--region X letter-->
+        <item>רנטגן, צילום רנטגן, קרני רנטגן, קרינת רנטגן</item>
+        <!--endregion X letter-->
+
+        <!--region Y letter-->
+        <item>עדיין, בכל זאת</item>
+        <item>אך, אולם</item>
+        <item>להניב, להפיק</item>
+        <item>להיכנע, לוותר, לסגת</item>
+        <item>צעיר</item>
+        <item>לפהק, פיהוק</item>
+        <!--endregion Y letter-->
+
+        <!--region Z letter-->
+        <item>איזור</item>
+        <item>גן חיות</item>
+        <item>קנאי, פנטי</item>
+        <!--endregion Z letter-->
+
+    </string-array>
+
+</resources>

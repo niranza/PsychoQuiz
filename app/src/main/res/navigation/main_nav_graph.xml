@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.niran.psychoquiz.ui.HomeFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_chooseLetterFragment"
+            app:destination="@id/chooseLetterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chooseLetterFragment"
+        android:name="com.niran.psychoquiz.ui.ChooseLetterFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_choose_letter">
+        <action
+            android:id="@+id/action_chooseLetterFragment_to_wordListFragment"
+            app:destination="@id/wordListFragment" />
+        <action
+            android:id="@+id/action_chooseLetterFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordListFragment"
+        android:name="com.niran.psychoquiz.ui.WordListFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_word_list" >
+        <argument
+            android:name="Letter"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.niran.psychoquiz.ui.QuizFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_quiz" />
+</navigation>

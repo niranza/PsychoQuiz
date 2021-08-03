@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="1dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/word_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/word_text_tv"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/image_button_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="word" />
+
+        <TextView
+            android:id="@+id/word_translation_tv"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image_button_layout"
+            tools:text="מילה" />
+
+        <!--region ImageButtons-->
+        <LinearLayout
+            android:id="@+id/image_button_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/word_translation_tv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/check_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/word_item_icon_size"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_check" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/star_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/word_item_icon_size"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_star" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/word_item_icon_size"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_close" />
+
+        </LinearLayout>
+        <!--endregion ImageButtons-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

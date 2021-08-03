@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Psycho Quiz</string>
+    <string name="start_quiz">Start Quiz</string>
+    <string name="practice">Practice</string>
+    <string name="letter">Letter</string>
+    <string name="search_title">Search</string>
+    <string name="search_a_word_here">Search a word here</string>
+    <string name="search_word_hint">Search a word</string>
+    <string name="display_all_words">Display All Words</string>
+    <string name="no_results">No Results</string>
+    <string name="next">NEXT</string>
+    <string name="previous">PREVIOUS</string>
+    <string name="quiz_headline">The meaning of the word \"%1$s\":</string>
+    <string name="error_message">Couldn\'t Load Page \"%1$s\"</string>
+</resources>

@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.PsychoQuiz" parent="Theme.MaterialComponents.DayNight">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="wordNeutralBgColor">@color/cardview_light_background</item>
+        <item name="wordUnknownBgColor">@color/red_light</item>
+        <item name="wordKnownBgColor">@color/green_light</item>
+        <item name="wordFavoriteBgColor">@color/yellow_light</item>
+        <item name="defaultBgColor">@color/design_default_color_background</item>
+        <item name="answerButtonsDefaultColor">@color/teal_200</item>
+    </style>
+
+    <style name="QuizButtonStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="android:textSize">17sp</item>
+        <item name="backgroundTint">?attr/answerButtonsDefaultColor</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70sp</item>
+    </style>
+
+    <style name="NextAndPreviousButtonStyle" parent="TextAppearance.AppCompat.Widget.Button">
+        <item name="backgroundTint">@color/design_default_color_background</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+</resources>

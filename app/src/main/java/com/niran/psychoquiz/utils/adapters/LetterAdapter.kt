@@ -1,0 +1,50 @@
+package com.niran.psychoquiz.utils.adapters
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.niran.psychoquiz.databinding.LetterItemBinding
+import com.niran.psychoquiz.utils.AppUtils
+
+class LetterAdapter(private val letterClickHandler: LetterClickHandler) :
+    RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
+
+    private val alphabets = AppUtils.alphabet
+
+    class LetterViewHolder private constructor(
+        private val binding: LetterItemBinding,
+        private val letterClickHandler: LetterClickHandler
+    ) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(letter: Char) {
+            binding.letterBtn.apply {
+                text = letter.toString()
+                setOnClickListener { letterClickHandler.onLetterClicked(letter) }
+            }
+        }
+
+        companion object {
+            fun create(parent: ViewGroup, letterClickHandler: LetterClickHandler)
+                    : LetterViewHolder {
+                val binding = LetterItemBinding.inflate(LayoutInflater.from(parent.context))
+                return LetterViewHolder(binding, letterClickHandler)
+            }
+        }
+    }
+
+    interface LetterClickHandler {
+        fun onLetterClicked(letter: Char)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LetterViewHolder {
+        return LetterViewHolder.create(parent, letterClickHandler)
+    }
+
+    override fun onBindViewHolder(holder: LetterViewHolder, position: Int) {
+        holder.bind(alphabets[position])
+    }
+
+    override fun getItemCount(): Int {
+        return alphabets.count()
+    }
+}

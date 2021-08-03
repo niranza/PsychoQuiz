@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="wordUnknownBgColor" format="color"/>
+    <attr name="wordNeutralBgColor" format="color"/>
+    <attr name="wordKnownBgColor" format="color"/>
+    <attr name="wordFavoriteBgColor" format="color"/>
+    <attr name="defaultBgColor" format="color"/>
+    <attr name="answerButtonsDefaultColor" format="color"/>
+
+</resources>
