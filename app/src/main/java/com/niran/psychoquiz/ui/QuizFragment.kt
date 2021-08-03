@@ -28,7 +28,6 @@ class QuizFragment : Fragment() {
     private val viewModel: QuizViewModel by viewModels {
         QuizViewModelFactory(
             (activity?.application as PsychoQuizApplication).wordRepository,
-            (activity?.application as PsychoQuizApplication).settingRepository,
         )
     }
 

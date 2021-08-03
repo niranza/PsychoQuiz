@@ -1,6 +1,7 @@
 package com.niran.psychoquiz.database
 
 import android.content.Context
+import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -8,16 +9,26 @@ import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.converters.SettingConverter
+import com.niran.psychoquiz.database.daos.DatabaseLoaderDao
 import com.niran.psychoquiz.database.daos.SettingDao
 import com.niran.psychoquiz.database.daos.WordDao
+import com.niran.psychoquiz.database.models.DatabaseLoader
 import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.database.models.settings.WordTypeSetting
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @Database(
-    entities = [Word::class, WordFirstLetterSetting::class, WordTypeSetting::class],
+    entities = [
+        Word::class,
+        WordFirstLetterSetting::class,
+        WordTypeSetting::class,
+        DatabaseLoader::class
+    ],
     version = 1,
     exportSchema = true
 )
@@ -26,19 +37,30 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
     abstract fun settingDao(): SettingDao
+    abstract fun databaseLoaderDao(): DatabaseLoaderDao
 
     class RoomCallBack(
         private val context: Context,
         private val scope: CoroutineScope
     ) : RoomDatabase.Callback() {
 
+        private var executeOnOpen = MutableStateFlow(true)
+        private suspend fun executeBeforeOnOpen(action: suspend () -> Unit) {
+            executeOnOpen.value = false
+            action()
+            executeOnOpen.value = true
+        }
+
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateWordTable(database.wordDao())
-                    populateSettingTable(database.settingDao())
+                    executeBeforeOnOpen {
+                        Log.d(TAG, "onCreate Called")
+                        database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
+                        Log.d(TAG, "onCreate Ended")
+                    }
                 }
             }
         }
@@ -48,10 +70,38 @@ abstract class AppDatabase : RoomDatabase() {
 
             INSTANCE?.let { database ->
                 scope.launch {
-                    populateWordTable(database.wordDao())
-                    populateSettingTable(database.settingDao())
+                    executeBeforeOnOpen {
+                        Log.d(TAG, "onDestructiveMigration Called")
+                        database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
+                        Log.d(TAG, "onDestructiveMigration Ended")
+                    }
                 }
             }
+        }
+
+        override fun onOpen(db: SupportSQLiteDatabase) {
+            super.onOpen(db)
+
+            INSTANCE?.let { database ->
+                scope.launch {
+                    executeOnOpen.collect {
+                        if (it) {
+                            Log.d(TAG, "onOpen Called")
+                            if (!isDataLoaded(database.databaseLoaderDao()))
+                                populateDatabase(database)
+                            initializeSettingValues(database)
+                            cancel()
+                            Log.d(TAG, "onOpen Ended")
+                        }
+                    }
+                }
+            }
+        }
+
+        private suspend fun populateDatabase(database: AppDatabase) {
+            populateWordTable(database.wordDao())
+            populateSettingTable(database.settingDao())
+            finishLoad(database.databaseLoaderDao())
         }
 
         private suspend fun populateWordTable(wordDao: WordDao) {
@@ -81,37 +131,39 @@ abstract class AppDatabase : RoomDatabase() {
 
             //region WordType Setting
             for (setting in Word.Types.values()) settingDao.insertWordTypeSetting(
-                WordTypeSetting(setting.ordinal, setting.settingValue)
+                WordTypeSetting(setting.getType(), setting.settingValue)
             )
             //endregion WordType Setting
 
         }
 
-        override fun onOpen(db: SupportSQLiteDatabase) {
-            super.onOpen(db)
+        private suspend fun initializeSettingValues(database: AppDatabase) {
 
-            INSTANCE?.let { database ->
-                scope.launch {
-                    initializeSettingValues(database.settingDao())
-                }
-            }
-        }
+            val dao = database.settingDao()
 
-        private suspend fun initializeSettingValues(settingDao: SettingDao) {
-
-            //region FirstLetter
-            val dbFirstLetterList = settingDao.getAllWordFirstLetterSettings()
+            //region init FirstLetter
+            val dbFirstLetterList = dao.getAllWordFirstLetterSettings()
             val firstLetterList = Word.FirstLetter.values()
             for (i in dbFirstLetterList.indices)
                 firstLetterList[i].settingValue = dbFirstLetterList[i].settingValue
             //endregion FirstLetter
 
-            //region WordType
-            val dbWordTypeList = settingDao.getAllWordTypeSettings()
+            //region init WordType
+            val dbWordTypeList = dao.getAllWordTypeSettings()
             val wordTypeList = Word.Types.values()
             for (i in dbWordTypeList.indices)
                 wordTypeList[i].settingValue = dbWordTypeList[i].settingValue
             //endregion WordType
+        }
+
+        private suspend fun finishLoad(databaseLoaderDao: DatabaseLoaderDao) =
+            databaseLoaderDao.insertDatabaseLoader(DatabaseLoader(isLoaded = true))
+
+        private suspend fun isDataLoaded(databaseLoaderDao: DatabaseLoaderDao) =
+            databaseLoaderDao.getDatabaseLoader().isLoaded
+
+        companion object {
+            const val TAG = "RoomCallBack"
         }
     }
 

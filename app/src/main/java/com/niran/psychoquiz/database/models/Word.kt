@@ -33,11 +33,10 @@ data class Word(
     }
 
     enum class Types(
-        var settingValue: Boolean = true
+        var settingValue: Boolean = false
     ) {
-        FAVORITE,
-        UNKNOWN,
-        NEUTRAL,
-        KNOWN;
+        FAVORITE, UNKNOWN, NEUTRAL(true), KNOWN;
+
+        fun getType(): Int = ordinal
     }
 }

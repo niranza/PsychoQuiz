@@ -4,7 +4,6 @@ import androidx.lifecycle.*
 import com.niran.psychoquiz.LoadingState
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
-import com.niran.psychoquiz.repositories.SettingRepository
 import com.niran.psychoquiz.repositories.WordRepository
 import com.niran.psychoquiz.utils.filterByWordChar
 import com.niran.psychoquiz.utils.filterByWordTypes
@@ -14,7 +13,6 @@ import kotlinx.coroutines.withContext
 
 class QuizViewModel(
     private val wordRepository: WordRepository,
-    private val settingRepository: SettingRepository
 ) : ViewModel() {
 
     private val _loadingState = MutableLiveData<LoadingState>()
@@ -49,22 +47,46 @@ class QuizViewModel(
 
     private fun loadGame() = viewModelScope.launch {
         try {
-            _loadingState.value = LoadingState.LOADING
-            loadWordList(alphabet, wordTypes)
-            loadAnswerList()
-            loadNewQuestion(Question.Load.NEXT)
-            _loadingState.value = LoadingState.SUCCESS
+        _loadingState.value = LoadingState.LOADING
+        loadWordList(getFirstLetterList(), getWordTypeList())
+        loadAnswerList()
+        loadNewQuestion(Question.Load.NEXT)
+        _loadingState.value = LoadingState.SUCCESS
         } catch (e: Exception) {
             LoadingState.ERROR.message = e.message.toString()
             _loadingState.value = LoadingState.ERROR
         }
     }
 
-    private suspend fun loadWordList(alphabet: CharArray, wordTypes: IntArray) =
+    private suspend fun getFirstLetterList(): CharArray =
+        withContext(Dispatchers.IO) {
+            val result = mutableListOf<Char>()
+            for (firstLetter in Word.FirstLetter.values())
+                if (firstLetter.settingValue)
+                    result.add(firstLetter.getChar())
+            result.toCharArray()
+        }
+
+    private suspend fun getWordTypeList(): IntArray =
+        withContext(Dispatchers.IO) {
+            val result = mutableListOf<Int>()
+            for (firstLetter in Word.Types.values())
+                if (firstLetter.settingValue)
+                    result.add(firstLetter.getType())
+            result.toIntArray()
+        }
+
+    private suspend fun loadWordList(wordFirstLetters: CharArray, wordTypes: IntArray) =
         wordRepository.suspendedGetAllWords().also { _wordList ->
+            if (wordFirstLetters.isEmpty() || wordTypes.isEmpty()) {
+                LoadingState.ERROR.message = INVALID_SETTINGS
+                _loadingState.value = LoadingState.ERROR
+                return@also
+            }
             withContext(Dispatchers.IO) {
                 val list =
-                    _wordList.filterByWordChar(*alphabet).filterByWordTypes(*wordTypes).shuffled()
+                    _wordList.filterByWordChar(*wordFirstLetters).filterByWordTypes(*wordTypes)
+                        .shuffled()
 //                Log.d("TAG", "list size before distinct: ${list.count()}")
 //                Log.d("TAG", "list size after distinct: ${list.distinctBy { it.wordTranslation }.count()}")
                 wordList = list
@@ -111,18 +133,19 @@ class QuizViewModel(
 
     companion object {
         private const val NUMBER_OF_MISLEADING_ANSWERS = 3
+
+        const val INVALID_SETTINGS = "Invalid Settings"
     }
 }
 
 class QuizViewModelFactory(
     private val wordRepository: WordRepository,
-    private val settingRepository: SettingRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(QuizViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return QuizViewModel(wordRepository, settingRepository) as T
+            return QuizViewModel(wordRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }

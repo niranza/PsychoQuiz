@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ce4795d030e185dfca0d8027f13fd3fb",
+    "identityHash": "6003265ad53fccffb1963b71aebf561b",
     "entities": [
       {
         "tableName": "word_table",
@@ -99,12 +99,38 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "database_loader_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`database_loader_id` INTEGER NOT NULL, `is_loaded` INTEGER NOT NULL, PRIMARY KEY(`database_loader_id`))",
+        "fields": [
+          {
+            "fieldPath": "databaseLoaderId",
+            "columnName": "database_loader_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isLoaded",
+            "columnName": "is_loaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "database_loader_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ce4795d030e185dfca0d8027f13fd3fb')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6003265ad53fccffb1963b71aebf561b')"
     ]
   }
 }
