@@ -1,9 +1,7 @@
 package com.niran.psychoquiz.ui
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -138,6 +136,30 @@ class QuizFragment : Fragment() {
 
     private fun isQuestionValid(question: Question) =
         question.wordText != "" && question.answers.isNotEmpty()
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.quiz_settings_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.settings_item -> {
+                navigateToSettingsFragment()
+                true
+            }
+            android.R.id.home -> {
+                navigateUp()
+                true
+            }
+            else -> true
+        }
+    }
+
+    private fun navigateToSettingsFragment() = view?.findNavController()
+        ?.navigate(QuizFragmentDirections.actionQuizFragmentToSettingsFragment())
+
+    fun navigateUp() = view?.findNavController()?.navigateUp()
 
     override fun onDestroyView() {
         super.onDestroyView()

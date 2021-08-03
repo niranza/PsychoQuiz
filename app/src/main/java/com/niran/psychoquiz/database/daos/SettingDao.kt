@@ -6,6 +6,7 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.database.models.settings.WordTypeSetting
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SettingDao {
@@ -15,7 +16,13 @@ interface SettingDao {
     suspend fun insertWordFirstLetterSetting(wordFirstLetterSetting: WordFirstLetterSetting)
 
     @Query("SELECT * FROM word_first_letter_setting_table")
-    suspend fun getAllWordFirstLetterSettings(): List<WordFirstLetterSetting>
+    suspend fun suspendGetAllWordFirstLetterSettings(): List<WordFirstLetterSetting>
+
+    @Query("DELETE FROM word_first_letter_setting_table")
+    suspend fun deleteAllWordFirstLetterSettings()
+
+    @Query("SELECT * FROM word_first_letter_setting_table")
+    fun getAllWordFirstLetterSettings(): Flow<List<WordFirstLetterSetting>>
     //endregion WordFirstLetterSetting
 
     //region WordTypeSetting
@@ -23,7 +30,12 @@ interface SettingDao {
     suspend fun insertWordTypeSetting(wordTypeSetting: WordTypeSetting)
 
     @Query("SELECT * FROM word_type_setting_table")
-    suspend fun getAllWordTypeSettings(): List<WordTypeSetting>
-    //endregion WordTypeSetting
+    suspend fun suspendGetAllWordTypeSettings(): List<WordTypeSetting>
 
+    @Query("DELETE FROM word_type_setting_table")
+    suspend fun deleteAllWordTypeSettings()
+
+    @Query("SELECT * FROM word_type_setting_table")
+    fun getAllWordTypeSettings(): Flow<List<WordTypeSetting>>
+    //endregion WordTypeSetting
 }

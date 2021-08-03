@@ -47,11 +47,11 @@ class QuizViewModel(
 
     private fun loadGame() = viewModelScope.launch {
         try {
-        _loadingState.value = LoadingState.LOADING
-        loadWordList(getFirstLetterList(), getWordTypeList())
-        loadAnswerList()
-        loadNewQuestion(Question.Load.NEXT)
-        _loadingState.value = LoadingState.SUCCESS
+            _loadingState.value = LoadingState.LOADING
+            loadWordList(getFirstLetterList(), getWordTypeList())
+            loadAnswerList()
+            loadNewQuestion(Question.Load.NEXT)
+            _loadingState.value = LoadingState.SUCCESS
         } catch (e: Exception) {
             LoadingState.ERROR.message = e.message.toString()
             _loadingState.value = LoadingState.ERROR
@@ -59,22 +59,10 @@ class QuizViewModel(
     }
 
     private suspend fun getFirstLetterList(): CharArray =
-        withContext(Dispatchers.IO) {
-            val result = mutableListOf<Char>()
-            for (firstLetter in Word.FirstLetter.values())
-                if (firstLetter.settingValue)
-                    result.add(firstLetter.getChar())
-            result.toCharArray()
-        }
+        withContext(Dispatchers.IO) { Word.FirstLetter.A.getAllValid().toCharArray() }
 
     private suspend fun getWordTypeList(): IntArray =
-        withContext(Dispatchers.IO) {
-            val result = mutableListOf<Int>()
-            for (firstLetter in Word.Types.values())
-                if (firstLetter.settingValue)
-                    result.add(firstLetter.getType())
-            result.toIntArray()
-        }
+        withContext(Dispatchers.IO) { Word.Types.UNKNOWN.getAllValid().toIntArray() }
 
     private suspend fun loadWordList(wordFirstLetters: CharArray, wordTypes: IntArray) =
         wordRepository.suspendedGetAllWords().also { _wordList ->

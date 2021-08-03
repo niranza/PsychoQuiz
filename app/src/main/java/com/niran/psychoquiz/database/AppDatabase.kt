@@ -18,6 +18,7 @@ import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.database.models.settings.WordTypeSetting
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -41,7 +42,8 @@ abstract class AppDatabase : RoomDatabase() {
 
     class RoomCallBack(
         private val context: Context,
-        private val scope: CoroutineScope
+        private val scope: CoroutineScope,
+        private val onFinishedLoading: () -> Unit
     ) : RoomDatabase.Callback() {
 
         private var executeOnOpen = MutableStateFlow(true)
@@ -60,6 +62,7 @@ abstract class AppDatabase : RoomDatabase() {
                         Log.d(TAG, "onCreate Called")
                         database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
                         Log.d(TAG, "onCreate Ended")
+                        delay(100)
                     }
                 }
             }
@@ -74,6 +77,7 @@ abstract class AppDatabase : RoomDatabase() {
                         Log.d(TAG, "onDestructiveMigration Called")
                         database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
                         Log.d(TAG, "onDestructiveMigration Ended")
+                        delay(100)
                     }
                 }
             }
@@ -90,6 +94,7 @@ abstract class AppDatabase : RoomDatabase() {
                             if (!isDataLoaded(database.databaseLoaderDao()))
                                 populateDatabase(database)
                             initializeSettingValues(database)
+                            onFinishedLoading()
                             cancel()
                             Log.d(TAG, "onOpen Ended")
                         }
@@ -105,6 +110,8 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateWordTable(wordDao: WordDao) {
+
+            wordDao.deleteAllWords()
 
             val res = context.resources
 
@@ -124,14 +131,18 @@ abstract class AppDatabase : RoomDatabase() {
         private suspend fun populateSettingTable(settingDao: SettingDao) {
 
             //region WordFirstLetter Setting
+            settingDao.deleteAllWordFirstLetterSettings()
+
             for (setting in Word.FirstLetter.values()) settingDao.insertWordFirstLetterSetting(
-                WordFirstLetterSetting(setting.ordinal, setting.settingValue)
+                WordFirstLetterSetting(setting.ordinal, setting.getValue())
             )
             //endregion WordFirstLetter Setting
 
             //region WordType Setting
+            settingDao.deleteAllWordTypeSettings()
+
             for (setting in Word.Types.values()) settingDao.insertWordTypeSetting(
-                WordTypeSetting(setting.getType(), setting.settingValue)
+                WordTypeSetting(setting.ordinal, setting.getValue())
             )
             //endregion WordType Setting
 
@@ -142,14 +153,14 @@ abstract class AppDatabase : RoomDatabase() {
             val dao = database.settingDao()
 
             //region init FirstLetter
-            val dbFirstLetterList = dao.getAllWordFirstLetterSettings()
+            val dbFirstLetterList = dao.suspendGetAllWordFirstLetterSettings()
             val firstLetterList = Word.FirstLetter.values()
             for (i in dbFirstLetterList.indices)
                 firstLetterList[i].settingValue = dbFirstLetterList[i].settingValue
             //endregion FirstLetter
 
             //region init WordType
-            val dbWordTypeList = dao.getAllWordTypeSettings()
+            val dbWordTypeList = dao.suspendGetAllWordTypeSettings()
             val wordTypeList = Word.Types.values()
             for (i in dbWordTypeList.indices)
                 wordTypeList[i].settingValue = dbWordTypeList[i].settingValue
@@ -172,7 +183,11 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        fun getDatabase(context: Context, scope: CoroutineScope): AppDatabase =
+        fun getDatabase(
+            context: Context,
+            scope: CoroutineScope,
+            onFinishedLoading: () -> Unit
+        ): AppDatabase =
             INSTANCE ?: synchronized(this) {
                 Room.databaseBuilder(
                     context.applicationContext,
@@ -181,7 +196,7 @@ abstract class AppDatabase : RoomDatabase() {
                 )
                     .fallbackToDestructiveMigration()
                     .fallbackToDestructiveMigrationOnDowngrade()
-                    .addCallback(RoomCallBack(context, scope))
+                    .addCallback(RoomCallBack(context, scope, onFinishedLoading))
                     .build().also { INSTANCE = it }
             }
 

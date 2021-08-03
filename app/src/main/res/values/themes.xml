@@ -19,20 +19,4 @@
         <item name="defaultBgColor">@color/design_default_color_background</item>
         <item name="answerButtonsDefaultColor">@color/teal_200</item>
     </style>
-
-    <style name="QuizButtonStyle" parent="TextAppearance.AppCompat.Widget.Button">
-        <item name="android:textSize">17sp</item>
-        <item name="backgroundTint">?attr/answerButtonsDefaultColor</item>
-        <item name="android:layout_margin">10dp</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">70sp</item>
-    </style>
-
-    <style name="NextAndPreviousButtonStyle" parent="TextAppearance.AppCompat.Widget.Button">
-        <item name="backgroundTint">@color/design_default_color_background</item>
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">17sp</item>
-    </style>
 </resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp"
+    tools:context=".ui.SettingsFragment">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings" />
+
+    <View
+        style="@style/DividerStyle"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/divider_margin"
+        android:layout_marginBottom="@dimen/divider_margin" />
+
+    <!--region WordFirstLetter Settings-->
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_letters" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/word_first_letter_rv"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/rv_padding"
+        android:paddingBottom="@dimen/rv_padding"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="4"
+        tools:itemCount="26"
+        tools:listitem="@layout/boolean_setting_item" />
+    <!--endregion WordFirstLetter Settings-->
+
+    <View
+        style="@style/DividerStyle"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/divider_margin"
+        android:layout_marginBottom="@dimen/divider_margin" />
+
+    <!--region WordType Settings-->
+    <TextView
+        style="@style/TextAppearance.AppCompat.Medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_word_types" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/word_type_rv"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:clipToPadding="false"
+        android:paddingTop="@dimen/rv_padding"
+        android:paddingBottom="@dimen/rv_padding"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        tools:itemCount="4"
+        tools:listitem="@layout/boolean_setting_item" />
+    <!--endregion WordType Settings-->
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

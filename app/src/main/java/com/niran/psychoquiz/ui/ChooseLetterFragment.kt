@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.niran.psychoquiz.DISPLAY_ALL_WORDS_LIST
 import com.niran.psychoquiz.databinding.FragmentChooseLetterBinding
 import com.niran.psychoquiz.utils.adapters.LetterAdapter
@@ -39,14 +40,14 @@ class ChooseLetterFragment : Fragment() {
                 adapter = letterAdapter
                 setHasFixedSize(true)
             }
-            practiceBtn.setOnClickListener { navigateToQuizActivity() }
+            practiceBtn.setOnClickListener { navigateToQuizFragment() }
             displayAllWordsBtn.setOnClickListener { navigateToWordListFragment() }
         }
 
     }
 
-    private fun navigateToQuizActivity() = view?.findNavController()
-        ?.navigate(ChooseLetterFragmentDirections.actionChooseLetterFragmentToQuizFragment())
+    private fun navigateToQuizFragment() = findNavController()
+        .navigate(ChooseLetterFragmentDirections.actionChooseLetterFragmentToQuizFragment())
 
     private fun navigateToWordListFragment(letter: String = DISPLAY_ALL_WORDS_LIST.toString()) =
         view?.findNavController()?.navigate(
