@@ -13,5 +13,5 @@ data class WordFirstLetterSetting(
     override val settingId: Int = -1,
 
     @ColumnInfo(name = "setting_value")
-    override val settingValue: Boolean = true,
+    override var settingValue: Boolean = true,
 ) : BooleanSetting(settingId, settingValue)

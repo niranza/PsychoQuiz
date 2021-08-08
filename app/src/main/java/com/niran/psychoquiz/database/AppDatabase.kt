@@ -8,11 +8,13 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.niran.psychoquiz.R
-import com.niran.psychoquiz.database.converters.SettingConverter
+import com.niran.psychoquiz.database.converters.StringListConverter
 import com.niran.psychoquiz.database.daos.DatabaseLoaderDao
+import com.niran.psychoquiz.database.daos.QuestionDao
 import com.niran.psychoquiz.database.daos.SettingDao
 import com.niran.psychoquiz.database.daos.WordDao
 import com.niran.psychoquiz.database.models.DatabaseLoader
+import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.database.models.settings.WordTypeSetting
@@ -28,17 +30,19 @@ import kotlinx.coroutines.launch
         Word::class,
         WordFirstLetterSetting::class,
         WordTypeSetting::class,
-        DatabaseLoader::class
+        DatabaseLoader::class,
+        Question::class
     ],
     version = 1,
     exportSchema = true
 )
-@TypeConverters(SettingConverter::class)
+@TypeConverters(StringListConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun wordDao(): WordDao
     abstract fun settingDao(): SettingDao
     abstract fun databaseLoaderDao(): DatabaseLoaderDao
+    abstract fun questionDao(): QuestionDao
 
     class RoomCallBack(
         private val context: Context,
@@ -93,7 +97,6 @@ abstract class AppDatabase : RoomDatabase() {
                             Log.d(TAG, "onOpen Called")
                             if (!isDataLoaded(database.databaseLoaderDao()))
                                 populateDatabase(database)
-                            initializeSettingValues(database)
                             onFinishedLoading()
                             cancel()
                             Log.d(TAG, "onOpen Ended")
@@ -133,8 +136,8 @@ abstract class AppDatabase : RoomDatabase() {
             //region WordFirstLetter Setting
             settingDao.deleteAllWordFirstLetterSettings()
 
-            for (setting in Word.FirstLetter.values()) settingDao.insertWordFirstLetterSetting(
-                WordFirstLetterSetting(setting.ordinal, setting.getValue())
+            for (i in Word.FirstLetter.keyList.indices) settingDao.insertWordFirstLetterSetting(
+                WordFirstLetterSetting(i, Word.FirstLetter.defaultSettingVal)
             )
             //endregion WordFirstLetter Setting
 
@@ -142,29 +145,10 @@ abstract class AppDatabase : RoomDatabase() {
             settingDao.deleteAllWordTypeSettings()
 
             for (setting in Word.Types.values()) settingDao.insertWordTypeSetting(
-                WordTypeSetting(setting.ordinal, setting.getValue())
+                WordTypeSetting(setting.ordinal, setting.defaultSettingVal)
             )
             //endregion WordType Setting
 
-        }
-
-        private suspend fun initializeSettingValues(database: AppDatabase) {
-
-            val dao = database.settingDao()
-
-            //region init FirstLetter
-            val dbFirstLetterList = dao.suspendGetAllWordFirstLetterSettings()
-            val firstLetterList = Word.FirstLetter.values()
-            for (i in dbFirstLetterList.indices)
-                firstLetterList[i].settingValue = dbFirstLetterList[i].settingValue
-            //endregion FirstLetter
-
-            //region init WordType
-            val dbWordTypeList = dao.suspendGetAllWordTypeSettings()
-            val wordTypeList = Word.Types.values()
-            for (i in dbWordTypeList.indices)
-                wordTypeList[i].settingValue = dbWordTypeList[i].settingValue
-            //endregion WordType
         }
 
         private suspend fun finishLoad(databaseLoaderDao: DatabaseLoaderDao) =

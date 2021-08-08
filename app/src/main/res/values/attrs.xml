@@ -7,5 +7,7 @@
     <attr name="wordFavoriteBgColor" format="color"/>
     <attr name="defaultBgColor" format="color"/>
     <attr name="answerButtonsDefaultColor" format="color"/>
+    <attr name="logoBackgroundColor" format="color"/>
+    <attr name="logoColor" format="color"/>
 
 </resources>

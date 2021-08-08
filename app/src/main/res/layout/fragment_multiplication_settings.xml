@@ -5,14 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="6dp"
-    tools:context=".ui.SettingsFragment">
-
-    <TextView
-        style="@style/TextAppearance.AppCompat.Large"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/settings" />
+    tools:context=".ui.MultiplicationSettingsFragment">
 
     <View
         style="@style/DividerStyle"
@@ -21,26 +14,22 @@
         android:layout_marginTop="@dimen/divider_margin"
         android:layout_marginBottom="@dimen/divider_margin" />
 
-    <!--region WordFirstLetter Settings-->
     <TextView
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/choose_letters" />
+        android:padding="4dp"
+        android:text="@string/first_number" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/word_first_letter_rv"
+        android:id="@+id/output_one_rv"
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/rv_padding"
-        android:paddingBottom="@dimen/rv_padding"
+        android:padding="@dimen/rv_padding"
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="4"
-        tools:itemCount="26"
-        tools:listitem="@layout/boolean_setting_item" />
-    <!--endregion WordFirstLetter Settings-->
+        app:spanCount="4" />
 
     <View
         style="@style/DividerStyle"
@@ -49,26 +38,21 @@
         android:layout_marginTop="@dimen/divider_margin"
         android:layout_marginBottom="@dimen/divider_margin" />
 
-    <!--region WordType Settings-->
     <TextView
         style="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/choose_word_types" />
+        android:padding="4dp"
+        android:text="@string/second_number" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/word_type_rv"
+        android:id="@+id/output_two_rv"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="250dp"
         android:clipToPadding="false"
-        android:paddingTop="@dimen/rv_padding"
-        android:paddingBottom="@dimen/rv_padding"
+        android:padding="@dimen/rv_padding"
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        tools:itemCount="4"
-        tools:listitem="@layout/boolean_setting_item" />
-    <!--endregion WordType Settings-->
-
+        app:spanCount="4" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>

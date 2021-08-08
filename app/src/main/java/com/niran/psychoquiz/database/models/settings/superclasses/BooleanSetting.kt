@@ -1,20 +1,18 @@
 package com.niran.psychoquiz.database.models.settings.superclasses
 
-open class BooleanSetting(
+abstract class BooleanSetting(
 
     open val settingId: Int,
 
-    open val settingValue: Boolean,
+    open var settingValue: Boolean,
 ) {
     interface Interface {
 
-        var settingValue: Boolean
+        val defaultSettingVal: Boolean
 
-        fun getValue(): Boolean
+        val keyList: List<Any>
 
-        fun getKey(): Any
-
-        fun getAllValid(): List<Any>
+        fun getAllValid(booleanSettings: List<BooleanSetting>): List<Any>
 
         fun getNames(): List<String>
     }

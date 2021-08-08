@@ -26,27 +26,24 @@ data class Word(
 
 ) {
     //region FirstLetter
-    enum class FirstLetter(
-        override var settingValue: Boolean = true
-    ) : BooleanSetting.Interface {
-        A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z;
+    object FirstLetter : BooleanSetting.Interface {
 
-        override fun getKey(): Char = name.lowercase().toCharArray()[0]
+        override val defaultSettingVal = true
 
-        override fun getValue(): Boolean = settingValue
+        override val keyList = ('a'..'z').toList()
 
-        override fun getAllValid(): List<Char> {
+        override fun getAllValid(booleanSettings: List<BooleanSetting>): List<Char> {
             val result = mutableListOf<Char>()
-            for (firstLetter in values())
-                if (firstLetter.settingValue)
-                    result.add(firstLetter.getKey())
+            for (i in booleanSettings.indices)
+                if (booleanSettings[i].settingValue)
+                    result.add(keyList[i])
             return result
         }
 
         override fun getNames(): List<String> {
             val result = mutableListOf<String>()
-            for (firstLetter in values())
-                result.add(firstLetter.name)
+            for (firstLetter in keyList)
+                result.add(firstLetter.uppercase())
             return result
         }
     }
@@ -54,19 +51,17 @@ data class Word(
 
     //region WordType
     enum class Types(
-        override var settingValue: Boolean = false
+        override val defaultSettingVal: Boolean = false
     ) : BooleanSetting.Interface {
         FAVORITE, UNKNOWN, NEUTRAL(true), KNOWN;
 
-        override fun getKey(): Int = ordinal
+        override val keyList = List(4) { i -> i }
 
-        override fun getValue(): Boolean = settingValue
-
-        override fun getAllValid(): List<Int> {
+        override fun getAllValid(booleanSettings: List<BooleanSetting>): List<Int> {
             val result = mutableListOf<Int>()
-            for (wordType in values())
-                if (wordType.settingValue)
-                    result.add(wordType.getKey())
+            for (i in booleanSettings.indices)
+                if (booleanSettings[i].settingValue)
+                    result.add(keyList[i])
             return result
         }
 

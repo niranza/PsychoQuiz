@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        setTheme(R.style.Theme_PsychoQuiz)
         setContentView(R.layout.splash_screen)
         viewModel.initViewModel()
 

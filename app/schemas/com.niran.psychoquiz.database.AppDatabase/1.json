@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "6003265ad53fccffb1963b71aebf561b",
+    "identityHash": "4a04b4756a636dc15ad4c1a07e9dcc2c",
     "entities": [
       {
         "tableName": "word_table",
@@ -125,12 +125,56 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "question_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `wordId` INTEGER NOT NULL, `question_word_text` TEXT NOT NULL, `correct_answer` TEXT NOT NULL, `answers` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "questionId",
+            "columnName": "question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordId",
+            "columnName": "wordId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "questionWordText",
+            "columnName": "question_word_text",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "correctAnswer",
+            "columnName": "correct_answer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "answers",
+            "columnName": "answers",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '6003265ad53fccffb1963b71aebf561b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '4a04b4756a636dc15ad4c1a07e9dcc2c')"
     ]
   }
 }

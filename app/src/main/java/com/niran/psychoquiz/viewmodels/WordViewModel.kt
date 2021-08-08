@@ -11,10 +11,10 @@ import kotlinx.coroutines.launch
 
 class WordViewModel(private val wordRepository: WordRepository) : ViewModel() {
 
-    fun getAllWords() = wordRepository.getAllWords().asLiveData()
+    fun getAllWordsAsLiveData() = wordRepository.getAllWordsWithFlow().asLiveData()
 
-    fun getWordsByLetter(firstLetter: Char) =
-        wordRepository.getWordsByLetter(firstLetter).asLiveData()
+    fun getWordsByLetterAsLiveData(firstLetter: Char) =
+        wordRepository.getWordsByLetterWithFlow(firstLetter).asLiveData()
 
     fun customUpdateWord(word: Word, wordType: Word.Types) = viewModelScope.launch {
         val newType =

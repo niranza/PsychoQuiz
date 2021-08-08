@@ -16,13 +16,13 @@ interface SettingDao {
     suspend fun insertWordFirstLetterSetting(wordFirstLetterSetting: WordFirstLetterSetting)
 
     @Query("SELECT * FROM word_first_letter_setting_table")
-    suspend fun suspendGetAllWordFirstLetterSettings(): List<WordFirstLetterSetting>
+    suspend fun getAllWordFirstLetterSettings(): List<WordFirstLetterSetting>
 
     @Query("DELETE FROM word_first_letter_setting_table")
     suspend fun deleteAllWordFirstLetterSettings()
 
     @Query("SELECT * FROM word_first_letter_setting_table")
-    fun getAllWordFirstLetterSettings(): Flow<List<WordFirstLetterSetting>>
+    fun getAllWordFirstLetterSettingsWithFlow(): Flow<List<WordFirstLetterSetting>>
     //endregion WordFirstLetterSetting
 
     //region WordTypeSetting
@@ -30,12 +30,12 @@ interface SettingDao {
     suspend fun insertWordTypeSetting(wordTypeSetting: WordTypeSetting)
 
     @Query("SELECT * FROM word_type_setting_table")
-    suspend fun suspendGetAllWordTypeSettings(): List<WordTypeSetting>
+    suspend fun getAllWordTypeSettings(): List<WordTypeSetting>
 
     @Query("DELETE FROM word_type_setting_table")
     suspend fun deleteAllWordTypeSettings()
 
     @Query("SELECT * FROM word_type_setting_table")
-    fun getAllWordTypeSettings(): Flow<List<WordTypeSetting>>
+    fun getAllWordTypeSettingsWithFlow(): Flow<List<WordTypeSetting>>
     //endregion WordTypeSetting
 }

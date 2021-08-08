@@ -6,9 +6,6 @@ import android.view.inputmethod.InputMethodManager
 
 object AppUtils {
 
-
-    val alphabet = ('a'..'z').toList()
-
     fun hideKeyBoard(activity: Activity) {
         val inputMethodManager = activity.getSystemService(Context.INPUT_METHOD_SERVICE) as
                 InputMethodManager

@@ -8,16 +8,16 @@ import kotlinx.coroutines.flow.Flow
 interface WordDao {
 
     @Query("SELECT * FROM word_table")
-    suspend fun suspendedGetAllWords(): List<Word>
+    suspend fun getAllWords(): List<Word>
 
     @Query("SELECT word_translation FROM word_table")
-    suspend fun suspendedGetAllTranslations(): List<String>
+    suspend fun getAllTranslations(): List<String>
 
     @Query("SELECT * FROM word_table ORDER BY word_text ASC")
-    fun getAllWords(): Flow<List<Word>>
+    fun getAllWordsWithFlow(): Flow<List<Word>>
 
     @Query("SELECT * FROM word_table WHERE word_char = :firstLetter ORDER BY word_text ASC")
-    fun getWordsByLetter(firstLetter: Char): Flow<List<Word>>
+    fun getWordsByLetterWithFlow(firstLetter: Char): Flow<List<Word>>
 
     @Query("DELETE FROM word_table")
     suspend fun deleteAllWords()

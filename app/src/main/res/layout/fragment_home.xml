@@ -6,14 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".ui.HomeFragment">
 
-    <Button
-        android:id="@+id/start_quiz_btn"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/logo_im"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/start_quiz"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/logo"
+        android:paddingStart="100dp"
+        android:paddingEnd="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_im">
+
+        <Button
+            android:id="@+id/english_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/english" />
+
+        <Button
+            android:id="@+id/math_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/math" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

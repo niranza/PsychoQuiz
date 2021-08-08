@@ -3,6 +3,7 @@ package com.niran.psychoquiz
 import android.app.Application
 import com.niran.psychoquiz.database.AppDatabase
 import com.niran.psychoquiz.repositories.DatabaseLoaderRepository
+import com.niran.psychoquiz.repositories.QuestionRepository
 import com.niran.psychoquiz.repositories.QuizSettingRepository
 import com.niran.psychoquiz.repositories.WordRepository
 import kotlinx.coroutines.CoroutineScope
@@ -30,4 +31,6 @@ class PsychoQuizApplication : Application() {
     val databaseLoaderRepository: DatabaseLoaderRepository by lazy {
         DatabaseLoaderRepository(database.databaseLoaderDao())
     }
+
+    val questionRepository: QuestionRepository by lazy { QuestionRepository(database.questionDao()) }
 }

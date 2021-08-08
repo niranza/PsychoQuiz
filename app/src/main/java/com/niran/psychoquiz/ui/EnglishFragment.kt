@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.niran.psychoquiz.DISPLAY_ALL_WORDS_LIST
-import com.niran.psychoquiz.databinding.FragmentChooseLetterBinding
+import com.niran.psychoquiz.databinding.FragmentEnglishBinding
 import com.niran.psychoquiz.utils.adapters.LetterAdapter
 
-class ChooseLetterFragment : Fragment() {
+class EnglishFragment : Fragment() {
 
-    private var _binding: FragmentChooseLetterBinding? = null
+    private var _binding: FragmentEnglishBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,7 +21,7 @@ class ChooseLetterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentChooseLetterBinding.inflate(inflater)
+        _binding = FragmentEnglishBinding.inflate(inflater)
 
         return binding.root
     }
@@ -47,11 +47,11 @@ class ChooseLetterFragment : Fragment() {
     }
 
     private fun navigateToQuizFragment() = findNavController()
-        .navigate(ChooseLetterFragmentDirections.actionChooseLetterFragmentToQuizFragment())
+        .navigate(EnglishFragmentDirections.actionChooseLetterFragmentToQuizFragment(false))
 
     private fun navigateToWordListFragment(letter: String = DISPLAY_ALL_WORDS_LIST.toString()) =
         view?.findNavController()?.navigate(
-            ChooseLetterFragmentDirections.actionChooseLetterFragmentToWordListFragment(letter)
+            EnglishFragmentDirections.actionChooseLetterFragmentToWordListFragment(letter)
         )
 
     override fun onDestroyView() {

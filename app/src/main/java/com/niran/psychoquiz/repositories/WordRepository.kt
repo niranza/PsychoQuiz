@@ -5,13 +5,13 @@ import com.niran.psychoquiz.database.models.Word
 
 class WordRepository(private val wordDao: WordDao) {
 
-    suspend fun suspendedGetAllWords() = wordDao.suspendedGetAllWords()
+    suspend fun getAllWords() = wordDao.getAllWords()
 
-    suspend fun suspendedGetAllTranslations() = wordDao.suspendedGetAllTranslations()
+    suspend fun getAllTranslations() = wordDao.getAllTranslations()
 
-    fun getAllWords() = wordDao.getAllWords()
+    fun getAllWordsWithFlow() = wordDao.getAllWordsWithFlow()
 
-    fun getWordsByLetter(firstLetter: Char) = wordDao.getWordsByLetter(firstLetter)
+    fun getWordsByLetterWithFlow(firstLetter: Char) = wordDao.getWordsByLetterWithFlow(firstLetter)
 
     suspend fun insertWord(word: Word) = wordDao.insertWord(word)
 

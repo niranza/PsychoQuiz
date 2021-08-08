@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.QuizSettingsFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/settings_content_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp"
+        app:layout_constraintBottom_toTopOf="@id/restart_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="spread_inside">
+
+        <View
+            style="@style/DividerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/divider_margin"
+            android:layout_marginBottom="@dimen/divider_margin" />
+
+        <!--region WordFirstLetter Settings-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/choose_letter_tv"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose_letters"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/select_all_first_letter_cb"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/select_all_first_letter_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/choose_letter_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/word_first_letter_rv"
+            android:layout_width="match_parent"
+            android:layout_height="402dp"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/rv_padding"
+            android:paddingBottom="@dimen/rv_padding"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="4"
+            tools:itemCount="26"
+            tools:listitem="@layout/boolean_setting_item" />
+        <!--endregion WordFirstLetter Settings-->
+
+        <View
+            style="@style/DividerStyle"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/divider_margin"
+            android:layout_marginBottom="@dimen/divider_margin" />
+
+        <!--region WordType Settings-->
+        <TextView
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_word_types" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/word_type_rv"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            android:clipToPadding="false"
+            android:paddingTop="@dimen/rv_padding"
+            android:paddingBottom="@dimen/rv_padding"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:itemCount="4"
+            tools:listitem="@layout/boolean_setting_item" />
+        <!--endregion WordType Settings-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <Button
+        android:id="@+id/restart_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/rv_padding"
+        android:layout_marginEnd="@dimen/rv_padding"
+        android:text="@string/restart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/settings_content_layout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

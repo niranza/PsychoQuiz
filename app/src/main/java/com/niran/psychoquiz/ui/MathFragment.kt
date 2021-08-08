@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.niran.psychoquiz.databinding.FragmentHomeBinding
+import com.niran.psychoquiz.databinding.FragmentMathBinding
 
-class HomeFragment : Fragment() {
+class MathFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentMathBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,25 +18,28 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentHomeBinding.inflate(inflater)
+        _binding = FragmentMathBinding.inflate(inflater)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
-            englishBtn.setOnClickListener { navigateToEnglishFragment() }
-            mathBtn.setOnClickListener { navigateToMathFragment() }
+
+            multiplicationBtn.setOnClickListener { navigateToMultiplicationFragment() }
+            divisionBtn.setOnClickListener { }
+            powerBtn.setOnClickListener { }
+
         }
     }
 
-    private fun navigateToEnglishFragment() = view?.findNavController()
-        ?.navigate(HomeFragmentDirections.actionHomeFragmentToChooseLetterFragment())
-
-    private fun navigateToMathFragment() = view?.findNavController()
-        ?.navigate(HomeFragmentDirections.actionHomeFragmentToMathNavGraph())
+    private fun navigateToMultiplicationFragment() = view?.findNavController()?.navigate(
+        MathFragmentDirections
+            .actionMathFragmentToMultiplicationFragment(
+                IntArray(12) { i -> i + 1 },
+                IntArray(12) { i -> i + 1 }
+            ))
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -78,10 +78,10 @@ class WordListFragment : Fragment() {
         }
 
         if (displayAllWords)
-            viewModel.getAllWords().observe(viewLifecycleOwner) { wordList ->
+            viewModel.getAllWordsAsLiveData().observe(viewLifecycleOwner) { wordList ->
                 uiSafeLoadList(wordList) { wordAdapter.submitList(it.sortByType()) }
             }
-        else viewModel.getWordsByLetter(firstLetterChar)
+        else viewModel.getWordsByLetterAsLiveData(firstLetterChar)
             .observe(viewLifecycleOwner) { wordList ->
                 uiSafeLoadList(wordList) { wordAdapter.submitList(it.sortByType()) }
             }
@@ -111,13 +111,13 @@ class WordListFragment : Fragment() {
 
     private fun searchWord(query: String?) {
         if (displayAllWords)
-            viewModel.getAllWords().observe(viewLifecycleOwner) { wordList ->
+            viewModel.getAllWordsAsLiveData().observe(viewLifecycleOwner) { wordList ->
                 uiSafeLoadList(wordList) {
                     val searchedList = it.sortByType().filterWordListBySearchQuery(query)
                     wordAdapter.submitList(uiLoadSearchedList(searchedList))
                 }
             }
-        else viewModel.getWordsByLetter(firstLetterChar)
+        else viewModel.getWordsByLetterAsLiveData(firstLetterChar)
             .observe(viewLifecycleOwner) { wordList ->
                 uiSafeLoadList(wordList) {
                     val searchedList = it.sortByType().filterWordListBySearchQuery(query)

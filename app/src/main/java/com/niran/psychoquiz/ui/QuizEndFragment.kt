@@ -6,11 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.niran.psychoquiz.databinding.FragmentHomeBinding
+import com.niran.psychoquiz.databinding.FragmentQuizEndBinding
 
-class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+class QuizEndFragment : Fragment() {
+
+    private var _binding: FragmentQuizEndBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,25 +19,22 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentHomeBinding.inflate(inflater)
+        _binding = FragmentQuizEndBinding.inflate(inflater)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
-            englishBtn.setOnClickListener { navigateToEnglishFragment() }
-            mathBtn.setOnClickListener { navigateToMathFragment() }
+
+            restartBtn.setOnClickListener { navigateToQuizFragment() }
+
         }
     }
 
-    private fun navigateToEnglishFragment() = view?.findNavController()
-        ?.navigate(HomeFragmentDirections.actionHomeFragmentToChooseLetterFragment())
-
-    private fun navigateToMathFragment() = view?.findNavController()
-        ?.navigate(HomeFragmentDirections.actionHomeFragmentToMathNavGraph())
+    private fun navigateToQuizFragment() = view?.findNavController()
+        ?.navigate(QuizEndFragmentDirections.actionQuizEndFragmentToQuizFragment(true))
 
     override fun onDestroyView() {
         super.onDestroyView()

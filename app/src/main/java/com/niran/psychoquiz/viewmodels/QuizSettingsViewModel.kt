@@ -4,22 +4,25 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
+import com.niran.psychoquiz.database.models.settings.superclasses.BooleanSetting
 import com.niran.psychoquiz.repositories.QuizSettingRepository
 import kotlinx.coroutines.launch
+import kotlin.reflect.KClass
 
 class QuizSettingsViewModel(private val settingRepository: QuizSettingRepository) : ViewModel() {
 
-    fun getAllWordFirstLettersSettings() =
-        settingRepository.getAllWordFirstLetterSettings().asLiveData()
+    fun insertBooleanSetting(booleanSetting: BooleanSetting) = viewModelScope.launch {
+        settingRepository.insertBooleanSetting(booleanSetting)
+    }
 
-    fun insertFirstLetterSetting(id: Int, value: Boolean) =
-        viewModelScope.launch { settingRepository.insertWordFirstLetterSetting(id, value) }
+    fun getAllWordFirstLettersSettingsAsLiveData() =
+        settingRepository.getAllWordFirstLetterSettingsWithFlow().asLiveData()
 
-    fun getAllWordTypeSettings() = settingRepository.getAllWordTypeSettings().asLiveData()
+    fun getAllWordTypeSettingsAsLiveData() =
+        settingRepository.getAllWordTypeSettingsWithFlow().asLiveData()
 
-    fun insertWordTypeSetting(id: Int, value: Boolean) =
-        viewModelScope.launch { settingRepository.insertWordTypeSetting(id, value) }
-
+    fun <T : BooleanSetting> selectAllSettings(clazz: KClass<T>, value: Boolean) =
+        viewModelScope.launch { settingRepository.selectAllSettings(clazz, value) }
 }
 
 class QuizSettingsViewModelFactory(

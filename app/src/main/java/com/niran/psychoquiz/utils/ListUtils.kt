@@ -1,5 +1,6 @@
 package com.niran.psychoquiz.utils
 
+import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
 
 //region WordListUtils
@@ -31,6 +32,10 @@ fun List<Word>.filterByWordChar(vararg wordChars: Char): List<Word> {
                 break;
             }
     return result
+}
+
+fun MutableList<Word>.removeQuestions(questionList: List<Question>) {
+    for (question in questionList) removeAll { question.wordId == it.wordId }
 }
 //endregion WordListUtils
 

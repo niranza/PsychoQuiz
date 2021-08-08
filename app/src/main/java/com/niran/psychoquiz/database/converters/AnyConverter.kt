@@ -3,7 +3,7 @@ package com.niran.psychoquiz.database.converters
 import androidx.room.TypeConverter
 import com.niran.psychoquiz.AnyTypes
 
-class SettingConverter {
+class AnyConverter {
 
     @TypeConverter
     fun fromAny(any: Any): String =
@@ -21,11 +21,9 @@ class SettingConverter {
         return when (AnyTypes.values()[splitList[0].toInt()]) {
             AnyTypes.BOOLEAN -> splitList[1].toBoolean()
             AnyTypes.INT -> splitList[1].toInt()
-            AnyTypes.STRING -> {
-                with(splitList) {
-                    removeAt(0)
-                    splitList.joinToString(REGEX)
-                }
+            AnyTypes.STRING -> with(splitList) {
+                removeAt(0)
+                splitList.joinToString(REGEX)
             }
             AnyTypes.DOUBLE -> splitList[1].toDouble()
         }
