@@ -3,35 +3,41 @@ package com.niran.psychoquiz.ui
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.niran.psychoquiz.LoadingState
+import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
-import com.niran.psychoquiz.databinding.FragmentMultiplicationBinding
+import com.niran.psychoquiz.databinding.FragmentMathQuizBinding
 import com.niran.psychoquiz.utils.AppUtils
-import com.niran.psychoquiz.viewmodels.MultiplicationViewModel
+import com.niran.psychoquiz.utils.enums.LoadingState
+import com.niran.psychoquiz.utils.enums.MathType
+import com.niran.psychoquiz.viewmodels.MathQuizViewModel
+import com.niran.psychoquiz.viewmodels.MathQuizViewModelFactory
 
 
-class MultiplicationFragment : Fragment() {
+class MathQuizFragment : Fragment() {
 
-    private var _binding: FragmentMultiplicationBinding? = null
+    private var _binding: FragmentMathQuizBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MultiplicationViewModel by viewModels()
+    private val viewModel: MathQuizViewModel by viewModels {
+        MathQuizViewModelFactory((activity?.application as PsychoQuizApplication).mathQuizSettingRepository)
+    }
 
-    private val navArgs: MultiplicationFragmentArgs by navArgs()
+    private val navArgs: MathQuizFragmentArgs by navArgs()
+
+    private val currentMathType get() = MathType.values()[navArgs.mathType]
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        _binding = FragmentMultiplicationBinding.inflate(inflater)
+        _binding = FragmentMathQuizBinding.inflate(inflater)
 
         setHasOptionsMenu(true)
 
@@ -44,23 +50,15 @@ class MultiplicationFragment : Fragment() {
         viewModel.loadingState.observe(viewLifecycleOwner) { loadingState ->
             loadingState?.let {
                 when (it) {
-                    LoadingState.LOADING -> {
-                        viewModel.outputOneArray = navArgs.outputOneArray
-                        Log.d(
-                            "TAG",
-                            "initialized outputOneArray with size: ${navArgs.outputOneArray.size}"
-                        )
-                        viewModel.outputTwoArray = navArgs.outputTwoArray
-                        Log.d(
-                            "TAG",
-                            "initialized outputTwoArray with size: ${navArgs.outputTwoArray.size}"
-                        )
-                        viewModel.restart()
-                    }
+                    LoadingState.LOADING -> viewModel.loadGame(currentMathType)
                     LoadingState.SUCCESS -> bind()
                     LoadingState.ERROR -> {
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_LONG).show()
-                        navigateToMultiplicationSettingsFragment()
+                        Toast.makeText(
+                            requireContext(),
+                            getString(R.string.error_message, it.message),
+                            Toast.LENGTH_LONG
+                        ).show()
+                        navigateToMathQuizSettingsFragment()
                     }
                 }
             }
@@ -68,6 +66,8 @@ class MultiplicationFragment : Fragment() {
     }
 
     private fun bind() = binding.apply {
+
+        symbolTv.text = currentMathType.symbol
 
         root.setOnClickListener {
             hideKeyBoard()
@@ -91,12 +91,13 @@ class MultiplicationFragment : Fragment() {
             override fun afterTextChanged(s: Editable?) {
                 s?.let {
                     if (it.isBlank()) return
-                    viewModel.validateAnswer(it.toString().toInt()).also { correctAnswer ->
-                        if (correctAnswer) {
-                            inputEt.text.clear()
-                            viewModel.restart()
+                    viewModel.validateAnswer(currentMathType, it.toString().toInt())
+                        .also { correctAnswer ->
+                            if (correctAnswer) {
+                                inputEt.text.clear()
+                                viewModel.loadNewMathQuestion(currentMathType)
+                            }
                         }
-                    }
                 }
             }
         })
@@ -117,7 +118,7 @@ class MultiplicationFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
             R.id.settings_item -> {
-                navigateToMultiplicationSettingsFragment()
+                navigateToMathQuizSettingsFragment()
                 true
             }
             android.R.id.home -> {
@@ -127,8 +128,9 @@ class MultiplicationFragment : Fragment() {
             else -> true
         }
 
-    private fun navigateToMultiplicationSettingsFragment() = view?.findNavController()?.navigate(
-        MultiplicationFragmentDirections.actionMultiplicationFragmentToMultiplicationSettingsFragment()
+    private fun navigateToMathQuizSettingsFragment() = view?.findNavController()?.navigate(
+        MathQuizFragmentDirections
+            .actionMathQuizFragmentToMathQuizSettingsFragment(currentMathType.ordinal)
     )
 
     private fun hideKeyBoard() = AppUtils.hideKeyBoard(requireActivity())

@@ -8,12 +8,12 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
-import com.niran.psychoquiz.LoadingState
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.databinding.FragmentQuizBinding
 import com.niran.psychoquiz.utils.UiUtil
+import com.niran.psychoquiz.utils.enums.LoadingState
 import com.niran.psychoquiz.viewmodels.QuizViewModel
 import com.niran.psychoquiz.viewmodels.QuizViewModelFactory
 import kotlinx.coroutines.delay
@@ -27,7 +27,7 @@ class QuizFragment : Fragment() {
     private val viewModel: QuizViewModel by viewModels {
         QuizViewModelFactory(
             (activity?.application as PsychoQuizApplication).wordRepository,
-            (activity?.application as PsychoQuizApplication).settingRepository,
+            (activity?.application as PsychoQuizApplication).quizSettingRepository,
             (activity?.application as PsychoQuizApplication).questionRepository,
         )
     }
@@ -38,7 +38,7 @@ class QuizFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentQuizBinding.inflate(inflater)
 

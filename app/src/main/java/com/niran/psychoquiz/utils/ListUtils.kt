@@ -8,8 +8,10 @@ fun List<Word>.sortByType() = sortedBy { it.wordType }
 
 fun List<Word>.filterWordListBySearchQuery(searchQuery: String?) =
     filter {
-        it.wordText.contains(searchQuery ?: "", true)
-                || it.wordTranslation.contains(searchQuery ?: "", true)
+        it.wordText.replace("\\s".toRegex(), "")
+            .contains(searchQuery ?: "", true)
+                || it.wordTranslation.replace("\\s".toRegex(), "")
+            .contains(searchQuery ?: "", true)
     }
 
 fun List<Word>.filterByWordTypes(vararg foodTypes: Int): List<Word> {

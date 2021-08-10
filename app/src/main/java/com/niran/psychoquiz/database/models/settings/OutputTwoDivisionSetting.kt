@@ -3,11 +3,10 @@ package com.niran.psychoquiz.database.models.settings
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.settings.superclasses.BooleanSetting
 
-@Entity(tableName = "word_type_setting_table")
-data class WordTypeSetting(
+@Entity(tableName = "output_two_division_setting_table")
+data class OutputTwoDivisionSetting(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "setting_id")
@@ -20,16 +19,16 @@ data class WordTypeSetting(
     override var settingKey: Int = -1,
 
     @ColumnInfo(name = "setting_name")
-    override val settingName: String = Word.Types.values()[settingKey].name.lowercase()
+    override val settingName: String = settingKey.toString()
 ) : BooleanSetting() {
 
     object Constant : SettingConstant {
 
-        val defaultSettingValList = List(Word.Types.values().size) { i ->
-            i == Word.Types.NEUTRAL.ordinal
-        }
+        override val keyList = (OUTPUT_TWO_MIN_NUMBER..OUTPUT_TWO_MAX_NUMBER).toList()
+    }
 
-        override val keyList =
-            List(Word.Types.values().size) { i -> Word.Types.values()[i].ordinal }
+    companion object {
+        const val OUTPUT_TWO_MIN_NUMBER = 1
+        const val OUTPUT_TWO_MAX_NUMBER = 10
     }
 }

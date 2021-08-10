@@ -1,12 +1,13 @@
 package com.niran.psychoquiz.viewmodels
 
 import androidx.lifecycle.*
-import com.niran.psychoquiz.LoadingState
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
+import com.niran.psychoquiz.database.models.settings.superclasses.getAllValid
 import com.niran.psychoquiz.repositories.QuestionRepository
 import com.niran.psychoquiz.repositories.QuizSettingRepository
 import com.niran.psychoquiz.repositories.WordRepository
+import com.niran.psychoquiz.utils.enums.LoadingState
 import com.niran.psychoquiz.utils.filterByWordChar
 import com.niran.psychoquiz.utils.filterByWordTypes
 import com.niran.psychoquiz.utils.removeQuestions
@@ -59,16 +60,12 @@ class QuizViewModel(
 
     private suspend fun getFirstLetterList(): CharArray =
         withContext(Dispatchers.IO) {
-            Word.FirstLetter.getAllValid(
-                quizSettingRepository.getAllWordFirstLetterSettings()
-            ).toCharArray()
+            quizSettingRepository.getAllWordFirstLetterSettings().getAllValid<Char>().toCharArray()
         }
 
     private suspend fun getWordTypeList(): IntArray =
         withContext(Dispatchers.IO) {
-            Word.Types.UNKNOWN.getAllValid(
-                quizSettingRepository.getAllWordTypeSettings()
-            ).toIntArray()
+            quizSettingRepository.getAllWordTypeSettings().getAllValid<Int>().toIntArray()
         }
 
     private suspend fun loadWordList(wordFirstLetters: CharArray, wordTypes: IntArray) =

@@ -9,30 +9,30 @@ import com.niran.psychoquiz.repositories.QuizSettingRepository
 import kotlinx.coroutines.launch
 import kotlin.reflect.KClass
 
-class QuizSettingsViewModel(private val settingRepository: QuizSettingRepository) : ViewModel() {
+class QuizSettingsViewModel(private val repository: QuizSettingRepository) : ViewModel() {
 
     fun insertBooleanSetting(booleanSetting: BooleanSetting) = viewModelScope.launch {
-        settingRepository.insertBooleanSetting(booleanSetting)
+        repository.insertBooleanSetting(booleanSetting)
     }
 
     fun getAllWordFirstLettersSettingsAsLiveData() =
-        settingRepository.getAllWordFirstLetterSettingsWithFlow().asLiveData()
+        repository.getAllWordFirstLetterSettingsWithFlow().asLiveData()
 
     fun getAllWordTypeSettingsAsLiveData() =
-        settingRepository.getAllWordTypeSettingsWithFlow().asLiveData()
+        repository.getAllWordTypeSettingsWithFlow().asLiveData()
 
     fun <T : BooleanSetting> selectAllSettings(clazz: KClass<T>, value: Boolean) =
-        viewModelScope.launch { settingRepository.selectAllSettings(clazz, value) }
+        viewModelScope.launch { repository.selectAllSettings(clazz, value) }
 }
 
 class QuizSettingsViewModelFactory(
-    private val quizSettingRepository: QuizSettingRepository
+    private val repository: QuizSettingRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(QuizSettingsViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return QuizSettingsViewModel(quizSettingRepository) as T
+            return QuizSettingsViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }

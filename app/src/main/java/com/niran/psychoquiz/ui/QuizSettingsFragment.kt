@@ -7,7 +7,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
-import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.database.models.settings.WordTypeSetting
 import com.niran.psychoquiz.database.models.settings.superclasses.BooleanSetting
@@ -24,7 +23,7 @@ class QuizSettingsFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: QuizSettingsViewModel by viewModels {
-        QuizSettingsViewModelFactory((activity?.application as PsychoQuizApplication).settingRepository)
+        QuizSettingsViewModelFactory((activity?.application as PsychoQuizApplication).quizSettingRepository)
     }
 
     private var originalStateWordFirstLetterList = listOf<WordFirstLetterSetting>()
@@ -38,7 +37,7 @@ class QuizSettingsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentQuizSettingsBinding.inflate(inflater)
 
@@ -51,35 +50,38 @@ class QuizSettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-            val wordFirstLetterAdapter = BooleanSettingAdapter(Word.FirstLetter.getNames(),
-                object : BooleanSettingAdapter.BooleanSettingClickHandler {
-                    override fun onCheckBoxClick(
-                        booleanSetting: BooleanSetting
-                    ) {
-                        val newBooleanSetting = (booleanSetting as WordFirstLetterSetting)
-                            .copy(settingValue = !booleanSetting.settingValue)
-                        viewModel.insertBooleanSetting(newBooleanSetting)
-                    }
-                })
+            val wordFirstLetterAdapter =
+                BooleanSettingAdapter(
+                    object : BooleanSettingAdapter.BooleanSettingClickHandler {
+                        override fun onCheckBoxClick(
+                            booleanSetting: BooleanSetting
+                        ) {
+                            (booleanSetting as WordFirstLetterSetting).apply {
+                                viewModel.insertBooleanSetting(copy(settingValue = !settingValue))
+                            }
+                        }
+                    })
 
-            selectAllFirstLetterCb.apply {
-                isChecked = allSettingsSelected(currentStateWordFirstLetterList)
-
-                setOnCheckedChangeListener { _, isChecked ->
-                    viewModel.selectAllSettings(WordFirstLetterSetting::class, isChecked)
-                }
+            selectAllFirstLetterCb.setOnCheckedChangeListener { _, isChecked ->
+                viewModel.selectAllSettings(WordFirstLetterSetting::class, isChecked)
             }
 
-            val wordTypeAdapter = BooleanSettingAdapter(Word.Types.UNKNOWN.getNames(),
+
+            val wordTypeAdapter = BooleanSettingAdapter(
                 object : BooleanSettingAdapter.BooleanSettingClickHandler {
                     override fun onCheckBoxClick(
                         booleanSetting: BooleanSetting
                     ) {
-                        val newBooleanSetting = (booleanSetting as WordTypeSetting)
-                            .copy(settingValue = !booleanSetting.settingValue)
-                        viewModel.insertBooleanSetting(newBooleanSetting)
+                        (booleanSetting as WordTypeSetting).apply {
+                            viewModel.insertBooleanSetting(copy(settingValue = !settingValue))
+                        }
                     }
                 })
+
+            selectAllWordTypeCb.setOnCheckedChangeListener { _, isChecked ->
+                viewModel.selectAllSettings(WordTypeSetting::class, isChecked)
+            }
+
 
             restartBtn.setOnClickListener { navigateToQuizFragment(true) }
 
@@ -108,11 +110,6 @@ class QuizSettingsFragment : Fragment() {
                     }, init = { list -> originalStateWordTypeList = list })
 
         }
-    }
-
-    private fun allSettingsSelected(settingList: List<BooleanSetting>): Boolean {
-        for (setting in settingList) if (!setting.settingValue) return false
-        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =

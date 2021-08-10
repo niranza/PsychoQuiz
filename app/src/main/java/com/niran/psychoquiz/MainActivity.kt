@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setTheme(R.style.Theme_PsychoQuiz)
+        supportActionBar?.hide()
         setContentView(R.layout.splash_screen)
         viewModel.initViewModel()
 
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun startMainActivity() {
         setContentView(R.layout.activity_main)
+        supportActionBar?.show()
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment

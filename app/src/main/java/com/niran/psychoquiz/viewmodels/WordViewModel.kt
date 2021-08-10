@@ -9,20 +9,20 @@ import com.niran.psychoquiz.repositories.WordRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class WordViewModel(private val wordRepository: WordRepository) : ViewModel() {
+class WordViewModel(private val repository: WordRepository) : ViewModel() {
 
-    fun getAllWordsAsLiveData() = wordRepository.getAllWordsWithFlow().asLiveData()
+    fun getAllWordsAsLiveData() = repository.getAllWordsWithFlow().asLiveData()
 
     fun getWordsByLetterAsLiveData(firstLetter: Char) =
-        wordRepository.getWordsByLetterWithFlow(firstLetter).asLiveData()
+        repository.getWordsByLetterWithFlow(firstLetter).asLiveData()
 
     fun customUpdateWord(word: Word, wordType: Word.Types) = viewModelScope.launch {
         val newType =
             if (word.wordType == wordType.ordinal) Word.Types.NEUTRAL
             else wordType
-        wordRepository.deleteWord(word)
+        repository.deleteWord(word)
         delay(DELAY_TIME)
-        wordRepository.insertWord(word.copy(wordType = newType.ordinal))
+        repository.insertWord(word.copy(wordType = newType.ordinal))
     }
 
     companion object {
@@ -31,12 +31,12 @@ class WordViewModel(private val wordRepository: WordRepository) : ViewModel() {
 
 }
 
-class WordViewModelFactory(private val wordRepository: WordRepository) : ViewModelProvider.Factory {
+class WordViewModelFactory(private val repository: WordRepository) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(WordViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
-            return WordViewModel(wordRepository) as T
+            return WordViewModel(repository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel Class")
     }

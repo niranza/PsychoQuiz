@@ -16,8 +16,7 @@ import com.niran.psychoquiz.database.daos.WordDao
 import com.niran.psychoquiz.database.models.DatabaseLoader
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
-import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
-import com.niran.psychoquiz.database.models.settings.WordTypeSetting
+import com.niran.psychoquiz.database.models.settings.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.delay
@@ -30,6 +29,11 @@ import kotlinx.coroutines.launch
         Word::class,
         WordFirstLetterSetting::class,
         WordTypeSetting::class,
+        OutputOneMultiplicationSetting::class,
+        OutputOneDivisionSetting::class,
+        OutputOnePowerSetting::class,
+        OutputTwoMultiplicationSetting::class,
+        OutputTwoDivisionSetting::class,
         DatabaseLoader::class,
         Question::class
     ],
@@ -132,24 +136,71 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateSettingTable(settingDao: SettingDao) {
+            populateWordFirstLetterSetting(settingDao)
+            populateWordTypeSetting(settingDao)
+            populateMultiplicationSetting(settingDao)
+            populateDivisionSetting(settingDao)
+            populatePowerSetting(settingDao)
+        }
 
-            //region WordFirstLetter Setting
+        //region Populating Settings
+        private suspend fun populateWordFirstLetterSetting(settingDao: SettingDao) {
             settingDao.deleteAllWordFirstLetterSettings()
 
-            for (i in Word.FirstLetter.keyList.indices) settingDao.insertWordFirstLetterSetting(
-                WordFirstLetterSetting(i, Word.FirstLetter.defaultSettingVal)
-            )
-            //endregion WordFirstLetter Setting
+            for (i in WordFirstLetterSetting.Constant.keyList.indices)
+                settingDao.insertWordFirstLetterSetting(
+                    WordFirstLetterSetting(settingKey = WordFirstLetterSetting.Constant.keyList[i])
+                )
+        }
 
-            //region WordType Setting
+        private suspend fun populateWordTypeSetting(settingDao: SettingDao) {
             settingDao.deleteAllWordTypeSettings()
 
-            for (setting in Word.Types.values()) settingDao.insertWordTypeSetting(
-                WordTypeSetting(setting.ordinal, setting.defaultSettingVal)
+            for (i in WordTypeSetting.Constant.keyList.indices) settingDao.insertWordTypeSetting(
+                WordTypeSetting(
+                    settingValue = WordTypeSetting.Constant.defaultSettingValList[i],
+                    settingKey = WordTypeSetting.Constant.keyList[i]
+                )
             )
-            //endregion WordType Setting
-
         }
+
+        private suspend fun populateMultiplicationSetting(settingDao: SettingDao) {
+            settingDao.deleteAllOutputOneMultiplicationSettings()
+            settingDao.deleteAllOutputTwoMultiplicationSettings()
+
+            for (i in OutputOneMultiplicationSetting.Constant.keyList.indices)
+                settingDao.insertOutputOneMultiplicationSetting(
+                    OutputOneMultiplicationSetting(settingKey = OutputOneMultiplicationSetting.Constant.keyList[i])
+                )
+            for (i in OutputTwoMultiplicationSetting.Constant.keyList.indices)
+                settingDao.insertOutputTwoMultiplicationSetting(
+                    OutputTwoMultiplicationSetting(settingKey = OutputTwoMultiplicationSetting.Constant.keyList[i])
+                )
+        }
+
+        private suspend fun populateDivisionSetting(settingDao: SettingDao) {
+            settingDao.deleteAllOutputOneDivisionSettings()
+            settingDao.deleteAllOutputTwoDivisionSettings()
+
+            for (i in OutputOneDivisionSetting.Constant.keyList.indices)
+                settingDao.insertOutputOneDivisionSetting(
+                    OutputOneDivisionSetting(settingKey = OutputOneDivisionSetting.Constant.keyList[i])
+                )
+            for (i in OutputTwoDivisionSetting.Constant.keyList.indices)
+                settingDao.insertOutputTwoDivisionSetting(
+                    OutputTwoDivisionSetting(settingKey = OutputTwoDivisionSetting.Constant.keyList[i])
+                )
+        }
+
+        private suspend fun populatePowerSetting(settingDao: SettingDao) {
+            settingDao.deleteAllOutputOnePowerSettings()
+
+            for (i in OutputOnePowerSetting.Constant.keyList.indices)
+                settingDao.insertOutputOnePowerSetting(
+                    OutputOnePowerSetting(settingKey = OutputOnePowerSetting.Constant.keyList[i])
+                )
+        }
+        //endregion Populating Settings
 
         private suspend fun finishLoad(databaseLoaderDao: DatabaseLoaderDao) =
             databaseLoaderDao.insertDatabaseLoader(DatabaseLoader(isLoaded = true))
@@ -171,19 +222,16 @@ abstract class AppDatabase : RoomDatabase() {
             context: Context,
             scope: CoroutineScope,
             onFinishedLoading: () -> Unit
-        ): AppDatabase =
-            INSTANCE ?: synchronized(this) {
-                Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "app_database"
-                )
-                    .fallbackToDestructiveMigration()
-                    .fallbackToDestructiveMigrationOnDowngrade()
-                    .addCallback(RoomCallBack(context, scope, onFinishedLoading))
-                    .build().also { INSTANCE = it }
-            }
-
+        ): AppDatabase = INSTANCE ?: synchronized(this) {
+            Room.databaseBuilder(
+                context.applicationContext,
+                AppDatabase::class.java,
+                "app_database"
+            )
+                .fallbackToDestructiveMigration()
+                .fallbackToDestructiveMigrationOnDowngrade()
+                .addCallback(RoomCallBack(context, scope, onFinishedLoading))
+                .build().also { INSTANCE = it }
+        }
     }
-
 }

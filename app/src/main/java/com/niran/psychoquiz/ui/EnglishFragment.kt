@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
-import com.niran.psychoquiz.DISPLAY_ALL_WORDS_LIST
 import com.niran.psychoquiz.databinding.FragmentEnglishBinding
+import com.niran.psychoquiz.ui.WordListFragment.Companion.DISPLAY_ALL_WORDS_LIST
 import com.niran.psychoquiz.utils.adapters.LetterAdapter
 
 class EnglishFragment : Fragment() {
@@ -19,7 +19,7 @@ class EnglishFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentEnglishBinding.inflate(inflater)
 

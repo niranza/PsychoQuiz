@@ -3,13 +3,13 @@ package com.niran.psychoquiz.utils.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.niran.psychoquiz.database.models.Word
+import com.niran.psychoquiz.database.models.settings.WordFirstLetterSetting
 import com.niran.psychoquiz.databinding.LetterItemBinding
 
 class LetterAdapter(private val letterClickHandler: LetterClickHandler) :
     RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
-    private val alphabets = Word.FirstLetter.keyList
+    private val alphabets = WordFirstLetterSetting.Constant.keyList
 
     class LetterViewHolder private constructor(
         private val binding: LetterItemBinding,

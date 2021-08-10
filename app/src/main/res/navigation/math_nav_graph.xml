@@ -11,33 +11,33 @@
         android:label="@string/app_name"
         tools:layout="@layout/fragment_math" >
         <action
-            android:id="@+id/action_mathFragment_to_multiplicationFragment"
-            app:destination="@id/multiplicationFragment" />
+            android:id="@+id/action_mathFragment_to_mathQuizFragment"
+            app:destination="@id/mathQuizFragment" />
     </fragment>
     <fragment
-        android:id="@+id/multiplicationFragment"
-        android:name="com.niran.psychoquiz.ui.MultiplicationFragment"
+        android:id="@+id/mathQuizFragment"
+        android:name="com.niran.psychoquiz.ui.MathQuizFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_multiplication" >
+        tools:layout="@layout/fragment_math_quiz" >
         <action
-            android:id="@+id/action_multiplicationFragment_to_multiplicationSettingsFragment"
-            app:destination="@id/multiplicationSettingsFragment" />
+            android:id="@+id/action_mathQuizFragment_to_mathQuizSettingsFragment"
+            app:destination="@id/mathQuizSettingsFragment" />
         <argument
-            android:name="outputOneArray"
-            app:argType="integer[]" />
-        <argument
-            android:name="outputTwoArray"
-            app:argType="integer[]" />
+            android:name="mathType"
+            app:argType="integer" />
     </fragment>
     <fragment
-        android:id="@+id/multiplicationSettingsFragment"
-        android:name="com.niran.psychoquiz.ui.MultiplicationSettingsFragment"
+        android:id="@+id/mathQuizSettingsFragment"
+        android:name="com.niran.psychoquiz.ui.MathQuizSettingsFragment"
         android:label="@string/settings"
-        tools:layout="@layout/fragment_multiplication_settings">
+        tools:layout="@layout/fragment_math_quiz_settings">
         <action
-            android:id="@+id/action_multiplicationSettingsFragment_to_multiplicationFragment"
-            app:destination="@id/multiplicationFragment"
-            app:popUpTo="@id/multiplicationFragment"
+            android:id="@+id/action_mathQuizSettingsFragment_to_mathQuizFragment"
+            app:destination="@id/mathQuizFragment"
+            app:popUpTo="@id/mathQuizFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="mathType"
+            app:argType="integer" />
     </fragment>
 </navigation>

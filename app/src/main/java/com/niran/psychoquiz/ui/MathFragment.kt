@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.niran.psychoquiz.databinding.FragmentMathBinding
+import com.niran.psychoquiz.utils.enums.MathType
 
 class MathFragment : Fragment() {
 
@@ -16,7 +17,7 @@ class MathFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentMathBinding.inflate(inflater)
 
@@ -27,19 +28,18 @@ class MathFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-            multiplicationBtn.setOnClickListener { navigateToMultiplicationFragment() }
-            divisionBtn.setOnClickListener { }
-            powerBtn.setOnClickListener { }
-
+            multiplicationBtn.setOnClickListener {
+                navigateToMathQuizFragment(MathType.MULTIPLICATION)
+            }
+            divisionBtn.setOnClickListener {
+                navigateToMathQuizFragment(MathType.DIVISION)
+            }
+            powerBtn.setOnClickListener { navigateToMathQuizFragment(MathType.POWER) }
         }
     }
 
-    private fun navigateToMultiplicationFragment() = view?.findNavController()?.navigate(
-        MathFragmentDirections
-            .actionMathFragmentToMultiplicationFragment(
-                IntArray(12) { i -> i + 1 },
-                IntArray(12) { i -> i + 1 }
-            ))
+    private fun navigateToMathQuizFragment(mathType: MathType) = view?.findNavController()
+        ?.navigate(MathFragmentDirections.actionMathFragmentToMathQuizFragment(mathType.ordinal))
 
     override fun onDestroyView() {
         super.onDestroyView()

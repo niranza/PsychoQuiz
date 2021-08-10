@@ -1,19 +1,25 @@
 package com.niran.psychoquiz.database.models.settings.superclasses
 
-abstract class BooleanSetting(
+abstract class BooleanSetting {
 
-    open val settingId: Int,
+    abstract val settingId: Int
 
-    open var settingValue: Boolean,
-) {
-    interface Interface {
+    abstract var settingValue: Boolean
 
-        val defaultSettingVal: Boolean
+    abstract val settingKey: Any
+
+    abstract val settingName: String
+
+    interface SettingConstant {
 
         val keyList: List<Any>
-
-        fun getAllValid(booleanSettings: List<BooleanSetting>): List<Any>
-
-        fun getNames(): List<String>
     }
+}
+
+fun <T> List<BooleanSetting>.getAllValid(): List<T> = mutableListOf<T>().also {
+    for (setting in this)
+        if (setting.settingValue) {
+            @Suppress("UNCHECKED_CAST")
+            it.add(setting.settingKey as T)
+        }
 }

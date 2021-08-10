@@ -6,7 +6,6 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import com.niran.psychoquiz.DISPLAY_ALL_WORDS_LIST
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.models.Word
@@ -38,7 +37,7 @@ class WordListFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentWordListBinding.inflate(inflater)
 
@@ -126,14 +125,13 @@ class WordListFragment : Fragment() {
             }
     }
 
-    private fun uiLoadSearchedList(searchedWordList: List<Word>): List<Word> =
-        with(binding) {
+    private fun uiLoadSearchedList(searchedWordList: List<Word>): List<Word> = with(binding) {
 
-            if (searchedWordList.isEmpty()) noResultTv.visibility = View.VISIBLE
-            else noResultTv.visibility = View.GONE
+        if (searchedWordList.isEmpty()) noResultTv.visibility = View.VISIBLE
+        else noResultTv.visibility = View.GONE
 
-            searchedWordList
-        }
+        searchedWordList
+    }
 
 
     private fun uiSafeLoadList(
@@ -149,10 +147,14 @@ class WordListFragment : Fragment() {
                 }
             }
         }
-    
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val DISPLAY_ALL_WORDS_LIST = '0'
     }
 }
 

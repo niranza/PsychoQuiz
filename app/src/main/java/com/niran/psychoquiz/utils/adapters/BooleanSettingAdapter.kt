@@ -9,7 +9,6 @@ import com.niran.psychoquiz.database.models.settings.superclasses.BooleanSetting
 import com.niran.psychoquiz.databinding.BooleanSettingItemBinding
 
 class BooleanSettingAdapter(
-    private val keyList: List<String>,
     private val booleanSettingClickHandler: BooleanSettingClickHandler
 ) : ListAdapter<BooleanSetting, BooleanSettingAdapter.BooleanSettingViewHolder>(
     BooleanSettingCallBack
@@ -17,13 +16,12 @@ class BooleanSettingAdapter(
 
     class BooleanSettingViewHolder private constructor(
         private val binding: BooleanSettingItemBinding,
-        private val keyList: List<String>,
         private val booleanSettingClickHandler: BooleanSettingClickHandler
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(booleanSetting: BooleanSetting, position: Int) {
+        fun bind(booleanSetting: BooleanSetting) {
             binding.apply {
-                keyTv.text = keyList[position]
+                keyTv.text = booleanSetting.settingName
                 valueCb.apply {
                     isChecked = booleanSetting.settingValue
                     setOnClickListener {
@@ -36,12 +34,11 @@ class BooleanSettingAdapter(
         companion object {
             fun create(
                 parent: ViewGroup,
-                keyList: List<String>,
                 booleanSettingClickHandler: BooleanSettingClickHandler
             ): BooleanSettingViewHolder {
                 val binding = BooleanSettingItemBinding
                     .inflate(LayoutInflater.from(parent.context), parent, false)
-                return BooleanSettingViewHolder(binding, keyList, booleanSettingClickHandler)
+                return BooleanSettingViewHolder(binding, booleanSettingClickHandler)
             }
         }
     }
@@ -54,11 +51,11 @@ class BooleanSettingAdapter(
         parent: ViewGroup,
         viewType: Int
     ): BooleanSettingViewHolder {
-        return BooleanSettingViewHolder.create(parent, keyList, booleanSettingClickHandler)
+        return BooleanSettingViewHolder.create(parent, booleanSettingClickHandler)
     }
 
     override fun onBindViewHolder(holder: BooleanSettingViewHolder, position: Int) {
-        holder.bind(getItem(position), position)
+        holder.bind(getItem(position))
     }
 
     object BooleanSettingCallBack : DiffUtil.ItemCallback<BooleanSetting>() {
