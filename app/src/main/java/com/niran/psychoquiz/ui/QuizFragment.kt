@@ -1,5 +1,6 @@
 package com.niran.psychoquiz.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -33,7 +34,11 @@ class QuizFragment : Fragment() {
     }
 
     private val navArgs: QuizFragmentArgs by navArgs()
-    private var reloadQuiz = true
+    private var reloadQuiz = true //initialized in onCreateView
+
+    private var wrongAnswerCount = 0
+
+    private var bindOnce = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,13 +62,15 @@ class QuizFragment : Fragment() {
                 loadingState?.let {
                     when (it) {
                         LoadingState.LOADING -> {
-                            viewModel.reloadQuiz = reloadQuiz
-                            loadingPb.visibility = View.VISIBLE
                             quizLayout.visibility = View.GONE
+                            refreshLayout.isRefreshing = true
+                            viewModel.loadGame(reloadQuiz)
                         }
                         LoadingState.SUCCESS -> {
+                            reloadQuiz = true
+                            if (bindOnce) bindOnce()
                             bind()
-                            loadingPb.visibility = View.GONE
+                            refreshLayout.isRefreshing = false
                             quizLayout.visibility = View.VISIBLE
                         }
                         LoadingState.ERROR -> {
@@ -81,14 +88,19 @@ class QuizFragment : Fragment() {
     }
 
     private fun bind() = binding.apply {
+        if (viewModel.isCurrentIndexInitial) previousTvBtn.visibility = View.GONE
+        else previousTvBtn.visibility = View.VISIBLE
+
+        indexTv.text = viewModel.indexString
+    }
+
+    private fun bindOnce() = binding.apply {
+        refreshLayout.setOnRefreshListener { viewModel.refreshGame() }
 
         val answerButtons = arrayOf(answer1, answer2, answer3, answer4)
         val nextAndPreviousButtons = arrayOf(nextTvBtn, previousTvBtn)
 
         UiUtil.setViewsBackgroundColor(R.attr.defaultBgColor, *nextAndPreviousButtons)
-
-        if (viewModel.isCurrentIndexInitial) previousTvBtn.visibility = View.GONE
-        else previousTvBtn.visibility = View.VISIBLE
 
         for (button in answerButtons) button.setOnClickListener {
             lifecycleScope.launchWhenCreated {
@@ -99,6 +111,8 @@ class QuizFragment : Fragment() {
                         *nextAndPreviousButtons
                     )
                     UiUtil.setViewsBackgroundColor(R.attr.wordKnownBgColor, button)
+                    viewModel.loadNewWord(wrongAnswerCount)
+                    wrongAnswerCount = 0
                     delay(DELAY_TIME_IN_MILLIS)
                     UiUtil.setViewsBackgroundColor(
                         R.attr.answerButtonsDefaultColor,
@@ -112,7 +126,10 @@ class QuizFragment : Fragment() {
                         *answerButtons,
                         *nextAndPreviousButtons
                     )
-                } else UiUtil.setViewsBackgroundColor(R.attr.wordUnknownBgColor, button)
+                } else {
+                    UiUtil.setViewsBackgroundColor(R.attr.wordUnknownBgColor, button)
+                    wrongAnswerCount++
+                }
             }
         }
 
@@ -137,27 +154,33 @@ class QuizFragment : Fragment() {
             indexTv.text = viewModel.indexString
         }
 
-        indexTv.text = viewModel.indexString
-
         viewModel.question.observe(viewLifecycleOwner) { question ->
             if (isQuestionValid(question)) {
                 quizHeadlineTv.text =
-                    getString(R.string.quiz_headline, question.questionWordText)
+                    getString(R.string.quiz_headline, question.word.wordText)
                 for (i in answerButtons.indices)
                     answerButtons[i].text = question.answers[i]
             }
         }
 
         viewModel.eventQuizFinished.observe(viewLifecycleOwner) { quizFinished ->
-            if (quizFinished) {
-                Toast.makeText(activity, "Congrats", Toast.LENGTH_LONG).show()
-                navigateToQuizEndFragment()
-            }
+            if (quizFinished) viewModel.refreshGame()
         }
+
+        viewModel.eventShowDialog.observe(viewLifecycleOwner) { if (it) showDialog() }
+
+        bindOnce = false
     }
 
     private fun isQuestionValid(question: Question) =
-        question.questionWordText != "" && question.answers.isNotEmpty()
+        question.word.wordText != "" && question.answers.isNotEmpty()
+
+    private fun showDialog() = AlertDialog.Builder(activity).apply {
+        setTitle(getString(R.string.unknown_dialog_title, viewModel.wordText))
+        setPositiveButton(R.string.no) { _, _ -> }
+        setNegativeButton(R.string.yes) { _, _ -> viewModel.updateCurrentQuestion() }
+        show()
+    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
         inflater.inflate(R.menu.settings_menu, menu)

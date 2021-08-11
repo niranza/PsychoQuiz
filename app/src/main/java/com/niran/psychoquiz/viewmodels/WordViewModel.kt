@@ -13,8 +13,7 @@ class WordViewModel(private val repository: WordRepository) : ViewModel() {
 
     fun getAllWordsAsLiveData() = repository.getAllWordsWithFlow().asLiveData()
 
-    fun getWordsByLetterAsLiveData(firstLetter: Char) =
-        repository.getWordsByLetterWithFlow(firstLetter).asLiveData()
+    fun getWordsByLetterAsLiveData() = repository.getAllWordsWithFlow().asLiveData()
 
     fun customUpdateWord(word: Word, wordType: Word.Types) = viewModelScope.launch {
         val newType =

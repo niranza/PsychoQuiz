@@ -23,13 +23,13 @@ data class WordTypeSetting(
     override val settingName: String = Word.Types.values()[settingKey].name.lowercase()
 ) : BooleanSetting() {
 
-    object Constant : SettingConstant {
-
-        val defaultSettingValList = List(Word.Types.values().size) { i ->
-            i == Word.Types.NEUTRAL.ordinal
-        }
+    object Constant : SettingConstant() {
 
         override val keyList =
             List(Word.Types.values().size) { i -> Word.Types.values()[i].ordinal }
+
+        override val defaultSettingValues = List(Word.Types.values().size) { i ->
+            i == Word.Types.NEUTRAL.ordinal || i == Word.Types.UNKNOWN.ordinal
+        }
     }
 }

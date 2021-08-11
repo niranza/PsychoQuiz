@@ -16,8 +16,8 @@ interface WordDao {
     @Query("SELECT * FROM word_table ORDER BY word_text ASC")
     fun getAllWordsWithFlow(): Flow<List<Word>>
 
-    @Query("SELECT * FROM word_table WHERE word_char = :firstLetter ORDER BY word_text ASC")
-    fun getWordsByLetterWithFlow(firstLetter: Char): Flow<List<Word>>
+//    @Query("SELECT * FROM word_table WHERE word_text[0] = :firstLetter ORDER BY word_text ASC")
+//    fun getWordsByLetterWithFlow(firstLetter: Char): Flow<List<Word>>
 
     @Query("DELETE FROM word_table")
     suspend fun deleteAllWords()

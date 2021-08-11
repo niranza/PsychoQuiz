@@ -22,7 +22,7 @@ data class OutputOnePowerSetting(
     override val settingName: String = settingKey.toString()
 ) : BooleanSetting() {
 
-    object Constant : SettingConstant {
+    object Constant : SettingConstant() {
 
         override val keyList = (OUTPUT_ONE_MIN_NUMBER..OUTPUT_ONE_MAX_NUMBER).toList() +
                 listOf(25)

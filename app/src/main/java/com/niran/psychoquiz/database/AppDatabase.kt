@@ -111,14 +111,30 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateDatabase(database: AppDatabase) {
+            Log.d(TAG, "Deleting Database")
+            deleteAllDatabase(database)
+            Log.d(TAG, "Repopulating Database")
             populateWordTable(database.wordDao())
-            populateSettingTable(database.settingDao())
+            populateSettingTables(database.settingDao())
             finishLoad(database.databaseLoaderDao())
         }
 
-        private suspend fun populateWordTable(wordDao: WordDao) {
+        private suspend fun deleteAllDatabase(database: AppDatabase) {
+            database.wordDao().apply {
+                deleteAllWords()
+            }
+            database.settingDao().apply {
+                deleteAllWordFirstLetterSettings()
+                deleteAllWordTypeSettings()
+                deleteAllOutputOneMultiplicationSettings()
+                deleteAllOutputTwoMultiplicationSettings()
+                deleteAllOutputOneDivisionSettings()
+                deleteAllOutputTwoDivisionSettings()
+                deleteAllOutputOnePowerSettings()
+            }
+        }
 
-            wordDao.deleteAllWords()
+        private suspend fun populateWordTable(wordDao: WordDao) {
 
             val res = context.resources
 
@@ -135,7 +151,7 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        private suspend fun populateSettingTable(settingDao: SettingDao) {
+        private suspend fun populateSettingTables(settingDao: SettingDao) {
             populateWordFirstLetterSetting(settingDao)
             populateWordTypeSetting(settingDao)
             populateMultiplicationSetting(settingDao)
@@ -145,8 +161,6 @@ abstract class AppDatabase : RoomDatabase() {
 
         //region Populating Settings
         private suspend fun populateWordFirstLetterSetting(settingDao: SettingDao) {
-            settingDao.deleteAllWordFirstLetterSettings()
-
             for (i in WordFirstLetterSetting.Constant.keyList.indices)
                 settingDao.insertWordFirstLetterSetting(
                     WordFirstLetterSetting(settingKey = WordFirstLetterSetting.Constant.keyList[i])
@@ -154,20 +168,15 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateWordTypeSetting(settingDao: SettingDao) {
-            settingDao.deleteAllWordTypeSettings()
-
             for (i in WordTypeSetting.Constant.keyList.indices) settingDao.insertWordTypeSetting(
                 WordTypeSetting(
-                    settingValue = WordTypeSetting.Constant.defaultSettingValList[i],
+                    settingValue = WordTypeSetting.Constant.defaultSettingValues[i],
                     settingKey = WordTypeSetting.Constant.keyList[i]
                 )
             )
         }
 
         private suspend fun populateMultiplicationSetting(settingDao: SettingDao) {
-            settingDao.deleteAllOutputOneMultiplicationSettings()
-            settingDao.deleteAllOutputTwoMultiplicationSettings()
-
             for (i in OutputOneMultiplicationSetting.Constant.keyList.indices)
                 settingDao.insertOutputOneMultiplicationSetting(
                     OutputOneMultiplicationSetting(settingKey = OutputOneMultiplicationSetting.Constant.keyList[i])
@@ -179,9 +188,6 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateDivisionSetting(settingDao: SettingDao) {
-            settingDao.deleteAllOutputOneDivisionSettings()
-            settingDao.deleteAllOutputTwoDivisionSettings()
-
             for (i in OutputOneDivisionSetting.Constant.keyList.indices)
                 settingDao.insertOutputOneDivisionSetting(
                     OutputOneDivisionSetting(settingKey = OutputOneDivisionSetting.Constant.keyList[i])
@@ -193,8 +199,6 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populatePowerSetting(settingDao: SettingDao) {
-            settingDao.deleteAllOutputOnePowerSettings()
-
             for (i in OutputOnePowerSetting.Constant.keyList.indices)
                 settingDao.insertOutputOnePowerSetting(
                     OutputOnePowerSetting(settingKey = OutputOnePowerSetting.Constant.keyList[i])

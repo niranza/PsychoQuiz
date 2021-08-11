@@ -11,8 +11,6 @@ class WordRepository(private val wordDao: WordDao) {
 
     fun getAllWordsWithFlow() = wordDao.getAllWordsWithFlow()
 
-    fun getWordsByLetterWithFlow(firstLetter: Char) = wordDao.getWordsByLetterWithFlow(firstLetter)
-
     suspend fun insertWord(word: Word) = wordDao.insertWord(word)
 
     suspend fun updateWord(word: Word) = wordDao.updateWord(word)

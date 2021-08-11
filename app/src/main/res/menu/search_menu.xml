@@ -7,4 +7,9 @@
         android:title="@string/search_title"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
+
+    <item
+        android:id="@+id/show_translation"
+        android:title="@string/hide_translation"
+        app:showAsAction="collapseActionView" />
 </menu>

@@ -22,7 +22,7 @@ data class OutputTwoDivisionSetting(
     override val settingName: String = settingKey.toString()
 ) : BooleanSetting() {
 
-    object Constant : SettingConstant {
+    object Constant : SettingConstant() {
 
         override val keyList = (OUTPUT_TWO_MIN_NUMBER..OUTPUT_TWO_MAX_NUMBER).toList()
     }

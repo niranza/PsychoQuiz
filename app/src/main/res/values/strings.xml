@@ -26,4 +26,9 @@
     <string name="hint">###</string>
     <string name="first_number">First Number</string>
     <string name="second_number">Second Number</string>
+    <string name="show_translation">Show Translation</string>
+    <string name="hide_translation">Hide Translation</string>
+    <string name="unknown_dialog_title">Do you feel like you already know the word \"%1$s\"?</string>
+    <string name="no">No</string>
+    <string name="yes">Yes</string>
 </resources>

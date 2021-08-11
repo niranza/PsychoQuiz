@@ -2,6 +2,7 @@ package com.niran.psychoquiz.utils.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +24,8 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
 
                 wordTextTv.text = word.wordText
                 wordTranslationTv.text = word.wordTranslation
+
+                wordTranslationTv.isVisible = wordClickHandler.showTranslation
 
                 starBtn.setOnClickListener {
                     if (isPositionValid()) wordClickHandler.onStarClicked(word)
@@ -75,6 +78,7 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
         fun onCloseClicked(word: Word)
         fun onStarClicked(word: Word)
         fun onCheckClicked(word: Word)
+        val showTranslation: Boolean
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {

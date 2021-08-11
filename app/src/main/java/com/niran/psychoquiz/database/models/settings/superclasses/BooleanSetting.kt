@@ -10,9 +10,11 @@ abstract class BooleanSetting {
 
     abstract val settingName: String
 
-    interface SettingConstant {
+    abstract class SettingConstant {
 
-        val keyList: List<Any>
+        abstract val keyList: List<Any>
+
+        open val defaultSettingValues: List<Boolean> = listOf()
     }
 }
 

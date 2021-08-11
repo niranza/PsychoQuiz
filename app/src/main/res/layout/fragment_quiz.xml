@@ -6,115 +6,109 @@
     android:layout_height="match_parent"
     tools:context=".ui.QuizFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/quiz_layout"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/index_tv"
-            style="@style/TextAppearance.AppCompat.Small"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="20dp"
-            app:layout_constraintBottom_toTopOf="@id/quiz_headline_tv"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0"
-            tools:text="1/4104" />
-
-
-        <TextView
-            android:id="@+id/quiz_headline_tv"
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@id/buttons_layout"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.7"
-            tools:text="פירוש המילה beautiful:" />
-
-        <!--region Button Layout-->
-        <LinearLayout
-            android:id="@+id/buttons_layout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.65">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/answer_1"
-                style="@style/QuizButtonStyle"
-                tools:text="עברית" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/answer_2"
-                style="@style/QuizButtonStyle"
-                tools:text="שפה" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/answer_3"
-                style="@style/QuizButtonStyle"
-                tools:text="יפה" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/answer_4"
-                style="@style/QuizButtonStyle"
-                tools:text="מאוד" />
-
-        </LinearLayout>
-        <!--endregion Button Layout-->
-
-        <!--region Previous-Next Buttons-->
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quiz_layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="25dp"
-            android:paddingRight="25dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttons_layout"
-            app:layout_constraintVertical_bias="0.7">
+            android:layout_height="match_parent">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/previous_tv_btn"
-                style="@style/NextAndPreviousButtonStyle"
-                android:text="@string/previous"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                android:id="@+id/index_tv"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintBottom_toTopOf="@id/quiz_headline_tv"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/next_tv_btn"
-                style="@style/NextAndPreviousButtonStyle"
-                android:text="@string/next"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                tools:text="1/4104" />
+
+
+            <TextView
+                android:id="@+id/quiz_headline_tv"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/buttons_layout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.7"
+                tools:text="פירוש המילה beautiful:" />
+
+            <!--region Button Layout-->
+            <LinearLayout
+                android:id="@+id/buttons_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.65">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/answer_1"
+                    style="@style/QuizButtonStyle"
+                    tools:text="עברית" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/answer_2"
+                    style="@style/QuizButtonStyle"
+                    tools:text="שפה" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/answer_3"
+                    style="@style/QuizButtonStyle"
+                    tools:text="יפה" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/answer_4"
+                    style="@style/QuizButtonStyle"
+                    tools:text="מאוד" />
+
+            </LinearLayout>
+            <!--endregion Button Layout-->
+
+            <!--region Previous-Next Buttons-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25dp"
+                android:paddingRight="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+                app:layout_constraintVertical_bias="0.7">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/previous_tv_btn"
+                    style="@style/NextAndPreviousButtonStyle"
+                    android:text="@string/previous"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/next_tv_btn"
+                    style="@style/NextAndPreviousButtonStyle"
+                    android:text="@string/next"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--endregion back-next buttons-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-        <!--endregion back-next buttons-->
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <!--region Loading Screen-->
-    <ProgressBar
-        android:id="@+id/loading_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <!--endregion Loading Screen-->
-
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

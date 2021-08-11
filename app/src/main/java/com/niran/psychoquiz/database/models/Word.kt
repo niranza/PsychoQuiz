@@ -17,14 +17,9 @@ data class Word(
     @ColumnInfo(name = "word_translation")
     val wordTranslation: String = "",
 
-    @ColumnInfo(name = "word_char")
-    val wordFirstLetter: Char = wordText[0].lowercaseChar(),
-
     @ColumnInfo(name = "word_type")
     val wordType: Int = Types.NEUTRAL.ordinal
 
 ) {
-    enum class Types {
-        FAVORITE, UNKNOWN, NEUTRAL, KNOWN;
-    }
+    enum class Types { FAVORITE, UNKNOWN, NEUTRAL, KNOWN; }
 }

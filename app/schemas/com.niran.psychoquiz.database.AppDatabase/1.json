@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "ef24fa9c9cc4f9c6015c131315bce8a0",
+    "identityHash": "e1567782df93d604c928598757e4a3bd",
     "entities": [
       {
         "tableName": "word_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_char` INTEGER NOT NULL, `word_type` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "wordId",
@@ -24,12 +24,6 @@
             "fieldPath": "wordTranslation",
             "columnName": "word_translation",
             "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "wordFirstLetter",
-            "columnName": "word_char",
-            "affinity": "INTEGER",
             "notNull": true
           },
           {
@@ -342,7 +336,7 @@
       },
       {
         "tableName": "question_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `wordId` INTEGER NOT NULL, `question_word_text` TEXT NOT NULL, `correct_answer` TEXT NOT NULL, `answers` TEXT NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `answers` TEXT NOT NULL, `word_id` INTEGER NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "questionId",
@@ -351,27 +345,33 @@
             "notNull": true
           },
           {
-            "fieldPath": "wordId",
-            "columnName": "wordId",
+            "fieldPath": "answers",
+            "columnName": "answers",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.wordId",
+            "columnName": "word_id",
             "affinity": "INTEGER",
             "notNull": true
           },
           {
-            "fieldPath": "questionWordText",
-            "columnName": "question_word_text",
+            "fieldPath": "word.wordText",
+            "columnName": "word_text",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "correctAnswer",
-            "columnName": "correct_answer",
+            "fieldPath": "word.wordTranslation",
+            "columnName": "word_translation",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "answers",
-            "columnName": "answers",
-            "affinity": "TEXT",
+            "fieldPath": "word.wordType",
+            "columnName": "word_type",
+            "affinity": "INTEGER",
             "notNull": true
           }
         ],
@@ -388,7 +388,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ef24fa9c9cc4f9c6015c131315bce8a0')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e1567782df93d604c928598757e4a3bd')"
     ]
   }
 }

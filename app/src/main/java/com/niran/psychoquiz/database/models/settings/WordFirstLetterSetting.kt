@@ -22,7 +22,7 @@ data class WordFirstLetterSetting(
     override val settingName: String = settingKey.toString().uppercase()
 ) : BooleanSetting() {
 
-    object Constant : SettingConstant {
+    object Constant : SettingConstant() {
 
         override val keyList = ('a'..'z').toList()
     }

@@ -1,9 +1,6 @@
 package com.niran.psychoquiz.database.daos
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.niran.psychoquiz.database.models.Question
 
 @Dao
@@ -18,4 +15,6 @@ interface QuestionDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insertQuestion(question: Question)
 
+    @Update
+    suspend fun updateQuestion(question: Question)
 }

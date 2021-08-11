@@ -29,7 +29,7 @@ fun List<Word>.filterByWordChar(vararg wordChars: Char): List<Word> {
     val result = mutableListOf<Word>()
     for (word in this)
         for (wordChar in wordChars)
-            if (word.wordFirstLetter == wordChar) {
+            if (word.wordText[0] == wordChar) {
                 result.add(word)
                 break;
             }
@@ -37,15 +37,6 @@ fun List<Word>.filterByWordChar(vararg wordChars: Char): List<Word> {
 }
 
 fun MutableList<Word>.removeQuestions(questionList: List<Question>) {
-    for (question in questionList) removeAll { question.wordId == it.wordId }
+    for (question in questionList) removeAll { question.word.wordId == it.wordId }
 }
 //endregion WordListUtils
-
-//region GeneralListUtils
-fun <T> List<List<T>>.mergeToSubList(): List<T> {
-    val resultList = mutableListOf<T>()
-    for (wordList in this)
-        resultList += wordList
-    return resultList
-}
-//endregion GeneralListUtils

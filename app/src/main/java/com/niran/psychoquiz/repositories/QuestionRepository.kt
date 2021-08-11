@@ -11,4 +11,5 @@ class QuestionRepository(private val questionDao: QuestionDao) {
 
     suspend fun insertQuestion(question: Question) = questionDao.insertQuestion(question)
 
+    suspend fun updateQuestion(question: Question) = questionDao.updateQuestion(question)
 }
