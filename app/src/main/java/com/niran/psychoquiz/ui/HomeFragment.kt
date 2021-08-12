@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.niran.psychoquiz.MainActivity
 import com.niran.psychoquiz.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -29,6 +30,7 @@ class HomeFragment : Fragment() {
         binding.apply {
             btnEnglish.setOnClickListener { navigateToEnglishFragment() }
             btnMath.setOnClickListener { navigateToMathFragment() }
+            btnTimer.setOnClickListener { startTimerActivity() }
         }
     }
 
@@ -37,6 +39,8 @@ class HomeFragment : Fragment() {
 
     private fun navigateToMathFragment() = view?.findNavController()
         ?.navigate(HomeFragmentDirections.actionHomeFragmentToMathNavGraph())
+
+    private fun startTimerActivity() = (activity as MainActivity).startTimerActivity()
 
     override fun onDestroyView() {
         super.onDestroyView()

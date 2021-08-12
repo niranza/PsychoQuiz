@@ -12,6 +12,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PsychoQuiz">
         <activity
+            android:name=".TimerActivity"
+            android:parentActivityName=".MainActivity">
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.niran.psychoquiz.MainActivity" />
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/splashScreenTheme"

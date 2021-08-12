@@ -1,5 +1,6 @@
 package com.niran.psychoquiz
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -54,4 +55,6 @@ class MainActivity : AppCompatActivity() {
 
         setupActionBarWithNavController(navController)
     }
+
+    fun startTimerActivity() = startActivity(Intent(this, TimerActivity::class.java))
 }
