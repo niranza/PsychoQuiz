@@ -21,8 +21,8 @@ class BooleanSettingAdapter(
 
         fun bind(booleanSetting: BooleanSetting) {
             binding.apply {
-                keyTv.text = booleanSetting.settingName
-                valueCb.apply {
+                tvKey.text = booleanSetting.settingName
+                cbValue.apply {
                     isChecked = booleanSetting.settingValue
                     setOnClickListener {
                         booleanSettingClickHandler.onCheckBoxClick(booleanSetting)

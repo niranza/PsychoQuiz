@@ -36,12 +36,12 @@ class EnglishFragment : Fragment() {
         })
 
         binding.apply {
-            letterRv.apply {
+            rvLetter.apply {
                 adapter = letterAdapter
                 setHasFixedSize(true)
             }
-            practiceBtn.setOnClickListener { navigateToQuizFragment() }
-            displayAllWordsBtn.setOnClickListener { navigateToWordListFragment() }
+            btnPractice.setOnClickListener { navigateToQuizFragment() }
+            btnDisplayAllWords.setOnClickListener { navigateToWordListFragment() }
         }
 
     }

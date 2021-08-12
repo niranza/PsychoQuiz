@@ -78,7 +78,7 @@ class WordListFragment : Fragment() {
         })
 
         binding.apply {
-            wordRv.apply {
+            rvWord.apply {
                 adapter = wordAdapter
                 setHasFixedSize(true)
             }
@@ -96,9 +96,9 @@ class WordListFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search_menu, menu)
+        inflater.inflate(R.menu.fragment_word_list_menu, menu)
 
-        (menu.findItem(R.id.search).actionView as SearchView).apply {
+        (menu.findItem(R.id.item_search).actionView as SearchView).apply {
             queryHint = getString(R.string.search_word_hint)
             isSubmitButtonEnabled = true
 
@@ -118,7 +118,7 @@ class WordListFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean = when (item.itemId) {
-        R.id.show_translation -> {
+        R.id.item_show_translation -> {
             lifecycleScope.launchWhenCreated {
                 item.apply {
                     if (showTranslation) {
@@ -162,8 +162,8 @@ class WordListFragment : Fragment() {
 
     private fun uiLoadSearchedList(searchedWordList: List<Word>): List<Word> = with(binding) {
 
-        if (searchedWordList.isEmpty()) noResultTv.visibility = View.VISIBLE
-        else noResultTv.visibility = View.GONE
+        if (searchedWordList.isEmpty()) tvNoResult.visibility = View.VISIBLE
+        else tvNoResult.visibility = View.GONE
 
         searchedWordList
     }
@@ -175,9 +175,9 @@ class WordListFragment : Fragment() {
     ) =
         wordList?.let {
             binding.apply {
-                if (wordList.isEmpty()) loadingWordsPb.visibility = View.VISIBLE
+                if (it.isEmpty()) pbLoadingWords.visibility = View.VISIBLE
                 else {
-                    loadingWordsPb.visibility = View.GONE
+                    pbLoadingWords.visibility = View.GONE
                     actionSubmitList(it)
                 }
             }

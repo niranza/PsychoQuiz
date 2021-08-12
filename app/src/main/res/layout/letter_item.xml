@@ -7,7 +7,7 @@
     android:paddingEnd="5dp">
 
     <Button
-        android:id="@+id/letter_btn"
+        android:id="@+id/btn_letter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="@string/letter"

@@ -62,7 +62,7 @@ class QuizSettingsFragment : Fragment() {
                         }
                     })
 
-            selectAllFirstLetterCb.setOnCheckedChangeListener { _, isChecked ->
+            cbSelectAllFirstLetter.setOnCheckedChangeListener { _, isChecked ->
                 viewModel.selectAllSettings(WordFirstLetterSetting::class, isChecked)
             }
 
@@ -78,19 +78,19 @@ class QuizSettingsFragment : Fragment() {
                     }
                 })
 
-            selectAllWordTypeCb.setOnCheckedChangeListener { _, isChecked ->
+            cbSelectAllWordType.setOnCheckedChangeListener { _, isChecked ->
                 viewModel.selectAllSettings(WordTypeSetting::class, isChecked)
             }
 
 
-            restartBtn.setOnClickListener { navigateToQuizFragment(true) }
+            btnRestart.setOnClickListener { navigateToQuizFragment(true) }
 
-            wordFirstLetterRv.apply {
+            rvWordFirstLetter.apply {
                 adapter = wordFirstLetterAdapter
                 setHasFixedSize(true)
             }
 
-            wordTypeRv.apply {
+            rvWordType.apply {
                 adapter = wordTypeAdapter
                 setHasFixedSize(true)
             }
@@ -113,11 +113,15 @@ class QuizSettingsFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
-        inflater.inflate(R.menu.empty_menu, menu)
+        inflater.inflate(R.menu.fragment_quiz_settings_menu, menu)
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
+            R.id.item_home -> {
+                navigateUp()
+                true
+            }
             android.R.id.home -> {
                 navigateToQuizFragment(reloadQuiz)
                 true
@@ -127,6 +131,8 @@ class QuizSettingsFragment : Fragment() {
 
     private fun navigateToQuizFragment(reloadQuiz: Boolean) = view?.findNavController()
         ?.navigate(QuizSettingsFragmentDirections.actionSettingsFragmentToQuizFragment(reloadQuiz))
+
+    private fun navigateUp() = view?.findNavController()?.navigateUp()
 
     override fun onDestroyView() {
         super.onDestroyView()

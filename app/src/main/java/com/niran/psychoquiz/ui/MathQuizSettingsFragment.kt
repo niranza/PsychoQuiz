@@ -46,7 +46,7 @@ class MathQuizSettingsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-            if (currentMathType == MathType.POWER) secondNumberLayout.visibility = View.GONE
+            if (currentMathType == MathType.POWER) layoutSecondNumber.visibility = View.GONE
 
             val outputOneAdapter = BooleanSettingAdapter(
                 object : BooleanSettingAdapter.BooleanSettingClickHandler {
@@ -58,7 +58,7 @@ class MathQuizSettingsFragment : Fragment() {
                     }
                 })
 
-            selectAllFirstNumberCb.setOnCheckedChangeListener { _, isChecked ->
+            cbSelectAllFirstNumber.setOnCheckedChangeListener { _, isChecked ->
                 viewModel.selectAllOutputOneSettings(currentMathType, isChecked)
             }
 
@@ -72,16 +72,16 @@ class MathQuizSettingsFragment : Fragment() {
                     }
                 })
 
-            selectAllSecondNumberCb.setOnCheckedChangeListener { _, isChecked ->
+            cbSelectAllSecondNumber.setOnCheckedChangeListener { _, isChecked ->
                 viewModel.selectAllOutputTwoSettings(currentMathType, isChecked)
             }
 
-            outputOneRv.apply {
+            rvOutputOne.apply {
                 setHasFixedSize(true)
                 adapter = outputOneAdapter
             }
 
-            outputTwoRv.apply {
+            rvOutputTwo.apply {
                 setHasFixedSize(true)
                 adapter = outputTwoAdapter
             }
@@ -99,16 +99,22 @@ class MathQuizSettingsFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
-        inflater.inflate(R.menu.empty_menu, menu)
+        inflater.inflate(R.menu.fragment_math_quiz_settings_menu, menu)
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
+            R.id.item_home -> {
+                navigateUp()
+                true
+            }
             android.R.id.home -> {
                 navigateToMathQuizFragment()
                 true
             }
             else -> true
         }
+
+    private fun navigateUp() = view?.findNavController()?.navigateUp()
 
     private fun navigateToMathQuizFragment() = view?.findNavController()?.navigate(
         MathQuizSettingsFragmentDirections.actionMathQuizSettingsFragmentToMathQuizFragment(

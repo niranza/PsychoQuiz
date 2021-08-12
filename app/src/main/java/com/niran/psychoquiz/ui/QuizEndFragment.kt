@@ -28,7 +28,7 @@ class QuizEndFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-            restartBtn.setOnClickListener { navigateToQuizFragment() }
+            btnRestart.setOnClickListener { navigateToQuizFragment() }
 
         }
     }

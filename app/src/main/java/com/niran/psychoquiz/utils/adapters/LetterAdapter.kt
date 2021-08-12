@@ -17,7 +17,7 @@ class LetterAdapter(private val letterClickHandler: LetterClickHandler) :
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(letter: Char) {
-            binding.letterBtn.apply {
+            binding.btnLetter.apply {
                 text = letter.toString()
                 setOnClickListener { letterClickHandler.onLetterClicked(letter) }
             }

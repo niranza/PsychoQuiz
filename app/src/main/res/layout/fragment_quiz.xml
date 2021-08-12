@@ -7,22 +7,22 @@
     tools:context=".ui.QuizFragment">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/refresh_layout"
+        android:id="@+id/layout_refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/quiz_layout"
+            android:id="@+id/layout_quiz"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/index_tv"
+                android:id="@+id/tv_index"
                 style="@style/TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="20dp"
-                app:layout_constraintBottom_toTopOf="@id/quiz_headline_tv"
+                app:layout_constraintBottom_toTopOf="@id/tv_quiz_headline"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -31,12 +31,12 @@
 
 
             <TextView
-                android:id="@+id/quiz_headline_tv"
+                android:id="@+id/tv_quiz_headline"
                 style="@style/TextAppearance.AppCompat.Large"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                app:layout_constraintBottom_toTopOf="@id/buttons_layout"
+                app:layout_constraintBottom_toTopOf="@id/layout_buttons"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +45,7 @@
 
             <!--region Button Layout-->
             <LinearLayout
-                android:id="@+id/buttons_layout"
+                android:id="@+id/layout_buttons"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -85,11 +85,11 @@
                 android:paddingLeft="25dp"
                 android:paddingRight="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+                app:layout_constraintTop_toBottomOf="@id/layout_buttons"
                 app:layout_constraintVertical_bias="0.7">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/previous_tv_btn"
+                    android:id="@+id/btn_previous"
                     style="@style/NextAndPreviousButtonStyle"
                     android:text="@string/previous"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +97,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/next_tv_btn"
+                    android:id="@+id/btn_next"
                     style="@style/NextAndPreviousButtonStyle"
                     android:text="@string/next"
                     app:layout_constraintBottom_toBottomOf="parent"

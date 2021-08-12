@@ -7,11 +7,11 @@
     tools:context=".ui.EnglishFragment">
 
     <Button
-        android:id="@+id/display_all_words_btn"
+        android:id="@+id/btn_display_all_words"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
         android:layout_marginStart="11dp"
+        android:layout_marginTop="11dp"
         android:layout_marginEnd="11dp"
         android:text="@string/display_all_words"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,23 +19,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/letter_rv"
+        android:id="@+id/rv_letter"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
         android:padding="@dimen/rv_padding"
         android:scrollbars="vertical"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/practice_btn"
+        app:layout_constraintBottom_toTopOf="@id/btn_practice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/display_all_words_btn"
+        app:layout_constraintTop_toBottomOf="@id/btn_display_all_words"
         app:spanCount="3"
         tools:itemCount="15"
         tools:listitem="@layout/letter_item" />
 
     <Button
-        android:id="@+id/practice_btn"
+        android:id="@+id/btn_practice"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"

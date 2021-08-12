@@ -44,15 +44,17 @@
         tools:layout="@layout/fragment_quiz">
         <action
             android:id="@+id/action_quizFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/settingsFragment"
+            app:popUpTo="@id/chooseLetterFragment"
+            app:popUpToInclusive="false" />
         <argument
             android:name="reloadQuiz"
             app:argType="boolean" />
         <action
             android:id="@+id/action_quizFragment_to_quizEndFragment"
             app:destination="@id/quizEndFragment"
-            app:popUpTo="@id/quizFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/chooseLetterFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -62,8 +64,8 @@
         <action
             android:id="@+id/action_settingsFragment_to_quizFragment"
             app:destination="@id/quizFragment"
-            app:popUpTo="@id/quizFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/chooseLetterFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/quizEndFragment"

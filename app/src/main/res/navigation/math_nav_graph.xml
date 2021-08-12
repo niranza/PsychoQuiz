@@ -21,7 +21,9 @@
         tools:layout="@layout/fragment_math_quiz" >
         <action
             android:id="@+id/action_mathQuizFragment_to_mathQuizSettingsFragment"
-            app:destination="@id/mathQuizSettingsFragment" />
+            app:destination="@id/mathQuizSettingsFragment"
+            app:popUpTo="@id/mathFragment"
+            app:popUpToInclusive="false" />
         <argument
             android:name="mathType"
             app:argType="integer" />
@@ -34,8 +36,8 @@
         <action
             android:id="@+id/action_mathQuizSettingsFragment_to_mathQuizFragment"
             app:destination="@id/mathQuizFragment"
-            app:popUpTo="@id/mathQuizFragment"
-            app:popUpToInclusive="true" />
+            app:popUpTo="@id/mathFragment"
+            app:popUpToInclusive="false" />
         <argument
             android:name="mathType"
             app:argType="integer" />

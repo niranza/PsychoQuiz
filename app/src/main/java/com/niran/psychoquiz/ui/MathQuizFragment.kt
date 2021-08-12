@@ -67,17 +67,17 @@ class MathQuizFragment : Fragment() {
 
     private fun bind() = binding.apply {
 
-        symbolTv.text = currentMathType.symbol
+        tvSymbol.text = currentMathType.symbol
 
         root.setOnClickListener {
             hideKeyBoard()
-            inputEt.apply {
+            etInput.apply {
                 text.clear()
                 clearFocus()
             }
         }
 
-        inputEt.addTextChangedListener(object : TextWatcher {
+        etInput.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(
                 s: CharSequence?, start: Int, count: Int, after: Int
             ) {
@@ -94,7 +94,7 @@ class MathQuizFragment : Fragment() {
                     viewModel.validateAnswer(currentMathType, it.toString().toInt())
                         .also { correctAnswer ->
                             if (correctAnswer) {
-                                inputEt.text.clear()
+                                etInput.text.clear()
                                 viewModel.loadNewMathQuestion(currentMathType)
                             }
                         }
@@ -103,21 +103,21 @@ class MathQuizFragment : Fragment() {
         })
 
         viewModel.outputOne.observe(viewLifecycleOwner) { output ->
-            outputOneTv.text = output
+            tvOutputOne.text = output
         }
 
         viewModel.outputTwo.observe(viewLifecycleOwner) { output ->
-            outputTwoTv.text = output
+            tvOutputTwo.text = output
         }
     }
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
-        inflater.inflate(R.menu.settings_menu, menu)
+        inflater.inflate(R.menu.fragment_quiz_menu, menu)
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
-            R.id.settings_item -> {
+            R.id.item_settings -> {
                 navigateToMathQuizSettingsFragment()
                 true
             }

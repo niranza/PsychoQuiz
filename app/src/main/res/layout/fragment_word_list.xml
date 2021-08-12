@@ -7,7 +7,7 @@
     tools:context=".ui.WordListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/word_rv"
+        android:id="@+id/rv_word"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:clipToPadding="false"
@@ -22,7 +22,7 @@
         tools:listitem="@layout/word_item" />
 
     <TextView
-        android:id="@+id/no_result_tv"
+        android:id="@+id/tv_no_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/no_results"
@@ -33,7 +33,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ProgressBar
-        android:id="@+id/loading_words_pb"
+        android:id="@+id/pb_loading_words"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="gone"

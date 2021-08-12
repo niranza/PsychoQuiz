@@ -7,7 +7,7 @@
     tools:context=".ui.HomeFragment">
 
     <ImageView
-        android:id="@+id/logo_im"
+        android:id="@+id/im_logo"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
@@ -29,16 +29,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/logo_im">
+        app:layout_constraintTop_toBottomOf="@id/im_logo">
 
         <Button
-            android:id="@+id/english_btn"
+            android:id="@+id/btn_english"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/english" />
 
         <Button
-            android:id="@+id/math_btn"
+            android:id="@+id/btn_math"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/math" />

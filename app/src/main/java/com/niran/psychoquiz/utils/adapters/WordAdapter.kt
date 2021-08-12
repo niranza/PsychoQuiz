@@ -22,20 +22,20 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
         fun bind(word: Word) {
             binding.apply {
 
-                wordTextTv.text = word.wordText
-                wordTranslationTv.text = word.wordTranslation
+                tvWordText.text = word.wordText
+                tvWordTranslation.text = word.wordTranslation
 
-                wordTranslationTv.isVisible = wordClickHandler.showTranslation
+                tvWordTranslation.isVisible = wordClickHandler.showTranslation
 
-                starBtn.setOnClickListener {
+                btnStar.setOnClickListener {
                     if (isPositionValid()) wordClickHandler.onStarClicked(word)
                 }
 
-                checkBtn.setOnClickListener {
+                btnCheck.setOnClickListener {
                     if (isPositionValid()) wordClickHandler.onCheckClicked(word)
                 }
 
-                closeBtn.setOnClickListener {
+                btnClose.setOnClickListener {
                     if (isPositionValid()) wordClickHandler.onCloseClicked(word)
                 }
 
@@ -62,7 +62,7 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
 
         private fun isPositionValid() = adapterPosition != RecyclerView.NO_POSITION
 
-        private fun backgrounds() = with(binding) { arrayOf(checkBtn, starBtn, closeBtn, itemView) }
+        private fun backgrounds() = with(binding) { arrayOf(btnCheck, btnStar, btnClose, itemView) }
 
         companion object {
             fun create(parent: ViewGroup, wordClickHandler: WordClickHandler): WordViewHolder {

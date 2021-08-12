@@ -9,59 +9,59 @@
     app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/word_content_layout"
+        android:id="@+id/layout_word_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="4dp">
 
         <TextView
-            android:id="@+id/word_text_tv"
+            android:id="@+id/tv_word_text"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/image_button_layout"
+            app:layout_constraintRight_toLeftOf="@id/layout_image_button"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="word" />
 
         <TextView
-            android:id="@+id/word_translation_tv"
+            android:id="@+id/tv_word_translation"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_button_layout"
+            app:layout_constraintTop_toBottomOf="@id/layout_image_button"
             tools:text="מילה" />
 
         <!--region ImageButtons-->
         <LinearLayout
-            android:id="@+id/image_button_layout"
+            android:id="@+id/layout_image_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:orientation="horizontal"
-            app:layout_constraintBottom_toTopOf="@id/word_translation_tv"
+            app:layout_constraintBottom_toTopOf="@id/tv_word_translation"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="spread_inside">
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/check_btn"
+                android:id="@+id/btn_check"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/word_item_icon_size"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/ic_check" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/star_btn"
+                android:id="@+id/btn_star"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/word_item_icon_size"
                 android:adjustViewBounds="true"
                 app:srcCompat="@drawable/ic_star" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/close_btn"
+                android:id="@+id/btn_close"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/word_item_icon_size"
                 android:adjustViewBounds="true"

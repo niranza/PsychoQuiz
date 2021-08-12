@@ -34,7 +34,7 @@ class QuizFragment : Fragment() {
     }
 
     private val navArgs: QuizFragmentArgs by navArgs()
-    private var reloadQuiz = true //initialized in onCreateView
+    private val reloadQuiz get() = navArgs.reloadQuiz
 
     private var wrongAnswerCount = 0
 
@@ -49,8 +49,6 @@ class QuizFragment : Fragment() {
 
         setHasOptionsMenu(true)
 
-        reloadQuiz = navArgs.reloadQuiz
-
         return binding.root
     }
 
@@ -62,16 +60,15 @@ class QuizFragment : Fragment() {
                 loadingState?.let {
                     when (it) {
                         LoadingState.LOADING -> {
-                            quizLayout.visibility = View.GONE
-                            refreshLayout.isRefreshing = true
+                            layoutQuiz.visibility = View.GONE
+                            layoutRefresh.isRefreshing = true
                             viewModel.loadGame(reloadQuiz)
                         }
                         LoadingState.SUCCESS -> {
-                            reloadQuiz = true
                             if (bindOnce) bindOnce()
                             bind()
-                            refreshLayout.isRefreshing = false
-                            quizLayout.visibility = View.VISIBLE
+                            layoutRefresh.isRefreshing = false
+                            layoutQuiz.visibility = View.VISIBLE
                         }
                         LoadingState.ERROR -> {
                             navigateToSettingsFragment()
@@ -88,17 +85,17 @@ class QuizFragment : Fragment() {
     }
 
     private fun bind() = binding.apply {
-        if (viewModel.isCurrentIndexInitial) previousTvBtn.visibility = View.GONE
-        else previousTvBtn.visibility = View.VISIBLE
+        if (viewModel.isCurrentIndexInitial) btnPrevious.visibility = View.GONE
+        else btnNext.visibility = View.VISIBLE
 
-        indexTv.text = viewModel.indexString
+        tvIndex.text = viewModel.indexString
     }
 
     private fun bindOnce() = binding.apply {
-        refreshLayout.setOnRefreshListener { viewModel.refreshGame() }
+        layoutRefresh.setOnRefreshListener { refreshGame() }
 
         val answerButtons = arrayOf(answer1, answer2, answer3, answer4)
-        val nextAndPreviousButtons = arrayOf(nextTvBtn, previousTvBtn)
+        val nextAndPreviousButtons = arrayOf(btnNext, btnPrevious)
 
         UiUtil.setViewsBackgroundColor(R.attr.defaultBgColor, *nextAndPreviousButtons)
 
@@ -119,8 +116,8 @@ class QuizFragment : Fragment() {
                         *answerButtons
                     )
                     viewModel.loadNewQuestion(Question.Load.NEXT)
-                    indexTv.text = viewModel.indexString
-                    previousTvBtn.visibility = View.VISIBLE
+                    tvIndex.text = viewModel.indexString
+                    btnPrevious.visibility = View.VISIBLE
                     UiUtil.setViewsIsClickable(
                         true,
                         *answerButtons,
@@ -133,17 +130,17 @@ class QuizFragment : Fragment() {
             }
         }
 
-        nextTvBtn.setOnClickListener {
+        btnNext.setOnClickListener {
             UiUtil.setViewsBackgroundColor(
                 R.attr.answerButtonsDefaultColor,
                 *answerButtons
             )
             viewModel.loadNewQuestion(Question.Load.NEXT)
-            indexTv.text = viewModel.indexString
-            previousTvBtn.visibility = View.VISIBLE
+            tvIndex.text = viewModel.indexString
+            btnPrevious.visibility = View.VISIBLE
         }
 
-        previousTvBtn.setOnClickListener {
+        btnPrevious.setOnClickListener {
             UiUtil.setViewsBackgroundColor(
                 R.attr.answerButtonsDefaultColor,
                 *answerButtons
@@ -151,25 +148,29 @@ class QuizFragment : Fragment() {
             if (!viewModel.isCurrentIndexInitial)
                 viewModel.loadNewQuestion(Question.Load.PREVIOUS)
             if (viewModel.isCurrentIndexInitial) it.visibility = View.GONE
-            indexTv.text = viewModel.indexString
+            tvIndex.text = viewModel.indexString
         }
 
         viewModel.question.observe(viewLifecycleOwner) { question ->
             if (isQuestionValid(question)) {
-                quizHeadlineTv.text =
-                    getString(R.string.quiz_headline, question.word.wordText)
+                tvQuizHeadline.text = getString(R.string.quiz_headline, question.word.wordText)
                 for (i in answerButtons.indices)
                     answerButtons[i].text = question.answers[i]
             }
         }
 
         viewModel.eventQuizFinished.observe(viewLifecycleOwner) { quizFinished ->
-            if (quizFinished) viewModel.refreshGame()
+            if (quizFinished) refreshGame()
         }
 
         viewModel.eventShowDialog.observe(viewLifecycleOwner) { if (it) showDialog() }
 
         bindOnce = false
+    }
+
+    private fun refreshGame() {
+        binding.layoutQuiz.visibility = View.GONE
+        viewModel.loadGame(true)
     }
 
     private fun isQuestionValid(question: Question) =
@@ -183,12 +184,12 @@ class QuizFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
-        inflater.inflate(R.menu.settings_menu, menu)
+        inflater.inflate(R.menu.fragment_quiz_menu, menu)
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
-            R.id.settings_item -> {
+            R.id.item_settings -> {
                 navigateToSettingsFragment()
                 true
             }

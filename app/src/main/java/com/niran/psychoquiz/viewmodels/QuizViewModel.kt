@@ -44,8 +44,6 @@ class QuizViewModel(
         _loadingState.value = LoadingState.LOADING
     }
 
-    fun refreshGame() = LoadingState.LOADING.let { _loadingState.value = it }
-
     fun loadGame(reloadQuiz: Boolean) = viewModelScope.launch {
         try {
             if (reloadQuiz) questionRepository.deleteAllQuestions()
@@ -160,7 +158,6 @@ class QuizViewModel(
         questionRepository.updateQuestion(newQuestion)
         wordRepository.updateWord(newQuestion.word)
         updateQuestionList()
-//        questionList[questionList.indexOf(_question.value)] = newQuestion
     }
 
     //endregion QuizAi

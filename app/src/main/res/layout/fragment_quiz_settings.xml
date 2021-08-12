@@ -7,12 +7,12 @@
     tools:context=".ui.QuizSettingsFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/settings_content_layout"
+        android:id="@+id/layout_settings_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="6dp"
-        app:layout_constraintBottom_toTopOf="@id/restart_btn"
+        app:layout_constraintBottom_toTopOf="@id/btn_restart"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside">
 
@@ -30,31 +30,31 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/choose_letter_tv"
+                android:id="@+id/tv_choose_letter"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/choose_letters"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/select_all_first_letter_cb"
+                app:layout_constraintEnd_toStartOf="@id/cb_select_all_first_letter"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <CheckBox
-                android:id="@+id/select_all_first_letter_cb"
+                android:id="@+id/cb_select_all_first_letter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/choose_letter_tv"
+                app:layout_constraintStart_toEndOf="@id/tv_choose_letter"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/word_first_letter_rv"
+            android:id="@+id/rv_word_first_letter"
             android:layout_width="match_parent"
             android:layout_height="402dp"
             android:clipToPadding="false"
@@ -81,31 +81,31 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/choose_word_type_tv"
+                android:id="@+id/tv_choose_word_type"
                 style="@style/TextAppearance.AppCompat.Medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/choose_word_types"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/select_all_word_type_cb"
+                app:layout_constraintEnd_toStartOf="@id/cb_select_all_word_type"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <CheckBox
-                android:id="@+id/select_all_word_type_cb"
+                android:id="@+id/cb_select_all_word_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/choose_word_type_tv"
+                app:layout_constraintStart_toEndOf="@id/tv_choose_word_type"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/word_type_rv"
+            android:id="@+id/rv_word_type"
             android:layout_width="match_parent"
             android:layout_height="124dp"
             android:clipToPadding="false"
@@ -121,7 +121,7 @@
     </androidx.appcompat.widget.LinearLayoutCompat>
 
     <Button
-        android:id="@+id/restart_btn"
+        android:id="@+id/btn_restart"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/rv_padding"
@@ -130,6 +130,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/settings_content_layout" />
+        app:layout_constraintTop_toBottomOf="@id/layout_settings_content" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

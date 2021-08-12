@@ -27,8 +27,8 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            englishBtn.setOnClickListener { navigateToEnglishFragment() }
-            mathBtn.setOnClickListener { navigateToMathFragment() }
+            btnEnglish.setOnClickListener { navigateToEnglishFragment() }
+            btnMath.setOnClickListener { navigateToMathFragment() }
         }
     }
 

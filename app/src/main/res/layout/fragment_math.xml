@@ -8,19 +8,19 @@
     tools:context=".ui.MathFragment">
 
     <Button
-        android:id="@+id/multiplication_btn"
+        android:id="@+id/btn_multiplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/multiplication" />
 
     <Button
-        android:id="@+id/division_btn"
+        android:id="@+id/btn_division"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/division" />
 
     <Button
-        android:id="@+id/power_btn"
+        android:id="@+id/btn_power"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/power" />

@@ -28,13 +28,13 @@ class MathFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
 
-            multiplicationBtn.setOnClickListener {
+            btnMultiplication.setOnClickListener {
                 navigateToMathQuizFragment(MathType.MULTIPLICATION)
             }
-            divisionBtn.setOnClickListener {
+            btnDivision.setOnClickListener {
                 navigateToMathQuizFragment(MathType.DIVISION)
             }
-            powerBtn.setOnClickListener { navigateToMathQuizFragment(MathType.POWER) }
+            btnPower.setOnClickListener { navigateToMathQuizFragment(MathType.POWER) }
         }
     }
 

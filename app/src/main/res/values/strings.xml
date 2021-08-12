@@ -31,4 +31,5 @@
     <string name="unknown_dialog_title">Do you feel like you already know the word \"%1$s\"?</string>
     <string name="no">No</string>
     <string name="yes">Yes</string>
+    <string name="home">Home</string>
 </resources>

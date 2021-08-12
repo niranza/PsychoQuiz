@@ -8,7 +8,7 @@
 
     <!--region Text Views-->
     <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/text_views_layout"
+        android:id="@+id/layout_text_views"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -19,14 +19,14 @@
         app:layout_constraintVertical_bias="0.4">
 
         <TextView
-            android:id="@+id/output_one_tv"
+            android:id="@+id/tv_output_one"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="42" />
 
         <TextView
-            android:id="@+id/symbol_tv"
+            android:id="@+id/tv_symbol"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,7 +34,7 @@
             android:text="@string/multiplication" />
 
         <TextView
-            android:id="@+id/output_two_tv"
+            android:id="@+id/tv_output_two"
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +44,7 @@
     <!--endregion Text Views-->
 
     <EditText
-        android:id="@+id/input_et"
+        android:id="@+id/et_input"
         style="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,6 +55,6 @@
         android:maxLength="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_views_layout" />
+        app:layout_constraintTop_toBottomOf="@id/layout_text_views" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
