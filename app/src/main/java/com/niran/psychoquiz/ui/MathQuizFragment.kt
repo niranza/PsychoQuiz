@@ -1,5 +1,8 @@
 package com.niran.psychoquiz.ui
 
+import android.animation.ArgbEvaluator
+import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.color.MaterialColors
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.databinding.FragmentMathQuizBinding
@@ -94,6 +98,7 @@ class MathQuizFragment : Fragment() {
                     viewModel.validateAnswer(currentMathType, it.toString().toInt())
                         .also { correctAnswer ->
                             if (correctAnswer) {
+                                animateBackground(root)
                                 etInput.text.clear()
                                 viewModel.loadNewMathQuestion(currentMathType)
                             }
@@ -111,6 +116,16 @@ class MathQuizFragment : Fragment() {
         }
     }
 
+    private fun animateBackground(view: View) {
+        val colorFrom =
+            MaterialColors.getColor(requireContext(), R.attr.wordKnownBgColor, Color.CYAN)
+        val colorTo = MaterialColors.getColor(requireContext(), R.attr.defaultBgColor, Color.CYAN)
+        ValueAnimator.ofObject(ArgbEvaluator(), colorFrom, colorTo).apply {
+            duration = 400 // milliseconds
+            addUpdateListener { animator -> view.setBackgroundColor(animator.animatedValue as Int) }
+            start()
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
         inflater.inflate(R.menu.fragment_quiz_menu, menu)
