@@ -20,7 +20,7 @@ class TimerActivity : AppCompatActivity() {
     private val viewModel: TimerViewModel by viewModels()
 
     private val maxNumberOfChapters = 8
-    private var totalNumberOfChapters = 8
+    private var totalNumberOfChapters = maxNumberOfChapters
 
     private val timerRunning get() = viewModel.timerRunning
 
@@ -28,7 +28,9 @@ class TimerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         _binding = ActivityTimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         supportActionBar?.apply {
             setTitle(R.string.timer)
             setDisplayHomeAsUpEnabled(true)
@@ -36,6 +38,7 @@ class TimerActivity : AppCompatActivity() {
 
         binding.apply {
 
+            //for configuration changes
             if (timerRunning) {
                 switchEssaySetting.isClickable = false
                 layoutChaptersSettings.visibility = View.GONE
@@ -103,7 +106,6 @@ class TimerActivity : AppCompatActivity() {
 
     private fun startTimer() = binding.apply {
         if (!btnReset.isVisible) playAudio(R.raw.test_began)
-        //timer is running is true
         viewModel.startTimer(totalNumberOfChapters)
         switchEssaySetting.isClickable = false
         layoutChaptersSettings.visibility = View.GONE
@@ -112,7 +114,6 @@ class TimerActivity : AppCompatActivity() {
     }
 
     private fun pauseTimer() = binding.apply {
-        //timer is running is false
         viewModel.pauseTimer()
         btnStartPause.setText(R.string.start)
         btnReset.visibility = View.VISIBLE
@@ -126,8 +127,7 @@ class TimerActivity : AppCompatActivity() {
         btnReset.visibility = View.GONE
     }
 
-    private fun playAudio(audioRaw: Int) =
-        MediaPlayer.create(this, audioRaw).apply { start() }
+    private fun playAudio(audioRaw: Int) = MediaPlayer.create(this, audioRaw).start()
 
     override fun onDestroy() {
         super.onDestroy()

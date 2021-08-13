@@ -1,5 +1,6 @@
 package com.niran.psychoquiz
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
@@ -8,11 +9,14 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.niran.psychoquiz.utils.MyContextWrapper
+import com.niran.psychoquiz.utils.getSharedPrefString
 import com.niran.psychoquiz.viewmodels.MainViewModel
 import com.niran.psychoquiz.viewmodels.MainViewModelFactory
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -57,4 +61,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startTimerActivity() = startActivity(Intent(this, TimerActivity::class.java))
+
+    override fun attachBaseContext(newBase: Context?) {
+        newBase?.apply {
+            super.attachBaseContext(
+                MyContextWrapper.wrap(
+                    this,
+                    getSharedPrefString(
+                        getString(R.string.main_pref_file_key),
+                        getString(R.string.saved_lang_key)
+                    ) ?: "en"
+                )
+            )
+        }
+    }
 }

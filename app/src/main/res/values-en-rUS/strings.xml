@@ -1,20 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!--region Strings to avoid boilerplate code-->
-    <string name="math_quiz_pref_file_key" translatable="false">MathQuizFragment Pref</string>
-    <string name="main_pref_file_key" translatable="false">MainActivity Pref</string>
-    <string name="saved_mute_key" translatable="false">mute</string>
-    <string name="saved_lang_key" translatable="false">lang</string>
-
-    <string name="multiplication" translatable="false">X</string>
-    <string name="division" translatable="false">/</string>
-    <string name="power" translatable="false">^</string>
-    <string name="hint" translatable="false">###</string>
-
-    <string name="hebrew" translatable="false">עברית</string>
-    <string name="english" translatable="false">English</string>
-    <!--endregion Strings to avoid boilerplate code-->
-
     <string name="app_name">Psycho Quiz</string>
     <string name="english_word">English</string>
     <string name="math">Math</string>

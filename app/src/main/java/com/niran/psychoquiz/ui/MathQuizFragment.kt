@@ -3,6 +3,7 @@ package com.niran.psychoquiz.ui
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -19,6 +20,8 @@ import com.niran.psychoquiz.databinding.FragmentMathQuizBinding
 import com.niran.psychoquiz.utils.AppUtils
 import com.niran.psychoquiz.utils.enums.LoadingState
 import com.niran.psychoquiz.utils.enums.MathType
+import com.niran.psychoquiz.utils.getSharedPrefBoolean
+import com.niran.psychoquiz.utils.setSharedPrefBoolean
 import com.niran.psychoquiz.viewmodels.MathQuizViewModel
 import com.niran.psychoquiz.viewmodels.MathQuizViewModelFactory
 
@@ -36,6 +39,8 @@ class MathQuizFragment : Fragment() {
 
     private val currentMathType get() = MathType.values()[navArgs.mathType]
 
+    private var mute = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -44,6 +49,8 @@ class MathQuizFragment : Fragment() {
         _binding = FragmentMathQuizBinding.inflate(inflater)
 
         setHasOptionsMenu(true)
+
+        loadMuteState()
 
         return binding.root
     }
@@ -98,6 +105,7 @@ class MathQuizFragment : Fragment() {
                     viewModel.validateAnswer(currentMathType, it.toString().toInt())
                         .also { correctAnswer ->
                             if (correctAnswer) {
+                                playAudio(R.raw.ding)
                                 animateBackground(root)
                                 etInput.text.clear()
                                 viewModel.loadNewMathQuestion(currentMathType)
@@ -127,11 +135,22 @@ class MathQuizFragment : Fragment() {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
-        inflater.inflate(R.menu.fragment_quiz_menu, menu)
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.fragment_math_quiz_menu, menu)
+        menu.findItem(R.id.item_mute).apply {
+            if (mute) setIcon(R.drawable.ic_volume_off) else setIcon(R.drawable.ic_volume_on)
+        }
+    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
+            R.id.item_mute -> {
+                mute = !mute
+                saveMuteState()
+                if (mute) item.setIcon(R.drawable.ic_volume_off)
+                else item.setIcon(R.drawable.ic_volume_on)
+                true
+            }
             R.id.item_settings -> {
                 navigateToMathQuizSettingsFragment()
                 true
@@ -147,6 +166,21 @@ class MathQuizFragment : Fragment() {
         MathQuizFragmentDirections
             .actionMathQuizFragmentToMathQuizSettingsFragment(currentMathType.ordinal)
     )
+
+    private fun loadMuteState() = activity?.getSharedPrefBoolean(
+        getString(R.string.math_quiz_pref_file_key),
+        getString(R.string.saved_mute_key)
+    )?.let { mute = it }
+
+    private fun saveMuteState() = activity?.setSharedPrefBoolean(
+        getString(R.string.math_quiz_pref_file_key),
+        getString(R.string.saved_mute_key),
+        mute
+    )
+
+    @Suppress("SameParameterValue")
+    private fun playAudio(audioRaw: Int) =
+        MediaPlayer.create(requireContext(), audioRaw).apply { if (!mute) start() }
 
     private fun hideKeyBoard() = AppUtils.hideKeyBoard(requireActivity())
 

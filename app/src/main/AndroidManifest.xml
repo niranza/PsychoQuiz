@@ -10,10 +10,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.PsychoQuiz">
+        android:theme="@style/Theme.PsychoQuiz"
+        tools:ignore="AllowBackup">
         <activity
             android:name=".TimerActivity"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

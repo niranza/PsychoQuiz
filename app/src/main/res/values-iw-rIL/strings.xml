@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Psycho Quiz</string>
+    <string name="english_word">אנגלית</string>
+    <string name="math">כמותי</string>
+    <string name="practice">התאמן בחידון</string>
+    <string name="letter">אות</string>
+    <string name="search_title">חיפוש</string>
+    <string name="search_a_word_here">חפש מילה כאן</string>
+    <string name="search_word_hint">חפש מילה</string>
+    <string name="display_all_words">הצג את כל המילים</string>
+    <string name="no_results">אין תוצאה מתאימה</string>
+    <string name="next">הבא</string>
+    <string name="previous">קודם</string>
+    <string name="quiz_headline">משמעות המילה \"%1$s\" היא:</string>
+    <string name="error_message">אין אפשרות לטעון דף זה \"%1$s\"</string>
+    <string name="settings">הגדרות</string>
+    <string name="choose_letters">בחרו אותיות</string>
+    <string name="choose_word_types">בחרו סוג מילה</string>
+    <string name="restart">אתחול</string>
+    <string name="logo">לוגו</string>
+    <string name="quiz_result">תוצאות החידון</string>
+    <string name="well_done">כל הכבוד!</string>
+    <string name="first_number">מספר ראשון</string>
+    <string name="second_number">מספר שני</string>
+    <string name="show_translation">הראה תרגום</string>
+    <string name="hide_translation">הסתר תרגום</string>
+    <string name="unknown_dialog_title">האם אתה מרגיש שאתה כבר יודע את המילה \"%1$s\"?</string>
+    <string name="no">לא</string>
+    <string name="yes">כן</string>
+    <string name="home">בית</string>
+    <string name="start">התחל</string>
+    <string name="pause">עצור</string>
+    <string name="reset">אתחול</string>
+    <string name="timer">טיימר</string>
+    <string name="chapter_title">פרק %1$d/%2$d</string>
+    <string name="with_essay">עם חיבור</string>
+    <string name="essay">חיבור</string>
+    <string name="chapters">פרקים</string>
+    <string name="change_language">שנה שפה</string>
+    <string name="choose_language">בחר שפה</string>
+    <string name="mute">השתק</string>
+
+</resources>
