@@ -13,7 +13,7 @@
     <string name="next">הבא</string>
     <string name="previous">קודם</string>
     <string name="quiz_headline">משמעות המילה \"%1$s\" היא:</string>
-    <string name="error_message">אין אפשרות לטעון דף זה \"%1$s\"</string>
+    <string name="error_message">אין אפשרות לטעון דף זה %1$s</string>
     <string name="settings">הגדרות</string>
     <string name="choose_letters">בחרו אותיות</string>
     <string name="choose_word_types">בחרו סוג מילה</string>
@@ -40,5 +40,8 @@
     <string name="change_language">שנה שפה</string>
     <string name="choose_language">בחר שפה</string>
     <string name="mute">השתק</string>
+    <string name="refresh_dialog_title">החידון נגמר! לאתחל?</string>
+    <string name="invalid_settings">לא נמצאו מילים המתאימות להגדרות שבחרת</string>
+    <string name="ok">אוקיי</string>
 
 </resources>

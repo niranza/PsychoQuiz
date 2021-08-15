@@ -28,7 +28,7 @@
     <string name="next">NEXT</string>
     <string name="previous">PREVIOUS</string>
     <string name="quiz_headline">The meaning of the word \"%1$s\":</string>
-    <string name="error_message">Couldn\'t Load Page \"%1$s\"</string>
+    <string name="error_message">Couldn\'t Load Page %1$s</string>
     <string name="settings">Settings</string>
     <string name="choose_letters">Choose Letters</string>
     <string name="choose_word_types">Choose Word Types</string>
@@ -55,5 +55,8 @@
     <string name="change_language">Change Language</string>
     <string name="choose_language">Choose Language</string>
     <string name="mute">Mute</string>
+    <string name="refresh_dialog_title">Quiz Finished! Restart?</string>
+    <string name="invalid_settings">Couldn\'t find any words to fit your settings</string>
+    <string name="ok">OK</string>
 
 </resources>

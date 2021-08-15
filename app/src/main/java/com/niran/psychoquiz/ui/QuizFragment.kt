@@ -3,7 +3,6 @@ package com.niran.psychoquiz.ui
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -38,6 +37,9 @@ class QuizFragment : Fragment() {
 
     private var wrongAnswerCount = 0
 
+    private var questionDialogShowing = false
+    private var refreshDialogGotCanceled = false
+
     private var bindOnce = true
 
     override fun onCreateView(
@@ -71,12 +73,8 @@ class QuizFragment : Fragment() {
                             layoutQuiz.visibility = View.VISIBLE
                         }
                         LoadingState.ERROR -> {
+                            errorDialog(it.message).show()
                             navigateToSettingsFragment()
-                            Toast.makeText(
-                                activity,
-                                getString(R.string.error_message, it.message),
-                                Toast.LENGTH_LONG
-                            ).show()
                         }
                     }
                 }
@@ -108,13 +106,13 @@ class QuizFragment : Fragment() {
                         *nextAndPreviousButtons
                     )
                     UiUtil.setViewsBackgroundColor(R.attr.wordKnownBgColor, button)
-                    viewModel.loadNewWord(wrongAnswerCount)
-                    wrongAnswerCount = 0
                     delay(DELAY_TIME_IN_MILLIS)
                     UiUtil.setViewsBackgroundColor(
                         R.attr.answerButtonsDefaultColor,
                         *answerButtons
                     )
+                    viewModel.loadNewWord(wrongAnswerCount)
+                    wrongAnswerCount = 0
                     viewModel.loadNewQuestion(Question.Load.NEXT)
                     tvIndex.text = viewModel.indexString
                     btnPrevious.visibility = View.VISIBLE
@@ -160,10 +158,15 @@ class QuizFragment : Fragment() {
         }
 
         viewModel.eventQuizFinished.observe(viewLifecycleOwner) { quizFinished ->
-            if (quizFinished) refreshGame()
+            if (quizFinished && !questionDialogShowing) {
+                refreshDialog().show()
+                refreshDialogGotCanceled = true
+            }
         }
 
-        viewModel.eventShowDialog.observe(viewLifecycleOwner) { if (it) showDialog() }
+        viewModel.eventShowDialog.observe(viewLifecycleOwner) { showDialog ->
+            if (showDialog) questionDialog().show()
+        }
 
         bindOnce = false
     }
@@ -176,16 +179,43 @@ class QuizFragment : Fragment() {
     private fun isQuestionValid(question: Question) =
         question.word.wordText != "" && question.answers.isNotEmpty()
 
-    private fun showDialog() = AlertDialog.Builder(activity).apply {
+    private fun errorDialog(message: String) = AlertDialog.Builder(activity).apply {
+        setTitle(
+            when (message) {
+                QuizViewModel.INVALID_SETTINGS ->
+                    getString(R.string.invalid_settings)
+                else -> getString(R.string.error_message, message)
+            }
+        )
+        setPositiveButton(R.string.ok) { _, _ -> }
+        create()
+    }
+
+    private fun questionDialog() = AlertDialog.Builder(activity).apply {
         setTitle(getString(R.string.unknown_dialog_title, viewModel.wordText))
         setPositiveButton(R.string.no) { _, _ -> }
         setNegativeButton(R.string.yes) { _, _ -> viewModel.updateCurrentQuestion() }
-        show()
+        setOnDismissListener {
+            questionDialogShowing = false
+            if (refreshDialogGotCanceled) {
+                refreshDialog().show()
+                refreshDialogGotCanceled = false
+            }
+
+        }
+        create()
+        questionDialogShowing = true
+    }
+
+    private fun refreshDialog() = AlertDialog.Builder(activity).apply {
+        setTitle(getString(R.string.refresh_dialog_title))
+        setPositiveButton(R.string.no) { _, _ -> }
+        setNegativeButton(R.string.yes) { _, _ -> refreshGame() }
+        create()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) =
         inflater.inflate(R.menu.fragment_quiz_menu, menu)
-
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean =
         when (item.itemId) {
@@ -214,6 +244,6 @@ class QuizFragment : Fragment() {
     }
 
     companion object {
-        private const val DELAY_TIME_IN_MILLIS = 700L
+        private const val DELAY_TIME_IN_MILLIS = 500L
     }
 }

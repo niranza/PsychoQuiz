@@ -1,5 +1,6 @@
 package com.niran.psychoquiz.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.niran.psychoquiz.database.models.settings.OutputOnePowerSetting
 import com.niran.psychoquiz.database.models.settings.superclasses.getAllValid
@@ -24,18 +25,22 @@ class MathQuizViewModel(private val repository: MathQuizSettingRepository) : Vie
     private var outputOneList = listOf<Int>()
     private var outputTwoList = listOf<Int>()
 
+    private var previousOutputs = mutableListOf<Int>()
+
+    private var loopCount = 0
+
     init {
         _loadingState.value = LoadingState.LOADING
     }
 
     fun loadGame(mathType: MathType) = viewModelScope.launch {
-        try {
-            loadOutputs(mathType)
-            loadNewMathQuestion(mathType)
-            _loadingState.value = LoadingState.SUCCESS
-        } catch (e: Exception) {
-            _loadingState.value = LoadingState.ERROR.also { it.message = e.message.toString() }
-        }
+//        try {
+        loadOutputs(mathType)
+        loadNewMathQuestion(mathType)
+        _loadingState.value = LoadingState.SUCCESS
+//        } catch (e: Exception) {
+//            _loadingState.value = LoadingState.ERROR.also { it.message = e.message.toString() }
+//        }
     }
 
     private suspend fun loadOutputs(mathType: MathType) {
@@ -48,33 +53,63 @@ class MathQuizViewModel(private val repository: MathQuizSettingRepository) : Vie
             _loadingState.value = LoadingState.ERROR.also { it.message = "Invalid Settings" }
             return
         }
-        val outputArrays = listOf(outputOneList, outputTwoList)
-        val randomNum = (0..1).random()
-        val arrayOne = outputArrays[randomNum]
-        val arrayTwo = outputArrays[if (randomNum == 1) 0 else 1]
         when (mathType) {
-            MathType.MULTIPLICATION -> {
-                _outputOne.value = getOutput(arrayOne)
-                _outputTwo.value = getOutput(arrayTwo)
+            MathType.MULTIPLICATION -> getRandomOutputArrays().also { randomArrays ->
+                val currentOutputs =
+                    mutableListOf(getOutput(randomArrays[0]), getOutput(randomArrays[1]))
+                setOutputs(mathType, currentOutputs)
             }
-            MathType.DIVISION -> {
-                _outputTwo.value = getOutput(arrayOne)
-                _outputOne.value = _outputTwo.value?.times(getOutput(arrayTwo))
+            MathType.DIVISION -> getRandomOutputArrays().also { randomArrays ->
+                val currentOutputs = mutableListOf(getOutput(randomArrays[0]))
+                currentOutputs.add(0, currentOutputs[0].times(getOutput(randomArrays[1])))
+                setOutputs(mathType, currentOutputs)
             }
             MathType.POWER -> {
-                _outputOne.value = getOutput(outputOneList)
-                _outputTwo.value =
-                    getOutput(OutputOnePowerSetting.Constant.getPower(_outputOne.value ?: 0))
+                val currentOutputs = mutableListOf(getOutput(outputOneList))
+                currentOutputs.add(
+                    getOutput(OutputOnePowerSetting.Constant.getPower(currentOutputs[0]))
+                )
+                setOutputs(mathType, currentOutputs)
             }
         }
-        _loadingState.value = LoadingState.SUCCESS
     }
+
+    private fun getRandomOutputArrays(): List<List<Int>> =
+        with(listOf(outputOneList, outputTwoList)) {
+            val randomNum = (0..1).random()
+            listOf(get(randomNum), get(if (randomNum == 1) 0 else 1))
+        }
 
     private fun getOutput(list: List<Int>) = with(list) { get((0 until size).random()) }
 
     private fun validSettings(mathType: MathType) = when (mathType) {
         MathType.POWER -> outputOneList.isNotEmpty()
         else -> outputOneList.isNotEmpty() && outputTwoList.isNotEmpty()
+    }
+
+    private fun setOutputs(mathType: MathType, currentOutputs: MutableList<Int>) {
+        errorIf(mathType, currentOutputs == previousOutputs)
+            .also { error -> if (error) return }
+        _outputOne.value = currentOutputs[0]
+        _outputTwo.value = currentOutputs[1]
+        previousOutputs = currentOutputs
+    }
+
+    private fun errorIf(mathType: MathType, condition: Boolean) = when {
+        loopCount > 5 -> {
+            loopCount = 0
+            false
+        }
+        condition -> {
+            Log.d("MathQuizFragment", "looped $loopCount")
+            loopCount++
+            loadNewMathQuestion(mathType)
+            true
+        }
+        else -> {
+            loopCount = 0
+            false
+        }
     }
 
     fun validateAnswer(mathType: MathType, answer: Int): Boolean = when (mathType) {

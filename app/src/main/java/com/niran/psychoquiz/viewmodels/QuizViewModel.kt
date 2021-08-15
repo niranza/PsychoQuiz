@@ -1,5 +1,6 @@
 package com.niran.psychoquiz.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
@@ -7,11 +8,8 @@ import com.niran.psychoquiz.database.models.settings.superclasses.getAllValid
 import com.niran.psychoquiz.repositories.QuestionRepository
 import com.niran.psychoquiz.repositories.QuizSettingRepository
 import com.niran.psychoquiz.repositories.WordRepository
-import com.niran.psychoquiz.utils.QuizAiUtil
+import com.niran.psychoquiz.utils.*
 import com.niran.psychoquiz.utils.enums.LoadingState
-import com.niran.psychoquiz.utils.filterByWordChar
-import com.niran.psychoquiz.utils.filterByWordTypes
-import com.niran.psychoquiz.utils.removeQuestions
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -32,12 +30,12 @@ class QuizViewModel(
     val eventQuizFinished: LiveData<Boolean> get() = _eventQuizFinished
 
     private var currentQuestionIndex = -1
-    private var questionList = listOf<Question>()
+    private var questionList = mutableListOf<Question>()
     private var wordList = mutableListOf<Word>()
     private var answerList = listOf<String>()
 
-    private var totalNumberOfQuestion = 0
-    val indexString get() = "${currentQuestionIndex + 1}/$totalNumberOfQuestion"
+    private var totalNumberOfWords = 0
+    val indexString get() = "${currentQuestionIndex + 1}/$totalNumberOfWords"
     val isCurrentIndexInitial get() = currentQuestionIndex == 0 || currentQuestionIndex == -1
 
     init {
@@ -45,55 +43,71 @@ class QuizViewModel(
     }
 
     fun loadGame(reloadQuiz: Boolean) = viewModelScope.launch {
-        try {
-            if (reloadQuiz) questionRepository.deleteAllQuestions()
-            updateQuestionList()
-            loadAnswerList()
-            loadWordList(getFirstLetterList(), getWordTypeList())
-            validateWordList()
-            loadNewQuestion(Question.Load.NEXT)
-            _loadingState.value = LoadingState.SUCCESS
-        } catch (e: Exception) {
-            _loadingState.value = LoadingState.ERROR.apply {
-                if (e.message.isNullOrBlank()) message = e.message.toString()
-            }
+//        try {
+        if (reloadQuiz) {
+            questionRepository.deleteAllQuestions()
+            Log.d("TAG", "Deleted All Question")
         }
+        updateQuestionList()
+        Log.d("TAG", "Updated Question List Question")
+        loadAnswerList()
+        Log.d("TAG", "Loaded Answer List")
+        loadWordList(getFirstLetterList(), getWordTypeList())
+        Log.d("TAG", "Loaded Word List")
+//        loadQuestionList()
+//        Log.d("TAG", "Loaded Question List")
+        validateLists().also { valid -> if (!valid) return@launch }
+        Log.d("TAG", "Validated Lists")
+        loadNewQuestion(Question.Load.NEXT)
+        Log.d("TAG", "Loaded Next Question")
+        _loadingState.value = LoadingState.SUCCESS
+//        } catch (e: Exception) {
+//            _loadingState.value = LoadingState.ERROR.apply {
+//                if (!e.message.isNullOrBlank()) message = e.message.toString()
+//            }
+//        }
     }
 
-    private suspend fun updateQuestionList() =
-        questionRepository.getAllQuestions().also { questionList = it }
+    private suspend fun updateQuestionList() = withContext(Dispatchers.IO) {
+        questionRepository.getAllQuestions().also { questionList = it as MutableList }
+    }
 
     private suspend fun loadAnswerList() =
         wordRepository.getAllTranslations().also { answerList = it }
 
-    private suspend fun getFirstLetterList(): CharArray =
-        withContext(Dispatchers.IO) {
-            quizSettingRepository.getAllWordFirstLetterSettings().getAllValid<Char>().toCharArray()
-        }
+    private suspend fun getFirstLetterList(): CharArray = withContext(Dispatchers.IO) {
+        quizSettingRepository.getAllWordFirstLetterSettings().getAllValid<Char>().toCharArray()
+    }
 
-    private suspend fun getWordTypeList(): IntArray =
-        withContext(Dispatchers.IO) {
-            quizSettingRepository.getAllWordTypeSettings().getAllValid<Int>().toIntArray()
-        }
+    private suspend fun getWordTypeList(): IntArray = withContext(Dispatchers.IO) {
+        quizSettingRepository.getAllWordTypeSettings().getAllValid<Int>().toIntArray()
+    }
 
     private suspend fun loadWordList(wordFirstLetters: CharArray, wordTypes: IntArray) =
         withContext(Dispatchers.IO) {
             val list = wordRepository.getAllWords().filterByWordChar(*wordFirstLetters)
                 .filterByWordTypes(*wordTypes).shuffled() as MutableList
+            Log.d("TAG", "Word List is with size of ${list.size}")
             wordList = list
         }
 
-    private suspend fun validateWordList() = withContext(Dispatchers.Default) {
+    private suspend fun loadQuestionList() =
+        withContext(Dispatchers.Default) { questionList.filterByWords(*wordList.toTypedArray()) }
+
+    private suspend fun validateLists(): Boolean = withContext(Dispatchers.Main) {
         if (wordList.isEmpty()) {
+            Log.d("TAG", "Word List is Empty. Error will be called")
             LoadingState.ERROR.message = INVALID_SETTINGS
             _loadingState.value = LoadingState.ERROR
-            return@withContext
-        } else totalNumberOfQuestion = wordList.size
+            return@withContext false
+        } else totalNumberOfWords = wordList.size
 
         currentQuestionIndex = if (questionList.isEmpty()) -1 else {
+            Log.d("TAG", "Question List wasn't empty. Updating data")
             wordList.removeQuestions(questionList)
             questionList.size - 2
         }
+        true
     }
 
     fun loadNewQuestion(loadState: Question.Load) = viewModelScope.launch {
@@ -101,8 +115,9 @@ class QuizViewModel(
             Question.Load.NEXT -> currentQuestionIndex++
             Question.Load.PREVIOUS -> currentQuestionIndex--
         }
-        if (currentQuestionIndex >= questionList.size)
-            addQuestion().also { cannotAddQuestion -> if (!cannotAddQuestion) return@launch }
+        if (currentQuestionIndex >= questionList.size) addQuestion().also { cannotAddQuestion ->
+            if (!cannotAddQuestion) currentQuestionIndex--
+        }
         _question.value = questionList[currentQuestionIndex]
     }
 
@@ -158,6 +173,7 @@ class QuizViewModel(
         questionRepository.updateQuestion(newQuestion)
         wordRepository.updateWord(newQuestion.word)
         updateQuestionList()
+        if (_question.value?.questionId == newQuestion.questionId) _question.value = newQuestion
     }
 
     //endregion QuizAi

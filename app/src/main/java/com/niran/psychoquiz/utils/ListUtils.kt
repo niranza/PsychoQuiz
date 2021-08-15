@@ -3,6 +3,21 @@ package com.niran.psychoquiz.utils
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
 
+
+//region QuestionListUtils
+
+fun List<Question>.filterByWords(vararg words: Word): List<Question> {
+    val notValidQuestions = mutableListOf<Question>()
+    for (question in this)
+        if (!words.contains(question.word))
+            notValidQuestions.add(question)
+    (this as MutableList).removeAll(notValidQuestions)
+    return this
+}
+
+//endregion QuestionListUtils
+
+
 //region WordListUtils
 fun List<Word>.sortByType() = sortedBy { it.wordType }
 
@@ -14,25 +29,19 @@ fun List<Word>.filterWordListBySearchQuery(searchQuery: String?) =
             .contains(searchQuery ?: "", true)
     }
 
-fun List<Word>.filterByWordTypes(vararg foodTypes: Int): List<Word> {
+fun List<Word>.filterByWordTypes(vararg wordTypes: Int): List<Word> {
     val result = mutableListOf<Word>()
     for (word in this)
-        for (wordType in foodTypes)
-            if (word.wordType == wordType) {
-                result.add(word)
-                break;
-            }
+        if (wordTypes.contains(word.wordType))
+            result.add(word)
     return result
 }
 
 fun List<Word>.filterByWordChar(vararg wordChars: Char): List<Word> {
     val result = mutableListOf<Word>()
     for (word in this)
-        for (wordChar in wordChars)
-            if (word.wordText[0] == wordChar) {
-                result.add(word)
-                break;
-            }
+        if (wordChars.contains(word.wordText[0]))
+            result.add(word)
     return result
 }
 
