@@ -6,6 +6,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import androidx.room.migration.AutoMigrationSpec
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.converters.StringListConverter
@@ -17,12 +18,9 @@ import com.niran.psychoquiz.database.models.DatabaseLoader
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.settings.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.cancel
-import kotlinx.coroutines.delay
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 @Database(
     entities = [
@@ -38,7 +36,10 @@ import kotlinx.coroutines.launch
         Question::class
     ],
     version = 1,
-    exportSchema = true
+    exportSchema = true,
+//    autoMigrations = [
+//        AutoMigration(from = 1, to = 2, spec = AppDatabase.MyAutoMigration::class),
+//    ]
 )
 @TypeConverters(StringListConverter::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -47,6 +48,20 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun settingDao(): SettingDao
     abstract fun databaseLoaderDao(): DatabaseLoaderDao
     abstract fun questionDao(): QuestionDao
+
+    @Suppress("unused")
+    class MyAutoMigration : AutoMigrationSpec {
+        override fun onPostMigrate(db: SupportSQLiteDatabase) {
+            super.onPostMigrate(db)
+            INSTANCE?.let { _ ->
+                CoroutineScope(Dispatchers.IO).launch {
+                    Log.d(RoomCallBack.TAG, "onPostMigrate Called")
+                    //add new words here
+                    Log.d(RoomCallBack.TAG, "onPostMigrate Ended")
+                }
+            }
+        }
+    }
 
     class RoomCallBack(
         private val context: Context,
