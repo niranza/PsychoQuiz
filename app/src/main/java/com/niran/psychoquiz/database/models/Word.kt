@@ -18,8 +18,10 @@ data class Word(
     val wordTranslation: String = "",
 
     @ColumnInfo(name = "word_type")
-    val wordType: Int = Types.NEUTRAL.ordinal
+    val wordType: Int = Types.NEUTRAL.ordinal,
 
+    @ColumnInfo(name = "times_answered_correct")
+    val timesAnsweredCorrect: Int = 0
 ) {
     enum class Types { FAVORITE, UNKNOWN, NEUTRAL, KNOWN; }
 }

@@ -1,6 +1,5 @@
 package com.niran.psychoquiz.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.*
 import com.niran.psychoquiz.database.models.Question
 import com.niran.psychoquiz.database.models.Word
@@ -43,32 +42,22 @@ class QuizViewModel(
     }
 
     fun loadGame(reloadQuiz: Boolean) = viewModelScope.launch {
-//        try {
-        if (reloadQuiz) {
-            questionRepository.deleteAllQuestions()
-            Log.d("TAG", "Deleted All Question")
+        try {
+            if (reloadQuiz) questionRepository.deleteAllQuestions()
+            loadQuestionList()
+            loadAnswerList()
+            loadWordList(getFirstLetterList(), getWordTypeList())
+            validateLists().also { valid -> if (!valid) return@launch }
+            loadNewQuestion(Question.Load.NEXT)
+            _loadingState.value = LoadingState.SUCCESS
+        } catch (e: Exception) {
+            _loadingState.value = LoadingState.ERROR.apply {
+                if (!e.message.isNullOrBlank()) message = e.message.toString()
+            }
         }
-        updateQuestionList()
-        Log.d("TAG", "Updated Question List Question")
-        loadAnswerList()
-        Log.d("TAG", "Loaded Answer List")
-        loadWordList(getFirstLetterList(), getWordTypeList())
-        Log.d("TAG", "Loaded Word List")
-//        loadQuestionList()
-//        Log.d("TAG", "Loaded Question List")
-        validateLists().also { valid -> if (!valid) return@launch }
-        Log.d("TAG", "Validated Lists")
-        loadNewQuestion(Question.Load.NEXT)
-        Log.d("TAG", "Loaded Next Question")
-        _loadingState.value = LoadingState.SUCCESS
-//        } catch (e: Exception) {
-//            _loadingState.value = LoadingState.ERROR.apply {
-//                if (!e.message.isNullOrBlank()) message = e.message.toString()
-//            }
-//        }
     }
 
-    private suspend fun updateQuestionList() = withContext(Dispatchers.IO) {
+    private suspend fun loadQuestionList() = withContext(Dispatchers.IO) {
         questionRepository.getAllQuestions().also { questionList = it as MutableList }
     }
 
@@ -87,23 +76,22 @@ class QuizViewModel(
         withContext(Dispatchers.IO) {
             val list = wordRepository.getAllWords().filterByWordChar(*wordFirstLetters)
                 .filterByWordTypes(*wordTypes).shuffled() as MutableList
-            Log.d("TAG", "Word List is with size of ${list.size}")
             wordList = list
         }
 
-    private suspend fun loadQuestionList() =
-        withContext(Dispatchers.Default) { questionList.filterByWords(*wordList.toTypedArray()) }
-
     private suspend fun validateLists(): Boolean = withContext(Dispatchers.Main) {
         if (wordList.isEmpty()) {
-            Log.d("TAG", "Word List is Empty. Error will be called")
             LoadingState.ERROR.message = INVALID_SETTINGS
             _loadingState.value = LoadingState.ERROR
             return@withContext false
         } else totalNumberOfWords = wordList.size
 
+        if (questionList.hasInvalidQuestions(*wordList.toTypedArray())) {
+            LoadingState.ERROR.message = RECOMMEND_REFRESHING
+            _loadingState.value = LoadingState.ERROR
+        }
+
         currentQuestionIndex = if (questionList.isEmpty()) -1 else {
-            Log.d("TAG", "Question List wasn't empty. Updating data")
             wordList.removeQuestions(questionList)
             questionList.size - 2
         }
@@ -131,7 +119,7 @@ class QuizViewModel(
         val answers = (getAnswers(word.wordTranslation)).shuffled()
         Question(word = word, answers = answers).also {
             questionRepository.insertQuestion(it)
-            updateQuestionList()
+            loadQuestionList()
         }
         return true
     }
@@ -158,23 +146,27 @@ class QuizViewModel(
     private lateinit var newQuestion: Question
     val wordText get() = newQuestion.word.wordText
 
-    fun loadNewWord(wrongAnswerCount: Int) =
-        QuizAiUtil.getNewWord(wrongAnswerCount, _question.value!!).also {
-            newQuestion = it.newQuestion
-            if (it.showDialog) _eventShowDialog.apply {
-                value = true
-                value = false
-                return@also
-            }
-            updateCurrentQuestion()
+    fun loadNewWord(wrongAnswerCount: Int) = viewModelScope.launch {
+        QuizAiUtil.getNewWord(wrongAnswerCount, _question.value!!).apply {
+            updateQuestion(questionWithNewAnswerCount)
+            newQuestion = questionWithNewWordType
+            if (questionUnknown) {
+                if (showDialog) _eventShowDialog.apply {
+                    value = true
+                    value = false
+                }
+            } else updateQuestion(newQuestion)
         }
-
-    fun updateCurrentQuestion() = viewModelScope.launch {
-        questionRepository.updateQuestion(newQuestion)
-        wordRepository.updateWord(newQuestion.word)
-        updateQuestionList()
-        if (_question.value?.questionId == newQuestion.questionId) _question.value = newQuestion
     }
+
+    private suspend fun updateQuestion(question: Question) {
+        questionRepository.updateQuestion(question)
+        wordRepository.updateWord(question.word)
+        loadQuestionList()
+        if (_question.value?.questionId == question.questionId) _question.value = question
+    }
+
+    fun updateCurrentQuestion() = viewModelScope.launch { updateQuestion(newQuestion) }
 
     //endregion QuizAi
 
@@ -182,6 +174,7 @@ class QuizViewModel(
         private const val NUMBER_OF_MISLEADING_ANSWERS = 3
 
         const val INVALID_SETTINGS = "Invalid Settings"
+        const val RECOMMEND_REFRESHING = "Refresh"
     }
 }
 

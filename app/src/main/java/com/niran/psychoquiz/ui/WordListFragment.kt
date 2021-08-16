@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.models.Word
@@ -59,19 +60,23 @@ class WordListFragment : Fragment() {
         wordAdapter = WordAdapter(object : WordAdapter.WordClickHandler {
             override fun onCloseClicked(word: Word) {
                 viewModel.customUpdateWord(word, Types.UNKNOWN)
+                showSnackBar(R.string.unknown_snackBar)
             }
 
             override fun onStarClicked(word: Word) {
                 viewModel.customUpdateWord(word, Types.FAVORITE)
+                showSnackBar(R.string.favorite_snackBar)
             }
 
             override fun onCheckClicked(word: Word) {
                 viewModel.customUpdateWord(word, Types.KNOWN)
+                showSnackBar(R.string.known_snackBar)
             }
 
             override fun onItemViewClicked(word: Word) {
                 if (word.wordType == Types.NEUTRAL.ordinal) return
                 viewModel.customUpdateWord(word, Types.NEUTRAL)
+                showSnackBar(R.string.neutral_snackBar)
             }
 
             override val showTranslation: Boolean get() = this@WordListFragment.showTranslation
@@ -93,6 +98,10 @@ class WordListFragment : Fragment() {
                 wordAdapter.submitList(it.filterByWordChar(firstLetterChar).sortByType())
             }
         }
+    }
+
+    private fun showSnackBar(stringId: Int) = binding.apply {
+        Snackbar.make(layoutSnackBar, getString(stringId), Snackbar.LENGTH_LONG).apply { show() }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

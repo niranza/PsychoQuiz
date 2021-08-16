@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.snackbar.Snackbar
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.models.Question
@@ -42,6 +43,8 @@ class QuizFragment : Fragment() {
 
     private var bindOnce = true
 
+    private var swipeDownToRefreshSnackBar: Snackbar? = null
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -73,8 +76,7 @@ class QuizFragment : Fragment() {
                             layoutQuiz.visibility = View.VISIBLE
                         }
                         LoadingState.ERROR -> {
-                            errorDialog(it.message).show()
-                            navigateToSettingsFragment()
+                            handleErrorWithDialog(it.message).show()
                         }
                     }
                 }
@@ -90,7 +92,10 @@ class QuizFragment : Fragment() {
     }
 
     private fun bindOnce() = binding.apply {
-        layoutRefresh.setOnRefreshListener { refreshGame() }
+        layoutRefresh.setOnRefreshListener {
+            swipeDownToRefreshSnackBar?.dismiss()
+            refreshGame()
+        }
 
         val answerButtons = arrayOf(answer1, answer2, answer3, answer4)
         val nextAndPreviousButtons = arrayOf(btnNext, btnPrevious)
@@ -158,10 +163,9 @@ class QuizFragment : Fragment() {
         }
 
         viewModel.eventQuizFinished.observe(viewLifecycleOwner) { quizFinished ->
-            if (quizFinished && !questionDialogShowing) {
-                refreshDialog().show()
-                refreshDialogGotCanceled = true
-            }
+            if (quizFinished)
+                if (!questionDialogShowing) refreshDialog().show()
+                else refreshDialogGotCanceled = true
         }
 
         viewModel.eventShowDialog.observe(viewLifecycleOwner) { showDialog ->
@@ -171,24 +175,43 @@ class QuizFragment : Fragment() {
         bindOnce = false
     }
 
-    private fun refreshGame() {
-        binding.layoutQuiz.visibility = View.GONE
+    private fun refreshGame() = binding.apply {
+        layoutRefresh.isRefreshing = true
+        layoutQuiz.visibility = View.GONE
         viewModel.loadGame(true)
     }
 
     private fun isQuestionValid(question: Question) =
         question.word.wordText != "" && question.answers.isNotEmpty()
 
-    private fun errorDialog(message: String) = AlertDialog.Builder(activity).apply {
+    private fun handleErrorWithDialog(message: String) = AlertDialog.Builder(activity).apply {
         setTitle(
             when (message) {
-                QuizViewModel.INVALID_SETTINGS ->
+                QuizViewModel.INVALID_SETTINGS -> {
+                    navigateToSettingsFragment()
                     getString(R.string.invalid_settings)
-                else -> getString(R.string.error_message, message)
+                }
+                QuizViewModel.RECOMMEND_REFRESHING -> {
+                    setOnDismissListener { showSwipeToRefreshPopUp() }
+                    getString(R.string.changes_detected)
+                }
+                else -> {
+                    navigateToSettingsFragment()
+                    getString(R.string.error_message, message)
+                }
             }
         )
-        setPositiveButton(R.string.ok) { _, _ -> }
+        setNegativeButton(R.string.ok) { _, _ -> }
         create()
+    }
+
+    private fun showSwipeToRefreshPopUp() = binding.apply {
+        swipeDownToRefreshSnackBar = Snackbar.make(
+            layoutPopupMessage,
+            R.string.swipe_down_to_refresh,
+            Snackbar.LENGTH_INDEFINITE
+        ).also { snackBar -> snackBar.setAction(R.string.multiplication) { snackBar.dismiss() } }
+            .apply { show() }
     }
 
     private fun questionDialog() = AlertDialog.Builder(activity).apply {

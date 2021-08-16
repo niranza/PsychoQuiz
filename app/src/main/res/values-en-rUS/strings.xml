@@ -42,6 +42,13 @@
     <string name="mute">Mute</string>
     <string name="refresh_dialog_title">Quiz Finished! Restart?</string>
     <string name="invalid_settings">Couldn\'t find any words to fit your settings</string>
+    <string name="changes_detected">Word changes detected.\nRecommend refreshing.</string>
     <string name="ok">OK</string>
+    <string name="refresh">Refresh</string>
+    <string name="swipe_down_to_refresh">Swipe Down To Refresh</string>
+    <string name="neutral_snackBar">Word is now neutral</string>
+    <string name="known_snackBar">Word is now Known</string>
+    <string name="unknown_snackBar">Word is now unknown</string>
+    <string name="favorite_snackBar">Word is now favorite</string>
 
 </resources>

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e1567782df93d604c928598757e4a3bd",
+    "identityHash": "3aee8577d66abc6eb4138f4af2e1aeae",
     "entities": [
       {
         "tableName": "word_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL, `times_answered_correct` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "wordId",
@@ -29,6 +29,12 @@
           {
             "fieldPath": "wordType",
             "columnName": "word_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timesAnsweredCorrect",
+            "columnName": "times_answered_correct",
             "affinity": "INTEGER",
             "notNull": true
           }
@@ -336,7 +342,7 @@
       },
       {
         "tableName": "question_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `answers` TEXT NOT NULL, `word_id` INTEGER NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `answers` TEXT NOT NULL, `word_id` INTEGER NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL, `times_answered_correct` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "questionId",
@@ -373,6 +379,12 @@
             "columnName": "word_type",
             "affinity": "INTEGER",
             "notNull": true
+          },
+          {
+            "fieldPath": "word.timesAnsweredCorrect",
+            "columnName": "times_answered_correct",
+            "affinity": "INTEGER",
+            "notNull": true
           }
         ],
         "primaryKey": {
@@ -388,7 +400,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e1567782df93d604c928598757e4a3bd')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3aee8577d66abc6eb4138f4af2e1aeae')"
     ]
   }
 }

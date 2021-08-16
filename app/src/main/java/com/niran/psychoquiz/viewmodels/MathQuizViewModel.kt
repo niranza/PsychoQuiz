@@ -34,13 +34,13 @@ class MathQuizViewModel(private val repository: MathQuizSettingRepository) : Vie
     }
 
     fun loadGame(mathType: MathType) = viewModelScope.launch {
-//        try {
-        loadOutputs(mathType)
-        loadNewMathQuestion(mathType)
-        _loadingState.value = LoadingState.SUCCESS
-//        } catch (e: Exception) {
-//            _loadingState.value = LoadingState.ERROR.also { it.message = e.message.toString() }
-//        }
+        try {
+            loadOutputs(mathType)
+            loadNewMathQuestion(mathType)
+            _loadingState.value = LoadingState.SUCCESS
+        } catch (e: Exception) {
+            _loadingState.value = LoadingState.ERROR.also { it.message = e.message.toString() }
+        }
     }
 
     private suspend fun loadOutputs(mathType: MathType) {
@@ -82,11 +82,6 @@ class MathQuizViewModel(private val repository: MathQuizSettingRepository) : Vie
 
     private fun getOutput(list: List<Int>) = with(list) { get((0 until size).random()) }
 
-    private fun validSettings(mathType: MathType) = when (mathType) {
-        MathType.POWER -> outputOneList.isNotEmpty()
-        else -> outputOneList.isNotEmpty() && outputTwoList.isNotEmpty()
-    }
-
     private fun setOutputs(mathType: MathType, currentOutputs: MutableList<Int>) {
         errorIf(mathType, currentOutputs == previousOutputs)
             .also { error -> if (error) return }
@@ -110,6 +105,11 @@ class MathQuizViewModel(private val repository: MathQuizSettingRepository) : Vie
             loopCount = 0
             false
         }
+    }
+
+    private fun validSettings(mathType: MathType) = when (mathType) {
+        MathType.POWER -> outputOneList.isNotEmpty()
+        else -> outputOneList.isNotEmpty() && outputTwoList.isNotEmpty()
     }
 
     fun validateAnswer(mathType: MathType, answer: Int): Boolean = when (mathType) {

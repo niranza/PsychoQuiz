@@ -70,9 +70,13 @@ class MainActivity : AppCompatActivity() {
                     getSharedPrefString(
                         getString(R.string.main_pref_file_key),
                         getString(R.string.saved_lang_key)
-                    ) ?: "en"
+                    ) ?: DEFAULT_LANGUAGE
                 )
             )
         }
+    }
+
+    companion object {
+        private const val DEFAULT_LANGUAGE = "en"
     }
 }

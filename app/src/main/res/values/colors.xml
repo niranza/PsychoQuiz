@@ -13,4 +13,10 @@
     <color name="yellow_light">#ffd600</color>
     <color name="red_light">#d50000</color>
     <color name="red_dark">#9b0000</color>
+    <color name="theme_blue">#81d4fa</color>
+    <color name="theme_blue_light">#b6ffff</color>
+    <color name="theme_blue_dark">#4ba3c7</color>
+    <color name="theme_green">#a5d6a7</color>
+    <color name="theme_green_light">#d7ffd9</color>
+    <color name="theme_green_dark">#75a478</color>
 </resources>

@@ -6,13 +6,11 @@ import com.niran.psychoquiz.database.models.Word
 
 //region QuestionListUtils
 
-fun List<Question>.filterByWords(vararg words: Word): List<Question> {
-    val notValidQuestions = mutableListOf<Question>()
+fun List<Question>.hasInvalidQuestions(vararg words: Word): Boolean{
     for (question in this)
         if (!words.contains(question.word))
-            notValidQuestions.add(question)
-    (this as MutableList).removeAll(notValidQuestions)
-    return this
+            return true
+    return false
 }
 
 //endregion QuestionListUtils
