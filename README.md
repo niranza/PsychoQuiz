@@ -13,3 +13,6 @@ The app integreates
 * Over 4000 English words with a quiz
 * Tests
 * Object Oriented Programming Principles
+* menus
+* animations
+* Media Player
