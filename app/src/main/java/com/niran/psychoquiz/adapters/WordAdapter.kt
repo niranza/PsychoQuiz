@@ -1,8 +1,8 @@
 package com.niran.psychoquiz.adapters
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -25,7 +25,8 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
                 tvWordText.text = word.wordText
                 tvWordTranslation.text = word.wordTranslation
 
-                tvWordTranslation.isVisible = wordClickHandler.showTranslation
+                tvWordTranslation.visibility =
+                    if (wordClickHandler.showTranslation) View.VISIBLE else View.INVISIBLE
 
                 btnStar.setOnClickListener {
                     if (isPositionValid()) wordClickHandler.onStarClicked(word)
