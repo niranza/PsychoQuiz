@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,7 +39,11 @@ class MathFragment : Fragment() {
     }
 
     private fun navigateToMathQuizFragment(mathType: MathType) = view?.findNavController()
-        ?.navigate(MathFragmentDirections.actionMathFragmentToMathQuizFragment(mathType.ordinal))
+        ?.navigate(
+            MathFragmentDirections.actionMathFragmentToMathQuizFragment(
+                mathType.ordinal
+            )
+        )
 
     override fun onDestroyView() {
         super.onDestroyView()

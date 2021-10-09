@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,7 +34,11 @@ class QuizEndFragment : Fragment() {
     }
 
     private fun navigateToQuizFragment() = view?.findNavController()
-        ?.navigate(QuizEndFragmentDirections.actionQuizEndFragmentToQuizFragment(true))
+        ?.navigate(
+            QuizEndFragmentDirections.actionQuizEndFragmentToQuizFragment(
+                true
+            )
+        )
 
     override fun onDestroyView() {
         super.onDestroyView()

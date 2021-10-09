@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.app.AlertDialog
 import android.os.Bundle

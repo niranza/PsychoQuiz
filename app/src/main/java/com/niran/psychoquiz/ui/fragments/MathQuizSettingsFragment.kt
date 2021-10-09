@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -10,7 +10,7 @@ import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.database.models.settings.superclasses.BooleanSetting
 import com.niran.psychoquiz.databinding.FragmentMathQuizSettingsBinding
-import com.niran.psychoquiz.utils.adapters.BooleanSettingAdapter
+import com.niran.psychoquiz.adapters.BooleanSettingAdapter
 import com.niran.psychoquiz.utils.enums.MathType
 import com.niran.psychoquiz.viewmodels.MathQuizSettingsViewModel
 import com.niran.psychoquiz.viewmodels.MathQuizSettingsViewModelFactory

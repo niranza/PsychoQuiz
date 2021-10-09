@@ -1,4 +1,4 @@
-package com.niran.psychoquiz
+package com.niran.psychoquiz.ui
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.niran.psychoquiz.PsychoQuizApplication
+import com.niran.psychoquiz.R
 import com.niran.psychoquiz.utils.MyContextWrapper
 import com.niran.psychoquiz.utils.getSharedPrefString
 import com.niran.psychoquiz.viewmodels.MainViewModel

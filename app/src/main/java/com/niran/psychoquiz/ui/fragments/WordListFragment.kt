@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.*
@@ -11,10 +11,10 @@ import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
 import com.niran.psychoquiz.PsychoQuizApplication
 import com.niran.psychoquiz.R
+import com.niran.psychoquiz.adapters.WordAdapter
 import com.niran.psychoquiz.database.models.Word
 import com.niran.psychoquiz.database.models.Word.Types
 import com.niran.psychoquiz.databinding.FragmentWordListBinding
-import com.niran.psychoquiz.utils.adapters.WordAdapter
 import com.niran.psychoquiz.utils.filterByWordChar
 import com.niran.psychoquiz.utils.filterWordListBySearchQuery
 import com.niran.psychoquiz.utils.sortByType
@@ -91,11 +91,15 @@ class WordListFragment : Fragment() {
 
         if (displayAllWords)
             viewModel.getAllWordsAsLiveData().observe(viewLifecycleOwner) { wordList ->
-                uiSafeLoadList(wordList) { wordAdapter.submitList(it.sortByType()) }
+                uiSafeLoadList(wordList) {
+                    val list = it.sortByType()
+                    wordAdapter.submitList(list)
+                }
             }
         else viewModel.getWordsByLetterAsLiveData().observe(viewLifecycleOwner) { wordList ->
             uiSafeLoadList(wordList) {
-                wordAdapter.submitList(it.filterByWordChar(firstLetterChar).sortByType())
+                val list = it.filterByWordChar(firstLetterChar).sortByType()
+                wordAdapter.submitList(list)
             }
         }
     }
@@ -157,14 +161,16 @@ class WordListFragment : Fragment() {
             viewModel.getAllWordsAsLiveData().observe(viewLifecycleOwner) { wordList ->
                 uiSafeLoadList(wordList) {
                     val searchedList = it.filterWordListBySearchQuery(query).sortByType()
-                    wordAdapter.submitList(uiLoadSearchedList(searchedList))
+                    val list = uiLoadSearchedList(searchedList)
+                    wordAdapter.submitList(list)
                 }
             }
         else viewModel.getWordsByLetterAsLiveData().observe(viewLifecycleOwner) { wordList ->
             uiSafeLoadList(wordList) {
                 val searchedList = it.filterWordListBySearchQuery(query)
                     .filterByWordChar(firstLetterChar).sortByType()
-                wordAdapter.submitList(uiLoadSearchedList(searchedList))
+                val list = uiLoadSearchedList(searchedList)
+                wordAdapter.submitList(list)
             }
         }
     }

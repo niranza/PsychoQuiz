@@ -1,11 +1,11 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.niran.psychoquiz.MainActivity
+import com.niran.psychoquiz.ui.MainActivity
 import com.niran.psychoquiz.R
 import com.niran.psychoquiz.databinding.FragmentHomeBinding
 import com.niran.psychoquiz.utils.saveLanguageAndRefresh

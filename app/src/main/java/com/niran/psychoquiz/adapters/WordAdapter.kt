@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.utils.adapters
+package com.niran.psychoquiz.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -96,7 +96,7 @@ class WordAdapter(private val wordClickHandler: WordClickHandler) :
         }
 
         override fun areContentsTheSame(oldItem: Word, newItem: Word): Boolean {
-            return newItem == oldItem
+            return newItem.hashCode() == oldItem.hashCode()
         }
     }
 }

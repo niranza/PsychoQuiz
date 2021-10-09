@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.utils.adapters
+package com.niran.psychoquiz.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

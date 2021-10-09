@@ -1,4 +1,4 @@
-package com.niran.psychoquiz
+package com.niran.psychoquiz.ui
 
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.niran.psychoquiz.R
 import com.niran.psychoquiz.databinding.ActivityTimerBinding
 import com.niran.psychoquiz.viewmodels.TimerViewModel
 

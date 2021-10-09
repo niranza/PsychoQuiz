@@ -1,4 +1,4 @@
-package com.niran.psychoquiz.ui
+package com.niran.psychoquiz.ui.fragments
 
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
@@ -172,8 +172,9 @@ class MathQuizFragment : Fragment() {
         }
 
     private fun navigateToMathQuizSettingsFragment() = view?.findNavController()?.navigate(
-        MathQuizFragmentDirections
-            .actionMathQuizFragmentToMathQuizSettingsFragment(currentMathType.ordinal)
+        MathQuizFragmentDirections.actionMathQuizFragmentToMathQuizSettingsFragment(
+            currentMathType.ordinal
+        )
     )
 
     private fun loadMuteState() = activity?.getSharedPrefBoolean(

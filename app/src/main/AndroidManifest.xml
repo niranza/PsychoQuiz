@@ -13,17 +13,17 @@
         android:theme="@style/Theme.PsychoQuiz"
         tools:ignore="AllowBackup">
         <activity
-            android:name=".TimerActivity"
-            android:parentActivityName=".MainActivity"
+            android:name=".ui.TimerActivity"
+            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.niran.psychoquiz.MainActivity" />
+                android:value="com.niran.psychoquiz.ui.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:screenOrientation="portrait"
             android:theme="@style/splashScreenTheme"
