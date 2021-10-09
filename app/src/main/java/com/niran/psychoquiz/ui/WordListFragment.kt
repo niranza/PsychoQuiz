@@ -172,7 +172,7 @@ class WordListFragment : Fragment() {
     private fun uiLoadSearchedList(searchedWordList: List<Word>): List<Word> = with(binding) {
 
         if (searchedWordList.isEmpty()) tvNoResult.visibility = View.VISIBLE
-        else tvNoResult.visibility = View.GONE
+        else tvNoResult.visibility = View.INVISIBLE
 
         searchedWordList
     }

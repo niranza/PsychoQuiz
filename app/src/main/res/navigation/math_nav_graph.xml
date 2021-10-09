@@ -9,16 +9,20 @@
         android:id="@+id/mathFragment"
         android:name="com.niran.psychoquiz.ui.MathFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_math" >
+        tools:layout="@layout/fragment_math">
         <action
             android:id="@+id/action_mathFragment_to_mathQuizFragment"
-            app:destination="@id/mathQuizFragment" />
+            app:destination="@id/mathQuizFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/mathQuizFragment"
         android:name="com.niran.psychoquiz.ui.MathQuizFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_math_quiz" >
+        tools:layout="@layout/fragment_math_quiz">
         <action
             android:id="@+id/action_mathQuizFragment_to_mathQuizSettingsFragment"
             app:destination="@id/mathQuizSettingsFragment"

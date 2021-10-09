@@ -11,10 +11,18 @@
         tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_chooseLetterFragment"
-            app:destination="@id/chooseLetterFragment" />
+            app:destination="@id/chooseLetterFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_homeFragment_to_math_nav_graph"
-            app:destination="@id/math_nav_graph" />
+            app:destination="@id/math_nav_graph"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/chooseLetterFragment"
@@ -23,10 +31,18 @@
         tools:layout="@layout/fragment_english">
         <action
             android:id="@+id/action_chooseLetterFragment_to_wordListFragment"
-            app:destination="@id/wordListFragment" />
+            app:destination="@id/wordListFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
         <action
             android:id="@+id/action_chooseLetterFragment_to_quizFragment"
-            app:destination="@id/quizFragment" />
+            app:destination="@id/quizFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
     </fragment>
     <fragment
         android:id="@+id/wordListFragment"
