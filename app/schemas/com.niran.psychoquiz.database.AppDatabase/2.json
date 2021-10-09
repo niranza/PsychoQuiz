@@ -1,0 +1,406 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "3aee8577d66abc6eb4138f4af2e1aeae",
+    "entities": [
+      {
+        "tableName": "word_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`word_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL, `times_answered_correct` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "wordId",
+            "columnName": "word_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordText",
+            "columnName": "word_text",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordTranslation",
+            "columnName": "word_translation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wordType",
+            "columnName": "word_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timesAnsweredCorrect",
+            "columnName": "times_answered_correct",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "word_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "word_first_letter_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "word_type_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "output_one_multiplication_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "output_one_division_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "output_one_power_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "output_two_multiplication_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "output_two_division_setting_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`setting_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `setting_value` INTEGER NOT NULL, `setting_key` INTEGER NOT NULL, `setting_name` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "settingId",
+            "columnName": "setting_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingValue",
+            "columnName": "setting_value",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingKey",
+            "columnName": "setting_key",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "settingName",
+            "columnName": "setting_name",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "setting_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "database_loader_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`database_loader_id` INTEGER NOT NULL, `is_loaded` INTEGER NOT NULL, PRIMARY KEY(`database_loader_id`))",
+        "fields": [
+          {
+            "fieldPath": "databaseLoaderId",
+            "columnName": "database_loader_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isLoaded",
+            "columnName": "is_loaded",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "database_loader_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "question_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`question_id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `answers` TEXT NOT NULL, `word_id` INTEGER NOT NULL, `word_text` TEXT NOT NULL, `word_translation` TEXT NOT NULL, `word_type` INTEGER NOT NULL, `times_answered_correct` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "questionId",
+            "columnName": "question_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "answers",
+            "columnName": "answers",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.wordId",
+            "columnName": "word_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.wordText",
+            "columnName": "word_text",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.wordTranslation",
+            "columnName": "word_translation",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.wordType",
+            "columnName": "word_type",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "word.timesAnsweredCorrect",
+            "columnName": "times_answered_correct",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "question_id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3aee8577d66abc6eb4138f4af2e1aeae')"
+    ]
+  }
+}

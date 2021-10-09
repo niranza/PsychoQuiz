@@ -1,11 +1,7 @@
 package com.niran.psychoquiz.database
 
 import android.content.Context
-import android.util.Log
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.room.TypeConverters
+import androidx.room.*
 import androidx.room.migration.AutoMigrationSpec
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.niran.psychoquiz.R
@@ -21,6 +17,7 @@ import com.niran.psychoquiz.database.models.settings.*
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
+import timber.log.Timber
 
 @Database(
     entities = [
@@ -35,11 +32,11 @@ import kotlinx.coroutines.flow.collect
         DatabaseLoader::class,
         Question::class
     ],
-    version = 1,
+    version = 2,
     exportSchema = true,
-//    autoMigrations = [
-//        AutoMigration(from = 1, to = 2, spec = AppDatabase.MyAutoMigration::class),
-//    ]
+    autoMigrations = [
+        AutoMigration(from = 1, to = 2, spec = AppDatabase.MyAutoMigration::class),
+    ]
 )
 @TypeConverters(StringListConverter::class)
 abstract class AppDatabase : RoomDatabase() {
@@ -55,9 +52,9 @@ abstract class AppDatabase : RoomDatabase() {
             super.onPostMigrate(db)
             INSTANCE?.let { _ ->
                 CoroutineScope(Dispatchers.IO).launch {
-                    Log.d(RoomCallBack.TAG, "onPostMigrate Called")
+                    Timber.d("onPostMigrate Called")
                     //add new words here
-                    Log.d(RoomCallBack.TAG, "onPostMigrate Ended")
+                    Timber.d("onPostMigrate Ended")
                 }
             }
         }
@@ -82,9 +79,9 @@ abstract class AppDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     executeBeforeOnOpen {
-                        Log.d(TAG, "onCreate Called")
+                        Timber.d("onCreate Called")
                         database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
-                        Log.d(TAG, "onCreate Ended")
+                        Timber.d("onCreate Ended")
                         delay(100)
                     }
                 }
@@ -97,9 +94,9 @@ abstract class AppDatabase : RoomDatabase() {
             INSTANCE?.let { database ->
                 scope.launch {
                     executeBeforeOnOpen {
-                        Log.d(TAG, "onDestructiveMigration Called")
+                        Timber.d("onDestructiveMigration Called")
                         database.databaseLoaderDao().insertDatabaseLoader(DatabaseLoader())
-                        Log.d(TAG, "onDestructiveMigration Ended")
+                        Timber.d("onDestructiveMigration Ended")
                         delay(100)
                     }
                 }
@@ -113,12 +110,12 @@ abstract class AppDatabase : RoomDatabase() {
                 scope.launch {
                     executeOnOpen.collect {
                         if (it) {
-                            Log.d(TAG, "onOpen Called")
+                            Timber.d("onOpen Called")
                             if (!isDataLoaded(database.databaseLoaderDao()))
                                 populateDatabase(database)
                             onFinishedLoading()
                             cancel()
-                            Log.d(TAG, "onOpen Ended")
+                            Timber.d("onOpen Ended")
                         }
                     }
                 }
@@ -126,9 +123,9 @@ abstract class AppDatabase : RoomDatabase() {
         }
 
         private suspend fun populateDatabase(database: AppDatabase) {
-            Log.d(TAG, "Deleting Database")
+            Timber.d("Deleting Database")
             deleteAllDatabase(database)
-            Log.d(TAG, "Repopulating Database")
+            Timber.d("Repopulating Database")
             populateWordTable(database.wordDao())
             populateSettingTables(database.settingDao())
             finishLoad(database.databaseLoaderDao())
