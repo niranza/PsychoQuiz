@@ -7,8 +7,14 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import timber.log.Timber
 
 class PsychoQuizApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+        Timber.plant(Timber.DebugTree())
+    }
 
     private val _finishedLoadingDatabase = MutableStateFlow(false)
     val finishedLoadingDatabase: StateFlow<Boolean> get() = _finishedLoadingDatabase
