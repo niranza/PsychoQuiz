@@ -16,3 +16,5 @@ The app integreates
 * menus
 * animations
 * Media Player
+  
+![Alt Text](https://github.com/niranza/PsychoQuiz/blob/master/gifs/psychoquiz_gif.gif)
